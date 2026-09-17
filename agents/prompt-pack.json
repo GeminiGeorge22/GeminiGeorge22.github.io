@@ -1,0 +1,112 @@
+{
+  "publisher": "publicrecords",
+  "disclosure": "Published by the publicrecords maintainer on Apify.",
+  "mcp_pin_url": "https://mcp.apify.com?tools=publicrecords/company-social-profile-finder,publicrecords/eu-ted-notices-scraper,publicrecords/usaspending-awards-scraper,publicrecords/grants-gov-scraper,publicrecords/uk-find-a-tender-scraper,publicrecords/legistar-meetings-scraper",
+  "site": "https://geminigeorge22.github.io/",
+  "updated": "2026-09-17",
+  "actors": [
+    {
+      "id": "crosswalk",
+      "brand": "Crosswalk \u2014 Company Social Profiles & LinkedIn Finder",
+      "when_to_use": "Need verified organization LinkedIn/Instagram/Facebook/X/TikTok/YouTube from a website or company name. Platform confirms the link. Orgs only; never people.",
+      "example_prompts": [
+        "Resolve hubspot.com with publicrecords/company-social-profile-finder and return verified LinkedIn + Instagram.",
+        "Call Crosswalk with query stripe.com and outputFormat compact; report confidence and verified flags.",
+        "Enrich my Google Maps dataset with publicrecords/company-social-profile-finder using inputDatasetId.",
+        "Batch-resolve stripe.com and notion.so social profiles via Crosswalk; organizations only."
+      ],
+      "sample_input": {
+        "query": "hubspot.com",
+        "outputFormat": "compact"
+      },
+      "store_url": "https://apify.com/publicrecords/company-social-profile-finder",
+      "site_url": "https://geminigeorge22.github.io/crosswalk/"
+    },
+    {
+      "id": "eu-ted-notices",
+      "brand": "EU TED Notices",
+      "when_to_use": "Need EU public procurement notices from the official TED Search API v3 (anonymous, no API key).",
+      "example_prompts": [
+        "Search EU TED notices about cybersecurity in Germany last 30 days using publicrecords/eu-ted-notices-scraper.",
+        "Run publicrecords/eu-ted-notices-scraper with buyerCountry DEU and CPV 72000000; summarize top buyers."
+      ],
+      "sample_input": {
+        "keywords": "cybersecurity",
+        "buyerCountry": "DEU",
+        "maxItems": 50
+      },
+      "store_url": "https://apify.com/publicrecords/eu-ted-notices-scraper",
+      "site_url": "https://geminigeorge22.github.io/ted/"
+    },
+    {
+      "id": "usaspending-awards",
+      "brand": "USASpending Awards",
+      "when_to_use": "Need US federal contract/IDV awards from the official USASpending.gov v2 API with agency, recipient, or NAICS filters.",
+      "example_prompts": [
+        "Run publicrecords/usaspending-awards-scraper for NAICS 541512 cloud awards and summarize top recipients.",
+        "Who won Department of Defense contracts last 30 days? Use publicrecords/usaspending-awards-scraper."
+      ],
+      "sample_input": {
+        "naics": [
+          "541512"
+        ],
+        "agency": "Department of Defense",
+        "maxItems": 50
+      },
+      "store_url": "https://apify.com/publicrecords/usaspending-awards-scraper",
+      "site_url": "https://geminigeorge22.github.io/usaspending/"
+    },
+    {
+      "id": "grants-gov",
+      "brand": "Grants.gov Opportunities",
+      "when_to_use": "Need US federal grant FOAs from the official Grants.gov search2 API (keyword, agency, posted-within).",
+      "example_prompts": [
+        "Find posted Grants.gov cybersecurity FOAs in the last 30 days with publicrecords/grants-gov-scraper."
+      ],
+      "sample_input": {
+        "keyword": "cybersecurity",
+        "status": "posted",
+        "postedWithinDays": 30,
+        "maxItems": 50
+      },
+      "store_url": "https://apify.com/publicrecords/grants-gov-scraper",
+      "site_url": "https://geminigeorge22.github.io/grantsgov/"
+    },
+    {
+      "id": "uk-find-a-tender",
+      "brand": "UK Find a Tender",
+      "when_to_use": "Need UK above-threshold Find a Tender notices via the official OCDS 1.1 API.",
+      "example_prompts": [
+        "Pull UK Find a Tender cloud tenders with publicrecords/uk-find-a-tender-scraper; noticeType tender."
+      ],
+      "sample_input": {
+        "keywords": [
+          "cloud"
+        ],
+        "noticeType": [
+          "tender"
+        ],
+        "maxItems": 50
+      },
+      "store_url": "https://apify.com/publicrecords/uk-find-a-tender-scraper",
+      "site_url": "https://geminigeorge22.github.io/uktender/"
+    },
+    {
+      "id": "legistar-meetings",
+      "brand": "Legistar Meetings",
+      "when_to_use": "Need US city council meetings, agendas, and minutes from public Legistar (Granicus) Web API clients.",
+      "example_prompts": [
+        "List recent Seattle Legistar council events with publicrecords/legistar-meetings-scraper."
+      ],
+      "sample_input": {
+        "clients": [
+          "seattle"
+        ],
+        "resource": "events",
+        "maxItems": 50
+      },
+      "store_url": "https://apify.com/publicrecords/legistar-meetings-scraper",
+      "site_url": "https://geminigeorge22.github.io/legistar/"
+    }
+  ]
+}

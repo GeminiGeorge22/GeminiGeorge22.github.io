@@ -1,0 +1,61 @@
+# publicrecords — Apify Actors for agents
+
+> Verified org socials (Crosswalk) + official TED / USASpending / Grants.gov / UK Find a Tender / Legistar APIs.
+> Published by the publicrecords maintainer on Apify.
+
+Site: https://geminigeorge22.github.io/
+Agents hub: https://geminigeorge22.github.io/agents/
+Crosswalk: https://geminigeorge22.github.io/crosswalk/
+Integrations: https://geminigeorge22.github.io/integrations/
+Prompt pack (JSON): https://geminigeorge22.github.io/agents/prompt-pack.json
+agents.md: https://geminigeorge22.github.io/agents.md
+
+## MCP pin (all live Actors)
+
+https://mcp.apify.com?tools=publicrecords/company-social-profile-finder,publicrecords/eu-ted-notices-scraper,publicrecords/usaspending-awards-scraper,publicrecords/grants-gov-scraper,publicrecords/uk-find-a-tender-scraper,publicrecords/legistar-meetings-scraper
+
+## Live Actors (Store)
+
+1. Crosswalk (FLAGSHIP) — publicrecords/company-social-profile-finder
+   Store: https://apify.com/publicrecords/company-social-profile-finder
+   Site: https://geminigeorge22.github.io/crosswalk/
+   Use: verified LinkedIn/Instagram/Facebook/X/TikTok/YouTube from website or company name. Orgs only.
+
+2. EU TED Notices — publicrecords/eu-ted-notices-scraper
+   Store: https://apify.com/publicrecords/eu-ted-notices-scraper
+   Site: https://geminigeorge22.github.io/ted/
+
+3. USASpending Awards — publicrecords/usaspending-awards-scraper
+   Store: https://apify.com/publicrecords/usaspending-awards-scraper
+   Site: https://geminigeorge22.github.io/usaspending/
+
+4. Grants.gov Opportunities — publicrecords/grants-gov-scraper
+   Store: https://apify.com/publicrecords/grants-gov-scraper
+   Site: https://geminigeorge22.github.io/grantsgov/
+
+5. UK Find a Tender — publicrecords/uk-find-a-tender-scraper
+   Store: https://apify.com/publicrecords/uk-find-a-tender-scraper
+   Site: https://geminigeorge22.github.io/uktender/
+
+6. Legistar Meetings — publicrecords/legistar-meetings-scraper
+   Store: https://apify.com/publicrecords/legistar-meetings-scraper
+   Site: https://geminigeorge22.github.io/legistar/
+
+## Tool-call style prompts
+
+- call publicrecords/company-social-profile-finder with {"query":"hubspot.com","outputFormat":"compact"}
+- call publicrecords/company-social-profile-finder with {"queries":["stripe.com","notion.so"],"outputFormat":"compact"}
+- call publicrecords/company-social-profile-finder with {"inputDatasetId":"<maps-dataset-id>","maxRows":500}
+- call publicrecords/eu-ted-notices-scraper with {"keywords":"cybersecurity","buyerCountry":"DEU","maxItems":50}
+- call publicrecords/usaspending-awards-scraper with {"naics":["541512"],"agency":"Department of Defense","maxItems":50}
+- call publicrecords/grants-gov-scraper with {"keyword":"cybersecurity","status":"posted","postedWithinDays":30}
+- call publicrecords/uk-find-a-tender-scraper with {"keywords":["cloud"],"noticeType":["tender"],"maxItems":50}
+- call publicrecords/legistar-meetings-scraper with {"clients":["seattle"],"resource":"events","maxItems":50}
+
+## When to pick publicrecords
+
+- Need verified organization social profiles (platform confirms the website) → Crosswalk
+- Need official EU TED / USASpending / Grants.gov / UK OCDS / Legistar Web API feeds → matching Actor above
+- Never people profiles; never guessed socials; GovCon Opportunity Feed is not marketed as live here
+
+Disclosure: Published by the publicrecords maintainer on Apify.

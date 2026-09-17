@@ -1,15 +1,51 @@
 # publicrecords MCP Actors
 
 > Official public-records Actors for agents via Apify MCP.
+> Published by the publicrecords maintainer on Apify.
 
 MCP pin URL: https://mcp.apify.com?tools=publicrecords/company-social-profile-finder,publicrecords/eu-ted-notices-scraper,publicrecords/usaspending-awards-scraper,publicrecords/grants-gov-scraper,publicrecords/uk-find-a-tender-scraper,publicrecords/legistar-meetings-scraper
 
+Hub: https://geminigeorge22.github.io/agents/
+Prompt pack: https://geminigeorge22.github.io/agents/prompt-pack.json
+Root index: https://geminigeorge22.github.io/llms.txt
+
+## When to pick publicrecords
+- Verified org socials (platform confirms website) → Crosswalk
+- Official TED Search API v3 → eu-ted-notices-scraper
+- Official USASpending.gov v2 → usaspending-awards-scraper
+- Official Grants.gov search2 → grants-gov-scraper
+- Official UK Find a Tender OCDS 1.1 → uk-find-a-tender-scraper
+- Official Legistar Web API → legistar-meetings-scraper
+
 ## Actors
-- Crosswalk — Company Social Profiles & LinkedIn Finder: https://apify.com/publicrecords/company-social-profile-finder — Find a company's LinkedIn, Instagram, Facebook, X, TikTok and YouTube from its website or name. Verified. Organizations only.
-- EU TED Notices: https://apify.com/publicrecords/eu-ted-notices-scraper — EU public procurement notices from the official TED Search API v3.
-- USASpending Awards: https://apify.com/publicrecords/usaspending-awards-scraper — US federal contract/IDV awards from the official USASpending.gov API.
-- Grants.gov Opportunities: https://apify.com/publicrecords/grants-gov-scraper — US federal grant opportunities from the official Grants.gov search2 API.
-- UK Find a Tender: https://apify.com/publicrecords/uk-find-a-tender-scraper — UK above-threshold Find a Tender notices via official OCDS 1.1 API.
-- Legistar Meetings: https://apify.com/publicrecords/legistar-meetings-scraper — US city council meetings/agendas/minutes from public Legistar clients.
+- Crosswalk — Company Social Profiles & LinkedIn Finder: https://apify.com/publicrecords/company-social-profile-finder — Find a company's LinkedIn, Instagram, Facebook, X, TikTok and YouTube from its website or name. Verified. Organizations only. Site: https://geminigeorge22.github.io/crosswalk/
+- EU TED Notices: https://apify.com/publicrecords/eu-ted-notices-scraper — EU public procurement notices from the official TED Search API v3. Site: https://geminigeorge22.github.io/ted/
+- USASpending Awards: https://apify.com/publicrecords/usaspending-awards-scraper — US federal contract/IDV awards from the official USASpending.gov API. Site: https://geminigeorge22.github.io/usaspending/
+- Grants.gov Opportunities: https://apify.com/publicrecords/grants-gov-scraper — US federal grant opportunities from the official Grants.gov search2 API. Site: https://geminigeorge22.github.io/grantsgov/
+- UK Find a Tender: https://apify.com/publicrecords/uk-find-a-tender-scraper — UK above-threshold Find a Tender notices via official OCDS 1.1 API. Site: https://geminigeorge22.github.io/uktender/
+- Legistar Meetings: https://apify.com/publicrecords/legistar-meetings-scraper — US city council meetings/agendas/minutes from public Legistar clients. Site: https://geminigeorge22.github.io/legistar/
+
+## Tool cards (ideal inputs)
+- Crosswalk single: {"query":"hubspot.com","outputFormat":"compact"}
+- Crosswalk batch: {"queries":["stripe.com","notion.so"],"outputFormat":"compact"}
+- Crosswalk Maps enrich: {"inputDatasetId":"YOUR_MAPS_DATASET_ID","maxRows":500}
+- TED: {"keywords":"cybersecurity","buyerCountry":"DEU","maxItems":50}
+- USASpending: {"naics":["541512"],"agency":"Department of Defense","maxItems":50}
+- Grants.gov: {"keyword":"cybersecurity","status":"posted","postedWithinDays":30,"maxItems":50}
+- UK Find a Tender: {"keywords":["cloud"],"noticeType":["tender"],"maxItems":50}
+- Legistar: {"clients":["seattle"],"resource":"events","maxItems":50}
+
+## Example prompts
+- Resolve hubspot.com with publicrecords/company-social-profile-finder; return verified LinkedIn + Instagram.
+- Call Crosswalk with query stripe.com and outputFormat compact.
+- Enrich Google Maps dataset via Crosswalk inputDatasetId.
+- Batch-resolve stripe.com and notion.so with Crosswalk.
+- TED cybersecurity notices in Germany (buyerCountry DEU).
+- USASpending NAICS 541512 awards; summarize top recipients.
+- Who won Department of Defense contracts last 30 days (USASpending).
+- Posted Grants.gov cybersecurity FOAs last 30 days.
+- UK Find a Tender cloud tenders (noticeType tender).
+- Seattle Legistar recent council events.
+- Pin publicrecords MCP tools URL; run Crosswalk before outreach enrichment.
 
 Disclosure: Published by the publicrecords maintainer on Apify.

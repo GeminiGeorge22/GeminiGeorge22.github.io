@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Enrich Google Maps leads with verified LinkedIn and social profiles — publicrecords</title>
+<meta name="description" content="Turn a Google Maps scrape into verified LinkedIn and social profiles in one Crosswalk step on Apify. Organizations only; platform-confirmed links.">
+<link rel="canonical" href="https://geminigeorge22.github.io/blog/enrich-google-maps-leads/">
+<meta name="robots" content="index,follow">
+<style>body{font:16px/1.55 system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;color:#111}pre,code{background:#f4f4f5;border-radius:6px}pre{padding:12px;overflow:auto}a.cta{display:inline-block;margin:16px 0;padding:10px 14px;background:#111;color:#fff;border-radius:8px;text-decoration:none}ol,ul{padding-left:1.2em}</style>
+</head><body>
+<nav><a href="https://geminigeorge22.github.io/">publicrecords</a> · <a href="https://geminigeorge22.github.io/blog/">Blog</a> · <a href="https://geminigeorge22.github.io/crosswalk/">Crosswalk</a></nav>
+<article>
+<h1>Enrich Google Maps leads with verified LinkedIn and social profiles in one step</h1>
+<p><em>2026-09-17</em></p>
+<p>A Google Maps scrape gives you names, phones, ratings and websites. For outreach you also want the LinkedIn company page and the social accounts, verified, not guessed. Here is the shortest path.</p>
+<ol>
+<li>Run any Google Maps scraper on Apify (or upload a CSV with a website column).</li>
+<li>Run Crosswalk with <code>inputDatasetId</code> set to that dataset. It auto-detects the website column, resolves each business, and attaches a <code>crosswalk</code> block to every row while passing all original columns through.</li>
+<li>Export as CSV. Columns include <code>crosswalk.identifiers.linkedin.id</code>, <code>…instagram.id</code>, <code>…facebook.id</code>, each with <code>confidence</code> and <code>verified</code>.</li>
+</ol>
+<p>What &quot;verified&quot; means: the platform itself points back at the business website (LinkedIn&#39;s website field, Instagram&#39;s external link, a bio link on X or TikTok). Declared-only links are still returned with their confidence so you can decide.</p>
+<p>What it costs: cache hits are free and the graph is pre-seeded with well-known companies; fresh resolutions are charged per organization. A 2,000-row list is typically a few tens of dollars including Instagram and Facebook confirmations.</p>
+<pre><code>{
+  "inputDatasetId": "YOUR_MAPS_DATASET_ID",
+  "maxRows": 500
+}</code></pre>
+<p>Actor: <a href="https://apify.com/publicrecords/company-social-profile-finder?utm_source=site&amp;utm_medium=blog&amp;utm_campaign=crosswalk&amp;utm_content=maps-enrich">https://apify.com/publicrecords/company-social-profile-finder</a> · Walkthrough: <a href="https://geminigeorge22.github.io/crosswalk/enrich-google-maps-leads-with-linkedin.html">crosswalk/enrich-google-maps-leads-with-linkedin.html</a></p>
+<p><a class="cta" href="https://apify.com/publicrecords/company-social-profile-finder?utm_source=site&amp;utm_medium=blog&amp;utm_campaign=crosswalk&amp;utm_content=maps-enrich">Try Crosswalk on Apify →</a></p>
+</article>
+<footer><p><em>Published by the publicrecords maintainer on Apify.</em></p></footer>
+</body></html>
