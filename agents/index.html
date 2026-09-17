@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>publicrecords Actors for MCP agents</title>
-<meta name="description" content="Pin publicrecords Apify Actors in your MCP client. Official TED, USASpending, Grants.gov, UK Find a Tender, and Legistar feeds for agents.">
+<meta name="description" content="Pin publicrecords Apify Actors in your MCP client. Crosswalk flagship plus TED, USASpending, Grants.gov, UK Find a Tender, and Legistar.">
 <link rel="canonical" href="https://geminigeorge22.github.io/agents/">
 <meta name="robots" content="index,follow">
 <style>
@@ -20,14 +20,15 @@ li{margin:10px 0}
 <pre>{
   "mcpServers": {
     "publicrecords": {
-      "url": "https://mcp.apify.com?tools=publicrecords/eu-ted-notices-scraper,publicrecords/usaspending-awards-scraper,publicrecords/grants-gov-scraper,publicrecords/uk-find-a-tender-scraper,publicrecords/legistar-meetings-scraper"
+      "url": "https://mcp.apify.com?tools=publicrecords/company-social-profile-finder,publicrecords/eu-ted-notices-scraper,publicrecords/usaspending-awards-scraper,publicrecords/grants-gov-scraper,publicrecords/uk-find-a-tender-scraper,publicrecords/legistar-meetings-scraper"
     }
   }
 }</pre>
-<p class="note">Hosted MCP: <a href="https://mcp.apify.com?tools=publicrecords/eu-ted-notices-scraper,publicrecords/usaspending-awards-scraper,publicrecords/grants-gov-scraper,publicrecords/uk-find-a-tender-scraper,publicrecords/legistar-meetings-scraper"><code>https://mcp.apify.com?tools=publicrecords/eu-ted-notices-scraper,publicrecords/usaspending-awards-scraper,publicrecords/grants-gov-scraper,publicrecords/uk-find-a-tender-scraper,publicrecords/legistar-meetings-scraper</code></a>. On first connect, authorize with an Apify account. Rental-only Actors are excluded by Apify MCP; ours are run-priced Store Actors.</p>
+<p class="note">Hosted MCP: <a href="https://mcp.apify.com?tools=publicrecords/company-social-profile-finder,publicrecords/eu-ted-notices-scraper,publicrecords/usaspending-awards-scraper,publicrecords/grants-gov-scraper,publicrecords/uk-find-a-tender-scraper,publicrecords/legistar-meetings-scraper"><code>mcp.apify.com?tools=…</code></a>. On first connect, authorize with an Apify account.</p>
 <h2>Pinned Actors</h2>
 <ul>
-<li><strong>EU TED Notices</strong> — EU public procurement notices from the official TED Search API v3.<br>
+<li><strong>Crosswalk — Company Social Profiles & LinkedIn Finder</strong> — Find a company's LinkedIn, Instagram, Facebook, X, TikTok and YouTube from its website or name. Verified. Organizations only.<br>
+  <code>publicrecords/company-social-profile-finder</code> · <a href="https://geminigeorge22.github.io/crosswalk/">site</a> · <a href="https://apify.com/publicrecords/company-social-profile-finder?utm_source=site&amp;utm_medium=agents&amp;utm_campaign=mcp">Store</a></li><li><strong>EU TED Notices</strong> — EU public procurement notices from the official TED Search API v3.<br>
   <code>publicrecords/eu-ted-notices-scraper</code> · <a href="https://geminigeorge22.github.io/ted/">site</a> · <a href="https://apify.com/publicrecords/eu-ted-notices-scraper?utm_source=site&amp;utm_medium=agents&amp;utm_campaign=mcp">Store</a></li><li><strong>USASpending Awards</strong> — US federal contract/IDV awards from the official USASpending.gov API.<br>
   <code>publicrecords/usaspending-awards-scraper</code> · <a href="https://geminigeorge22.github.io/usaspending/">site</a> · <a href="https://apify.com/publicrecords/usaspending-awards-scraper?utm_source=site&amp;utm_medium=agents&amp;utm_campaign=mcp">Store</a></li><li><strong>Grants.gov Opportunities</strong> — US federal grant opportunities from the official Grants.gov search2 API.<br>
   <code>publicrecords/grants-gov-scraper</code> · <a href="https://geminigeorge22.github.io/grantsgov/">site</a> · <a href="https://apify.com/publicrecords/grants-gov-scraper?utm_source=site&amp;utm_medium=agents&amp;utm_campaign=mcp">Store</a></li><li><strong>UK Find a Tender</strong> — UK above-threshold Find a Tender notices via official OCDS 1.1 API.<br>
@@ -36,9 +37,9 @@ li{margin:10px 0}
 </ul>
 <h2>Example agent prompts</h2>
 <ul>
+<li>“Resolve hubspot.com with publicrecords/company-social-profile-finder and return verified LinkedIn + Instagram.”</li>
 <li>“Search Apify for EU TED notices about cybersecurity in Germany last 30 days using publicrecords/eu-ted-notices-scraper.”</li>
 <li>“Run publicrecords/usaspending-awards-scraper for NAICS 541512 cloud awards and summarize top recipients.”</li>
-<li>“Fetch open Grants.gov opportunities with keyword education posted in the last 14 days via publicrecords/grants-gov-scraper.”</li>
 </ul>
 <p class="note">More: <a href="https://docs.apify.com/platform/integrations/mcp">Apify MCP docs</a>.</p>
 <footer><p><em>Published by the publicrecords maintainer on Apify.</em></p></footer>

@@ -2,9 +2,10 @@
 
 > Official public-records Actors for agents via Apify MCP.
 
-MCP pin URL: https://mcp.apify.com?tools=publicrecords/eu-ted-notices-scraper,publicrecords/usaspending-awards-scraper,publicrecords/grants-gov-scraper,publicrecords/uk-find-a-tender-scraper,publicrecords/legistar-meetings-scraper
+MCP pin URL: https://mcp.apify.com?tools=publicrecords/company-social-profile-finder,publicrecords/eu-ted-notices-scraper,publicrecords/usaspending-awards-scraper,publicrecords/grants-gov-scraper,publicrecords/uk-find-a-tender-scraper,publicrecords/legistar-meetings-scraper
 
 ## Actors
+- Crosswalk — Company Social Profiles & LinkedIn Finder: https://apify.com/publicrecords/company-social-profile-finder — Find a company's LinkedIn, Instagram, Facebook, X, TikTok and YouTube from its website or name. Verified. Organizations only.
 - EU TED Notices: https://apify.com/publicrecords/eu-ted-notices-scraper — EU public procurement notices from the official TED Search API v3.
 - USASpending Awards: https://apify.com/publicrecords/usaspending-awards-scraper — US federal contract/IDV awards from the official USASpending.gov API.
 - Grants.gov Opportunities: https://apify.com/publicrecords/grants-gov-scraper — US federal grant opportunities from the official Grants.gov search2 API.
