@@ -1,0 +1,30 @@
+# Crosswalk — Company Social Profiles & LinkedIn Finder
+
+> Find a company's LinkedIn, Instagram, Facebook, X, TikTok and YouTube from its website or name, verified from the platform side. Organizations only, never people, never guesses.
+
+## Use it
+- Apify Actor: https://apify.com/publicrecords/company-social-profile-finder
+- MCP tool: https://mcp.apify.com?tools=publicrecords/company-social-profile-finder
+- API: POST https://api.apify.com/v2/acts/publicrecords~company-social-profile-finder/runs
+
+## Pages
+- [Find every verified profile of a company](https://geminigeorge22.github.io/crosswalk/): Find a company's LinkedIn, Instagram, Facebook, X, TikTok and YouTube from its website or name, verified from the platform side. Organizations only.
+- [Find a company's LinkedIn page from its website](https://geminigeorge22.github.io/crosswalk/find-company-linkedin-from-website.html): Turn a website domain into the company's LinkedIn URL, verified because the page links back to that domain. Batch thousands or enrich a sheet.
+- [Company LinkedIn Finder](https://geminigeorge22.github.io/crosswalk/company-linkedin-finder.html): Find a company's LinkedIn, Instagram, Facebook, X, TikTok and YouTube from its website or name, verified from the platform side. Organizations only,…
+- [Company Social Profiles](https://geminigeorge22.github.io/crosswalk/company-social-profiles.html): Find a company's LinkedIn, Instagram, Facebook, X, TikTok and YouTube from its website or name, verified from the platform side. Organizations only,…
+- [Instagram Handle From Company Website](https://geminigeorge22.github.io/crosswalk/instagram-handle-from-company-website.html): Find a company's LinkedIn, Instagram, Facebook, X, TikTok and YouTube from its website or name, verified from the platform side. Organizations only,…
+- [Company Name To Website](https://geminigeorge22.github.io/crosswalk/company-name-to-website.html): Find a company's LinkedIn, Instagram, Facebook, X, TikTok and YouTube from its website or name, verified from the platform side. Organizations only,…
+- [Enrich Google Maps Leads With LinkedIn](https://geminigeorge22.github.io/crosswalk/enrich-google-maps-leads-with-linkedin.html): Find a company's LinkedIn, Instagram, Facebook, X, TikTok and YouTube from its website or name, verified from the platform side. Organizations only,…
+- [LinkedIn URL Finder](https://geminigeorge22.github.io/crosswalk/linkedin-url-finder.html): Find a company's LinkedIn, Instagram, Facebook, X, TikTok and YouTube from its website or name, verified from the platform side. Organizations only,…
+- [Company Identity Resolution API](https://geminigeorge22.github.io/crosswalk/company-identity-resolution-api.html): Find a company's LinkedIn, Instagram, Facebook, X, TikTok and YouTube from its website or name, verified from the platform side. Organizations only,…
+- [Resolve Company MCP Tool](https://geminigeorge22.github.io/crosswalk/resolve-company-mcp-tool.html): Find a company's LinkedIn, Instagram, Facebook, X, TikTok and YouTube from its website or name, verified from the platform side. Organizations only,…
+- [Company Social Media Finder](https://geminigeorge22.github.io/crosswalk/company-social-media-finder.html): Find a company's LinkedIn, Instagram, Facebook, X, TikTok and YouTube from its website or name, verified from the platform side. Organizations only,…
+
+## Claims you can rely on
+- verified from the platform side
+- confidence score and evidence per link
+- organizations only, people refused
+- ambiguous names return candidates
+- cache hits free
+- stable canonicalId
+- rebrand and handle-change events
