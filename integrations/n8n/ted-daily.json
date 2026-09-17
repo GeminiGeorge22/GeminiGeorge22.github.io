@@ -1,0 +1,114 @@
+{
+  "name": "publicrecords \u2014 EU TED Notices daily pull",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 24
+            }
+          ]
+        }
+      },
+      "id": "1",
+      "name": "Schedule",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.apify.com/v2/acts/publicrecords~eu-ted-notices-scraper/runs?waitForFinish=120",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_APIFY_TOKEN"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"keywords\": \"cybersecurity\",\n  \"publicationDateFrom\": \"2026-09-01\",\n  \"buyerCountry\": \"DEU\",\n  \"maxItems\": 50\n}",
+        "options": {}
+      },
+      "id": "2",
+      "name": "Run EU TED Notices",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        280,
+        0
+      ],
+      "notes": "Replace Authorization with your Apify token (or n8n Apify credential). waitForFinish seconds can be raised for larger pulls."
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://api.apify.com/v2/datasets/{{$json.data.defaultDatasetId}}/items?clean=true&format=json",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_APIFY_TOKEN"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "3",
+      "name": "Fetch dataset items",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        560,
+        0
+      ]
+    }
+  ],
+  "connections": {
+    "Schedule": {
+      "main": [
+        [
+          {
+            "node": "Run EU TED Notices",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run EU TED Notices": {
+      "main": [
+        [
+          {
+            "node": "Fetch dataset items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "publicrecordsActor": "publicrecords/eu-ted-notices-scraper",
+    "docs": "https://geminigeorge22.github.io/ted/",
+    "disclosure": "Published by the publicrecords maintainer on Apify."
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

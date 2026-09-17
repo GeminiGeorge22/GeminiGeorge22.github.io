@@ -1,0 +1,14 @@
+# publicrecords MCP Actors
+
+> Official public-records Actors for agents via Apify MCP.
+
+MCP pin URL: https://mcp.apify.com?tools=publicrecords/eu-ted-notices-scraper,publicrecords/usaspending-awards-scraper,publicrecords/grants-gov-scraper,publicrecords/uk-find-a-tender-scraper,publicrecords/legistar-meetings-scraper
+
+## Actors
+- EU TED Notices: https://apify.com/publicrecords/eu-ted-notices-scraper — EU public procurement notices from the official TED Search API v3.
+- USASpending Awards: https://apify.com/publicrecords/usaspending-awards-scraper — US federal contract/IDV awards from the official USASpending.gov API.
+- Grants.gov Opportunities: https://apify.com/publicrecords/grants-gov-scraper — US federal grant opportunities from the official Grants.gov search2 API.
+- UK Find a Tender: https://apify.com/publicrecords/uk-find-a-tender-scraper — UK above-threshold Find a Tender notices via official OCDS 1.1 API.
+- Legistar Meetings: https://apify.com/publicrecords/legistar-meetings-scraper — US city council meetings/agendas/minutes from public Legistar clients.
+
+Disclosure: Published by the publicrecords maintainer on Apify.
