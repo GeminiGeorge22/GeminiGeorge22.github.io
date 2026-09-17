@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UK Find a Tender API — a practical feed</title>
+<meta name="description" content="UK above-threshold Find a Tender notices via the official OCDS 1.1 API. Keyword and CPV filters to flat JSON for GovCon BD.">
+<link rel="canonical" href="https://geminigeorge22.github.io/blog/uk-find-a-tender-api.html">
+<style>body{font:16px/1.55 system-ui,sans-serif;max-width:720px;margin:40px auto;padding:0 20px}nav{margin-bottom:24px;color:#666}a{color:#06c}pre{background:#f6f8fa;padding:12px;overflow:auto;border-radius:8px}footer{margin-top:48px;color:#666;font-size:.9rem}</style></head><body>
+<nav><a href="../">publicrecords</a> · <a href="./">Blog</a> · <a href="../uktender/">UK Find a Tender</a></nav>
+<h1>UK Find a Tender API — a practical feed</h1><p>UK GovCon BD teams; Market intelligence analysts usually need a reliable machine-readable feed — not another portal tab. Here is a method you can run yourself, then the Apify Actor that automates it.</p><h2>The method</h2><ol><li>Prefer the <strong>official API</strong> for the source (not brittle HTML) whenever one exists.</li><li>Filter server-side or early: keywords, dates, codes (CPV/NAICS/CFDA), and geography.</li><li>Flatten each record into one JSON row with stable ids and deep links back to the source.</li><li>Deduplicate on the source id; keep failures as separate rows so one miss does not kill the batch.</li><li>Schedule daily and diff on id so operators only see what is new.</li></ol><h2>Doing it at scale</h2><p><strong>UK Find a Tender</strong> (<code>publicrecords/uk-find-a-tender-scraper</code>) runs that method on Apify. UK above-threshold Find a Tender notices via the official OCDS 1.1 API. Keyword and CPV filters to flat JSON for GovCon BD.</p><p>What you can rely on: Official Find a Tender OCDS 1.1 API; Above-threshold notices; Flat structured notice rows; Keyword and CPV filters.</p><pre><code>{
+  &quot;source&quot;: &quot;UK Find a Tender&quot;,
+  &quot;note&quot;: &quot;Shape varies by Actor — see the Store README for the live output schema.&quot;
+}
+</code></pre><p>Actor: <a href="https://apify.com/publicrecords/uk-find-a-tender-scraper?utm_source=site&amp;utm_medium=article&amp;utm_campaign=uktender">https://apify.com/publicrecords/uk-find-a-tender-scraper?utm_source=site&amp;utm_medium=article&amp;utm_campaign=uktender</a></p><p>Method pages: https://geminigeorge22.github.io/uktender/?utm_source=site&amp;utm_medium=article&amp;utm_campaign=uktender</p><p><em>Published by the maintainer of this Actor.</em></p>
+<footer>Published by the maintainer of this Actor. · <a href="../sitemap.xml">Sitemap</a></footer>
+</body></html>
