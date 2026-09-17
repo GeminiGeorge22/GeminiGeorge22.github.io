@@ -1,0 +1,23 @@
+# UK Find a Tender — UK Find a Tender Scraper
+
+> UK above-threshold Find a Tender notices via the official OCDS 1.1 API. Keyword and CPV filters to flat JSON for GovCon BD.
+
+## Use it
+- Apify Actor: https://apify.com/publicrecords/uk-find-a-tender-scraper
+- API: POST https://api.apify.com/v2/acts/publicrecords~uk-find-a-tender-scraper/runs
+
+## Pages
+- [UK Find a Tender Scraper](https://geminigeorge22.github.io/uktender/): UK above-threshold Find a Tender notices via the official OCDS 1.1 API. Keyword and CPV filters to flat JSON for GovCon BD.
+- [Uk Find A Tender API](https://geminigeorge22.github.io/uktender/uk-find-a-tender-api.html): UK above-threshold Find a Tender notices via the official OCDS 1.1 API. Keyword and CPV filters to flat JSON for GovCon BD.
+- [Uk Above Threshold Tenders](https://geminigeorge22.github.io/uktender/uk-above-threshold-tenders.html): UK above-threshold Find a Tender notices via the official OCDS 1.1 API. Keyword and CPV filters to flat JSON for GovCon BD.
+- [Find A Tender Ocds API](https://geminigeorge22.github.io/uktender/find-a-tender-ocds-api.html): UK above-threshold Find a Tender notices via the official OCDS 1.1 API. Keyword and CPV filters to flat JSON for GovCon BD.
+- [Uk Public Procurement Notices](https://geminigeorge22.github.io/uktender/uk-public-procurement-notices.html): UK above-threshold Find a Tender notices via the official OCDS 1.1 API. Keyword and CPV filters to flat JSON for GovCon BD.
+- [Uk Cpv Tender Search](https://geminigeorge22.github.io/uktender/uk-cpv-tender-search.html): UK above-threshold Find a Tender notices via the official OCDS 1.1 API. Keyword and CPV filters to flat JSON for GovCon BD.
+- [Uk Government Contracts Feed](https://geminigeorge22.github.io/uktender/uk-government-contracts-feed.html): UK above-threshold Find a Tender notices via the official OCDS 1.1 API. Keyword and CPV filters to flat JSON for GovCon BD.
+
+## Claims you can rely on
+- official Find a Tender OCDS 1.1 API
+- above-threshold notices
+- flat structured notice rows
+- keyword and CPV filters
+- planning, tender, and award stage filters

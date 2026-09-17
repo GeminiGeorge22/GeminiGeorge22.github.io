@@ -1,0 +1,24 @@
+# USASpending Awards — USASpending Awards Scraper
+
+> Federal contract and IDV awards from the official USASpending.gov v2 API. Last-30-days default; agency, recipient, and NAICS filters to flat JSON.
+
+## Use it
+- Apify Actor: https://apify.com/publicrecords/usaspending-awards-scraper
+- API: POST https://api.apify.com/v2/acts/publicrecords~usaspending-awards-scraper/runs
+
+## Pages
+- [USASpending Awards Scraper](https://geminigeorge22.github.io/usaspending/): Federal contract and IDV awards from the official USASpending.gov v2 API. Last-30-days default; agency, recipient, and NAICS filters to flat JSON.
+- [USASpending API Awards](https://geminigeorge22.github.io/usaspending/usaspending-api-awards.html): Federal contract and IDV awards from the official USASpending.gov v2 API. Last-30-days default; agency, recipient, and NAICS filters to flat JSON.
+- [Federal Contract Awards Feed](https://geminigeorge22.github.io/usaspending/federal-contract-awards-feed.html): Federal contract and IDV awards from the official USASpending.gov v2 API. Last-30-days default; agency, recipient, and NAICS filters to flat JSON.
+- [Usaspending.gov Scraper](https://geminigeorge22.github.io/usaspending/usaspending-gov-scraper.html): Federal contract and IDV awards from the official USASpending.gov v2 API. Last-30-days default; agency, recipient, and NAICS filters to flat JSON.
+- [Who Won Federal Contracts Last 30 Days](https://geminigeorge22.github.io/usaspending/who-won-federal-contracts-last-30-days.html): Federal contract and IDV awards from the official USASpending.gov v2 API. Last-30-days default; agency, recipient, and NAICS filters to flat JSON.
+- [Naics Federal Awards API](https://geminigeorge22.github.io/usaspending/naics-federal-awards-api.html): Federal contract and IDV awards from the official USASpending.gov v2 API. Last-30-days default; agency, recipient, and NAICS filters to flat JSON.
+- [Dod Contract Awards Data](https://geminigeorge22.github.io/usaspending/dod-contract-awards-data.html): Federal contract and IDV awards from the official USASpending.gov v2 API. Last-30-days default; agency, recipient, and NAICS filters to flat JSON.
+
+## Claims you can rely on
+- official USASpending.gov v2 API
+- contracts and IDVs by default
+- last-30-days default window
+- agency, recipient, NAICS, keyword, and date filters
+- deduplicated award rows
+- optional award-detail hydration

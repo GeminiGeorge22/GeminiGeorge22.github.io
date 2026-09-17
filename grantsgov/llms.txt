@@ -1,0 +1,23 @@
+# Grants.gov Opportunities — Grants.gov Opportunities Scraper
+
+> Federal grant opportunities from the official Grants.gov search2 API. Keyword, agency, posted-within and date filters to flat FOA JSON.
+
+## Use it
+- Apify Actor: https://apify.com/publicrecords/grants-gov-scraper
+- API: POST https://api.apify.com/v2/acts/publicrecords~grants-gov-scraper/runs
+
+## Pages
+- [Grants.gov Opportunities Scraper](https://geminigeorge22.github.io/grantsgov/): Federal grant opportunities from the official Grants.gov search2 API. Keyword, agency, posted-within and date filters to flat FOA JSON.
+- [Grants.gov API](https://geminigeorge22.github.io/grantsgov/grants-gov-api.html): Federal grant opportunities from the official Grants.gov search2 API. Keyword, agency, posted-within and date filters to flat FOA JSON.
+- [Federal Grant Opportunities Scraper](https://geminigeorge22.github.io/grantsgov/federal-grant-opportunities-scraper.html): Federal grant opportunities from the official Grants.gov search2 API. Keyword, agency, posted-within and date filters to flat FOA JSON.
+- [Grants.gov Search2 API](https://geminigeorge22.github.io/grantsgov/grants-gov-search2-api.html): Federal grant opportunities from the official Grants.gov search2 API. Keyword, agency, posted-within and date filters to flat FOA JSON.
+- [Foa Opportunity Feed](https://geminigeorge22.github.io/grantsgov/foa-opportunity-feed.html): Federal grant opportunities from the official Grants.gov search2 API. Keyword, agency, posted-within and date filters to flat FOA JSON.
+- [Federal Funding Opportunity Monitor](https://geminigeorge22.github.io/grantsgov/federal-funding-opportunity-monitor.html): Federal grant opportunities from the official Grants.gov search2 API. Keyword, agency, posted-within and date filters to flat FOA JSON.
+- [Grants.gov Keyword Search API](https://geminigeorge22.github.io/grantsgov/grants-gov-keyword-search-api.html): Federal grant opportunities from the official Grants.gov search2 API. Keyword, agency, posted-within and date filters to flat FOA JSON.
+
+## Claims you can rely on
+- official Grants.gov search2 API
+- flat deduplicated FOA rows
+- keyword, agency, posted-within, and date filters
+- opportunity identifiers, status, CFDA/ALN codes
+- optional synopsis and funding-instrument hydration

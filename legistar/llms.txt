@@ -1,0 +1,24 @@
+# Legistar Meetings — Legistar Meetings Scraper
+
+> Scrape US city council meetings, agendas, and minutes from public Legistar (Granicus) clients. Multi-city clients to flat JSON via the official Web API. Not affiliated with Granicus/Legistar.
+
+## Use it
+- Apify Actor: https://apify.com/publicrecords/legistar-meetings-scraper
+- API: POST https://api.apify.com/v2/acts/publicrecords~legistar-meetings-scraper/runs
+
+## Pages
+- [Legistar Meetings Scraper](https://geminigeorge22.github.io/legistar/): Scrape US city council meetings, agendas, and minutes from public Legistar (Granicus) clients. Multi-city clients to flat JSON via the official Web API.…
+- [Legistar API Scraper](https://geminigeorge22.github.io/legistar/legistar-api-scraper.html): Scrape US city council meetings, agendas, and minutes from public Legistar (Granicus) clients. Multi-city clients to flat JSON via the official Web API.…
+- [City Council Meetings Scraper](https://geminigeorge22.github.io/legistar/city-council-meetings-scraper.html): Scrape US city council meetings, agendas, and minutes from public Legistar (Granicus) clients. Multi-city clients to flat JSON via the official Web API.…
+- [Granicus Legistar Meetings API](https://geminigeorge22.github.io/legistar/granicus-legistar-meetings-api.html): Scrape US city council meetings, agendas, and minutes from public Legistar (Granicus) clients. Multi-city clients to flat JSON via the official Web API.…
+- [Municipal Agenda And Minutes Feed](https://geminigeorge22.github.io/legistar/municipal-agenda-and-minutes-feed.html): Scrape US city council meetings, agendas, and minutes from public Legistar (Granicus) clients. Multi-city clients to flat JSON via the official Web API.…
+- [Legistar Legislation Scraper](https://geminigeorge22.github.io/legistar/legistar-legislation-scraper.html): Scrape US city council meetings, agendas, and minutes from public Legistar (Granicus) clients. Multi-city clients to flat JSON via the official Web API.…
+- [Multi City Council Meetings Data](https://geminigeorge22.github.io/legistar/multi-city-council-meetings-data.html): Scrape US city council meetings, agendas, and minutes from public Legistar (Granicus) clients. Multi-city clients to flat JSON via the official Web API.…
+
+## Claims you can rely on
+- official Legistar Web API v1 OData
+- no browser or login
+- multi-city clients[] input
+- meetings, agendas, minutes links, and legislation matters
+- flat JSON rows
+- not affiliated with Granicus/Legistar

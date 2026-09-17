@@ -1,0 +1,23 @@
+# EU TED Notices — EU TED Notices Scraper
+
+> Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
+
+## Use it
+- Apify Actor: https://apify.com/publicrecords/eu-ted-notices-scraper
+- API: POST https://api.apify.com/v2/acts/publicrecords~eu-ted-notices-scraper/runs
+
+## Pages
+- [EU TED Notices Scraper](https://geminigeorge22.github.io/ted/): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
+- [Eu Ted Notices API](https://geminigeorge22.github.io/ted/eu-ted-notices-api.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
+- [Tenders Electronic Daily Scraper](https://geminigeorge22.github.io/ted/tenders-electronic-daily-scraper.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
+- [Eu Public Procurement Notices](https://geminigeorge22.github.io/ted/eu-public-procurement-notices.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
+- [Ted Search API V3](https://geminigeorge22.github.io/ted/ted-search-api-v3.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
+- [Eu Cpv Code Tender Search](https://geminigeorge22.github.io/ted/eu-cpv-code-tender-search.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
+- [European Government Contracts Feed](https://geminigeorge22.github.io/ted/european-government-contracts-feed.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
+
+## Claims you can rely on
+- official TED Search API v3
+- anonymous search, no API key
+- flat JSON notice records
+- keyword, date, notice-type, CPV, and buyer-country filters
+- HTML/PDF/XML publication links
