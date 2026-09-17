@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to find any company&#x27;s LinkedIn page from its website (and know it&#x27;s the right one) — publicrecords</title>
+<meta name="description" content="Find a company LinkedIn page from its website by reading what the company declares and confirming from LinkedIn. Crosswalk on Apify automates it.">
+<link rel="canonical" href="https://geminigeorge22.github.io/blog/linkedin-from-website/">
+<meta name="robots" content="index,follow">
+<style>body{font:16px/1.55 system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;color:#111}pre,code{background:#f4f4f5;border-radius:6px}pre{padding:12px;overflow:auto}a.cta{display:inline-block;margin:16px 0;padding:10px 14px;background:#111;color:#fff;border-radius:8px;text-decoration:none}ul{padding-left:1.2em}</style>
+</head><body>
+<nav><a href="https://geminigeorge22.github.io/">publicrecords</a> · <a href="https://geminigeorge22.github.io/blog/">Blog</a> · <a href="https://geminigeorge22.github.io/crosswalk/">Crosswalk</a></nav>
+<article>
+<h1>How to find any company&#x27;s LinkedIn page from its website (and know it&#x27;s the right one)</h1>
+<p><em>2026-09-17</em></p>
+<p>If you have ever built a lead list, you have hit this problem: you have 2,000 company websites and you need the LinkedIn company page for each. Searching LinkedIn by name gives you look-alikes, regional subsidiaries and the occasional fan page. The domain is the one identifier the company actually controls, so it should be the starting point.</p>
+<h2>The method</h2>
+<ul><li><strong>Read what the company declares.</strong> Most sites publish their profiles in three places: schema.org <code>sameAs</code> markup, <code>rel=&quot;me&quot;</code> links, and the header or footer. Wikidata holds the same information for larger organizations, curated by humans.</li><li><strong>Confirm from LinkedIn&#x27;s side.</strong> A LinkedIn company page has a website field. If it points back at the domain you started from, the link is confirmed. If it points somewhere else, it is not the company&#x27;s page, however similar the name.</li><li><strong>Handle ambiguity honestly.</strong> A site that links five LinkedIn pages (regions, divisions) with no <code>sameAs</code> declaring which is primary gets all five, capped below the confidence threshold, instead of a coin flip.</li></ul>
+<h2>Doing it at scale</h2>
+<p>Crosswalk is an Apify Actor that runs this method for a domain, a list, or an entire dataset from a Google Maps or jobs scraper. Each result carries a confidence score, a <code>verified</code> flag and the evidence:</p>
+<pre><code>{ &quot;domain&quot;: &quot;hubspot.com&quot;, &quot;identifiers&quot;: { &quot;linkedin&quot;: { &quot;id&quot;: &quot;company/hubspot&quot;, &quot;confidence&quot;: 0.99, &quot;verified&quot;: true } } }</code></pre>
+<p>The same call returns Instagram, Facebook, X, TikTok, YouTube, GitHub, Google Maps and registry ids, and a stable <code>canonicalId</code> you can join everything on. Cache hits are free; ambiguous names come back as candidates rather than guesses; person profiles are refused.</p>
+<p>Actor: https://apify.com/publicrecords/company-social-profile-finder · Method page: https://geminigeorge22.github.io/crosswalk/find-company-linkedin-from-website.html</p>
+<p>*Disclosure: I build and maintain Crosswalk.*</p>
+<p><a class="cta" href="https://apify.com/publicrecords/company-social-profile-finder?utm_source=site&utm_medium=blog&utm_campaign=crosswalk&utm_content=linkedin-from-website">Try Crosswalk on Apify →</a></p>
+</article>
+<footer><p><em>Published by the publicrecords maintainer on Apify.</em></p></footer>
+</body></html>
