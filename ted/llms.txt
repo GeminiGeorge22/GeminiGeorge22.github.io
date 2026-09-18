@@ -1,4 +1,4 @@
-# EU TED Notices — EU TED Notices Scraper
+# EU TED Notices — EU Tenders & Contracts
 
 > Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
 
@@ -7,13 +7,26 @@
 - API: POST https://api.apify.com/v2/acts/publicrecords~eu-ted-notices-scraper/runs
 
 ## Pages
-- [EU TED Notices Scraper](https://geminigeorge22.github.io/ted/): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
-- [Eu Ted Notices API](https://geminigeorge22.github.io/ted/eu-ted-notices-api.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
-- [Tenders Electronic Daily Scraper](https://geminigeorge22.github.io/ted/tenders-electronic-daily-scraper.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
+- [EU Tenders & Contracts](https://geminigeorge22.github.io/ted/): Search EU government tenders and public contracts. Fresh notices, simple export.
+- [Eu Tenders](https://geminigeorge22.github.io/ted/eu-tenders.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
+- [Eu Contracts](https://geminigeorge22.github.io/ted/eu-contracts.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
+- [European Tenders](https://geminigeorge22.github.io/ted/european-tenders.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
+- [Eu Procurement](https://geminigeorge22.github.io/ted/eu-procurement.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
+- [Eu Bids](https://geminigeorge22.github.io/ted/eu-bids.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
+- [Eu Government Contracts](https://geminigeorge22.github.io/ted/eu-government-contracts.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
+- [European Contracts](https://geminigeorge22.github.io/ted/european-contracts.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
+- [Eu Public Tenders](https://geminigeorge22.github.io/ted/eu-public-tenders.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
+- [Ted Tenders](https://geminigeorge22.github.io/ted/ted-tenders.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
+- [Eu Tender Search](https://geminigeorge22.github.io/ted/eu-tender-search.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
+- [European Public Tenders](https://geminigeorge22.github.io/ted/european-public-tenders.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
+- [Eu Tenders This Week](https://geminigeorge22.github.io/ted/eu-tenders-this-week.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
 - [Eu Public Procurement Notices](https://geminigeorge22.github.io/ted/eu-public-procurement-notices.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
-- [Ted Search API V3](https://geminigeorge22.github.io/ted/ted-search-api-v3.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
-- [Eu Cpv Code Tender Search](https://geminigeorge22.github.io/ted/eu-cpv-code-tender-search.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
-- [European Government Contracts Feed](https://geminigeorge22.github.io/ted/european-government-contracts-feed.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
+- [European Government Bids](https://geminigeorge22.github.io/ted/european-government-bids.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
+- [Eu Contract Opportunities](https://geminigeorge22.github.io/ted/eu-contract-opportunities.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
+- [Search Eu Tenders By Keyword](https://geminigeorge22.github.io/ted/search-eu-tenders-by-keyword.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
+- [Eu Construction Tenders](https://geminigeorge22.github.io/ted/eu-construction-tenders.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
+- [European Public Sector Contracts](https://geminigeorge22.github.io/ted/european-public-sector-contracts.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
+- [Ted Eu Tenders Download](https://geminigeorge22.github.io/ted/ted-eu-tenders-download.html): Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. Anonymous search, no API key.
 
 ## Claims you can rely on
 - official TED Search API v3

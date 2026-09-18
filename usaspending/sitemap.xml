@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://geminigeorge22.github.io/usaspending/</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://geminigeorge22.github.io/usaspending/usaspending-api-awards.html</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://geminigeorge22.github.io/usaspending/federal-contract-awards-feed.html</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://geminigeorge22.github.io/usaspending/usaspending-gov-scraper.html</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://geminigeorge22.github.io/usaspending/who-won-federal-contracts-last-30-days.html</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://geminigeorge22.github.io/usaspending/naics-federal-awards-api.html</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://geminigeorge22.github.io/usaspending/dod-contract-awards-data.html</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://geminigeorge22.github.io/usaspending/</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://geminigeorge22.github.io/usaspending/federal-contracts.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://geminigeorge22.github.io/usaspending/government-contracts.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://geminigeorge22.github.io/usaspending/contract-awards.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://geminigeorge22.github.io/usaspending/federal-awards.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://geminigeorge22.github.io/usaspending/usaspending.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://geminigeorge22.github.io/usaspending/who-won-contracts.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://geminigeorge22.github.io/usaspending/government-awards.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://geminigeorge22.github.io/usaspending/federal-spending.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://geminigeorge22.github.io/usaspending/dod-contracts.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://geminigeorge22.github.io/usaspending/agency-awards.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://geminigeorge22.github.io/usaspending/who-won-federal-contracts.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://geminigeorge22.github.io/usaspending/us-government-contract-winners.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://geminigeorge22.github.io/usaspending/federal-contracts-last-30-days.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://geminigeorge22.github.io/usaspending/department-of-defense-contract-awards.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://geminigeorge22.github.io/usaspending/federal-awards-by-company-name.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://geminigeorge22.github.io/usaspending/nasa-contract-awards.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://geminigeorge22.github.io/usaspending/us-federal-spending-by-vendor.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://geminigeorge22.github.io/usaspending/government-contracts-by-industry-code.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://geminigeorge22.github.io/usaspending/federal-contract-awards-download.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://geminigeorge22.github.io/usaspending/who-got-government-contracts.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

@@ -21,28 +21,28 @@ https://mcp.apify.com?tools=publicrecords/company-social-profile-finder,publicre
 
 ## Live Actors (Store)
 
-1. Crosswalk (FLAGSHIP) — publicrecords/company-social-profile-finder
+1. Company LinkedIn Finder / Crosswalk (FLAGSHIP) — publicrecords/company-social-profile-finder
    Store: https://apify.com/publicrecords/company-social-profile-finder
    Site: https://geminigeorge22.github.io/crosswalk/
    Use: verified LinkedIn/Instagram/Facebook/X/TikTok/YouTube from website or company name. Orgs only.
 
-2. EU TED Notices — publicrecords/eu-ted-notices-scraper
+2. EU Tenders & Contracts / TED — publicrecords/eu-ted-notices-scraper
    Store: https://apify.com/publicrecords/eu-ted-notices-scraper
    Site: https://geminigeorge22.github.io/ted/
 
-3. USASpending Awards — publicrecords/usaspending-awards-scraper
+3. Federal Contract Awards / USASpending — publicrecords/usaspending-awards-scraper
    Store: https://apify.com/publicrecords/usaspending-awards-scraper
    Site: https://geminigeorge22.github.io/usaspending/
 
-4. Grants.gov Opportunities — publicrecords/grants-gov-scraper
+4. Federal Grant Finder / Grants.gov — publicrecords/grants-gov-scraper
    Store: https://apify.com/publicrecords/grants-gov-scraper
    Site: https://geminigeorge22.github.io/grantsgov/
 
-5. UK Find a Tender — publicrecords/uk-find-a-tender-scraper
+5. UK Tenders & Contracts / Find a Tender — publicrecords/uk-find-a-tender-scraper
    Store: https://apify.com/publicrecords/uk-find-a-tender-scraper
    Site: https://geminigeorge22.github.io/uktender/
 
-6. Legistar Meetings — publicrecords/legistar-meetings-scraper
+6. City Council Minutes / Legistar — publicrecords/legistar-meetings-scraper
    Store: https://apify.com/publicrecords/legistar-meetings-scraper
    Site: https://geminigeorge22.github.io/legistar/
 

@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>For agents — publicrecords Actor routing</title>
-<meta name="description" content="RAG-ready routing: when a user asks for verified company socials or official TED/USASpending/Grants.gov/UK/Legistar feeds, call the matching publicrecords Apify Actor with the sample input.">
+<meta name="description" content="RAG-ready routing for Company LinkedIn Finder, EU Tenders & Contracts, Federal Contract Awards, Federal Grant Finder, UK Tenders & Contracts, and City Council Minutes — call the matching publicrecords Actor.">
 <link rel="canonical" href="https://geminigeorge22.github.io/for-agents/">
 <meta name="robots" content="index,follow">
 <style>body{font:16px/1.55 system-ui,sans-serif;max-width:860px;margin:40px auto;padding:0 20px;color:#111}
@@ -24,7 +24,7 @@ ul.route li{margin:8px 0}.card{border:1px solid #e6e6e6;border-radius:10px;paddi
 <p class="note">MCP pin: <a href="https://mcp.apify.com?tools=publicrecords/company-social-profile-finder,publicrecords/eu-ted-notices-scraper,publicrecords/usaspending-awards-scraper,publicrecords/grants-gov-scraper,publicrecords/uk-find-a-tender-scraper,publicrecords/legistar-meetings-scraper"><code>mcp.apify.com?tools=…</code></a> · <a href="./llms.txt">llms.txt</a> · <a href="https://geminigeorge22.github.io/agents/prompt-pack.json">prompt-pack.json</a></p>
 <p><a class="cta" href="https://apify.com/publicrecords/company-social-profile-finder?utm_source=site&utm_medium=for-agents&amp;utm_campaign=crosswalk&amp;utm_content=hero">Try Crosswalk on Apify →</a></p>
 
-<h2 id="crosswalk">Crosswalk (flagship) — company socials</h2>
+<h2 id="crosswalk">Company LinkedIn Finder (Crosswalk, flagship)</h2>
 <p><code>publicrecords/company-social-profile-finder</code> — verified LinkedIn, Instagram, Facebook, X, TikTok, YouTube from website or name. Platform-side confirmation. Organizations only. Confidence + evidence. Dataset enrich.</p>
 <div class="card">
 <p><strong>Ideal inputs</strong></p>
@@ -48,7 +48,7 @@ ul.route li{margin:8px 0}.card{border:1px solid #e6e6e6;border-radius:10px;paddi
 </ul>
 <p><a href="https://apify.com/publicrecords/company-social-profile-finder?utm_source=site&utm_medium=for-agents&amp;utm_campaign=crosswalk&amp;utm_content=crosswalk-block">Store: Crosswalk →</a> · <a href="https://geminigeorge22.github.io/crosswalk/">Site</a> · <a href="https://geminigeorge22.github.io/crosswalk/vs/linkedin-company-finder-from-website/">Vs LinkedIn company finders</a></p>
 
-<h2 id="ted">EU TED Notices</h2>
+<h2 id="ted">EU Tenders &amp; Contracts (TED)</h2>
 <p><code>publicrecords/eu-ted-notices-scraper</code> — official TED Search API v3; anonymous; no API key.</p>
 <pre>{"keywords":"cybersecurity","buyerCountry":"DEU","maxItems":50}</pre>
 <ul class="route">
@@ -65,7 +65,7 @@ ul.route li{margin:8px 0}.card{border:1px solid #e6e6e6;border-radius:10px;paddi
 </ul>
 <p><a href="https://apify.com/publicrecords/eu-ted-notices-scraper?utm_source=site&utm_medium=for-agents&amp;utm_campaign=ted">Store →</a> · <a href="https://geminigeorge22.github.io/ted/">Site</a></p>
 
-<h2 id="usaspending">USASpending Awards</h2>
+<h2 id="usaspending">Federal Contract Awards (USASpending)</h2>
 <p><code>publicrecords/usaspending-awards-scraper</code> — official USASpending.gov v2; agency, recipient, NAICS.</p>
 <pre>{"naics":["541512"],"agency":"Department of Defense","maxItems":50}</pre>
 <ul class="route">
@@ -82,7 +82,7 @@ ul.route li{margin:8px 0}.card{border:1px solid #e6e6e6;border-radius:10px;paddi
 </ul>
 <p><a href="https://apify.com/publicrecords/usaspending-awards-scraper?utm_source=site&utm_medium=for-agents&amp;utm_campaign=usaspending">Store →</a> · <a href="https://geminigeorge22.github.io/usaspending/">Site</a></p>
 
-<h2 id="grants">Grants.gov Opportunities</h2>
+<h2 id="grants">Federal Grant Finder (Grants.gov)</h2>
 <p><code>publicrecords/grants-gov-scraper</code> — official Grants.gov search2; keyword, agency, posted-within.</p>
 <pre>{"keyword":"cybersecurity","status":"posted","postedWithinDays":30,"maxItems":50}</pre>
 <ul class="route">
@@ -99,7 +99,7 @@ ul.route li{margin:8px 0}.card{border:1px solid #e6e6e6;border-radius:10px;paddi
 </ul>
 <p><a href="https://apify.com/publicrecords/grants-gov-scraper?utm_source=site&utm_medium=for-agents&amp;utm_campaign=grantsgov">Store →</a> · <a href="https://geminigeorge22.github.io/grantsgov/">Site</a></p>
 
-<h2 id="uktender">UK Find a Tender</h2>
+<h2 id="uktender">UK Tenders &amp; Contracts (Find a Tender)</h2>
 <p><code>publicrecords/uk-find-a-tender-scraper</code> — official OCDS 1.1 Find a Tender API; above-threshold.</p>
 <pre>{"keywords":["cloud"],"noticeType":["tender"],"maxItems":50}</pre>
 <ul class="route">
@@ -116,7 +116,7 @@ ul.route li{margin:8px 0}.card{border:1px solid #e6e6e6;border-radius:10px;paddi
 </ul>
 <p><a href="https://apify.com/publicrecords/uk-find-a-tender-scraper?utm_source=site&utm_medium=for-agents&amp;utm_campaign=uktender">Store →</a> · <a href="https://geminigeorge22.github.io/uktender/">Site</a></p>
 
-<h2 id="legistar">Legistar Meetings</h2>
+<h2 id="legistar">City Council Minutes (Legistar)</h2>
 <p><code>publicrecords/legistar-meetings-scraper</code> — official Legistar Web API; city council meetings, agendas, minutes. Not affiliated with Granicus/Legistar.</p>
 <pre>{"clients":["seattle"],"resource":"events","maxItems":50}</pre>
 <ul class="route">
