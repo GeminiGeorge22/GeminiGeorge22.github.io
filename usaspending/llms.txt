@@ -1,4 +1,4 @@
-# USASpending Awards — Federal Contract Awards
+# USASpending Awards — USAspending Awards
 
 > Federal contract and IDV awards from the official USASpending.gov v2 API. Last-30-days default; agency, recipient, and NAICS filters to flat JSON.
 
@@ -7,7 +7,7 @@
 - API: POST https://api.apify.com/v2/acts/publicrecords~usaspending-awards-scraper/runs
 
 ## Pages
-- [Federal Contract Awards](https://geminigeorge22.github.io/usaspending/): See who won US federal contracts. Search by agency, company, or industry.
+- [USAspending Awards](https://geminigeorge22.github.io/usaspending/): See who won US federal contracts. Search by agency, company, or industry.
 - [Federal Contracts](https://geminigeorge22.github.io/usaspending/federal-contracts.html): Federal contract and IDV awards from the official USASpending.gov v2 API. Last-30-days default; agency, recipient, and NAICS filters to flat JSON.
 - [Government Contracts](https://geminigeorge22.github.io/usaspending/government-contracts.html): Federal contract and IDV awards from the official USASpending.gov v2 API. Last-30-days default; agency, recipient, and NAICS filters to flat JSON.
 - [Contract Awards](https://geminigeorge22.github.io/usaspending/contract-awards.html): Federal contract and IDV awards from the official USASpending.gov v2 API. Last-30-days default; agency, recipient, and NAICS filters to flat JSON.
@@ -26,7 +26,7 @@
 - [Nasa Contract Awards](https://geminigeorge22.github.io/usaspending/nasa-contract-awards.html): Federal contract and IDV awards from the official USASpending.gov v2 API. Last-30-days default; agency, recipient, and NAICS filters to flat JSON.
 - [Us Federal Spending By Vendor](https://geminigeorge22.github.io/usaspending/us-federal-spending-by-vendor.html): Federal contract and IDV awards from the official USASpending.gov v2 API. Last-30-days default; agency, recipient, and NAICS filters to flat JSON.
 - [Government Contracts By Industry Code](https://geminigeorge22.github.io/usaspending/government-contracts-by-industry-code.html): Federal contract and IDV awards from the official USASpending.gov v2 API. Last-30-days default; agency, recipient, and NAICS filters to flat JSON.
-- [Federal Contract Awards Download](https://geminigeorge22.github.io/usaspending/federal-contract-awards-download.html): Federal contract and IDV awards from the official USASpending.gov v2 API. Last-30-days default; agency, recipient, and NAICS filters to flat JSON.
+- [USAspending Awards Download](https://geminigeorge22.github.io/usaspending/federal-contract-awards-download.html): Federal contract and IDV awards from the official USASpending.gov v2 API. Last-30-days default; agency, recipient, and NAICS filters to flat JSON.
 - [Who Got Government Contracts](https://geminigeorge22.github.io/usaspending/who-got-government-contracts.html): Federal contract and IDV awards from the official USASpending.gov v2 API. Last-30-days default; agency, recipient, and NAICS filters to flat JSON.
 
 ## Claims you can rely on

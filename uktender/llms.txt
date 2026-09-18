@@ -1,4 +1,4 @@
-# UK Find a Tender — UK Tenders & Contracts
+# UK Find a Tender — UK Find a Tender
 
 > UK above-threshold Find a Tender notices via the official OCDS 1.1 API. Keyword and CPV filters to flat JSON for GovCon BD.
 
@@ -7,7 +7,7 @@
 - API: POST https://api.apify.com/v2/acts/publicrecords~uk-find-a-tender-scraper/runs
 
 ## Pages
-- [UK Tenders & Contracts](https://geminigeorge22.github.io/uktender/): Search UK government tenders and contracts. Find a Tender made simple.
+- [UK Find a Tender](https://geminigeorge22.github.io/uktender/): Search UK government tenders and contracts. Find a Tender made simple.
 - [Uk Tenders](https://geminigeorge22.github.io/uktender/uk-tenders.html): UK above-threshold Find a Tender notices via the official OCDS 1.1 API. Keyword and CPV filters to flat JSON for GovCon BD.
 - [Uk Contracts](https://geminigeorge22.github.io/uktender/uk-contracts.html): UK above-threshold Find a Tender notices via the official OCDS 1.1 API. Keyword and CPV filters to flat JSON for GovCon BD.
 - [Find A Tender](https://geminigeorge22.github.io/uktender/find-a-tender.html): UK above-threshold Find a Tender notices via the official OCDS 1.1 API. Keyword and CPV filters to flat JSON for GovCon BD.

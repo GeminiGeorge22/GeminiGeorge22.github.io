@@ -1,4 +1,4 @@
-# Grants.gov Opportunities — Federal Grant Finder
+# Grants.gov Opportunities — Grants.gov Finder
 
 > Federal grant opportunities from the official Grants.gov search2 API. Keyword, agency, posted-within and date filters to flat FOA JSON.
 
@@ -7,7 +7,7 @@
 - API: POST https://api.apify.com/v2/acts/publicrecords~grants-gov-scraper/runs
 
 ## Pages
-- [Federal Grant Finder](https://geminigeorge22.github.io/grantsgov/): Find open US federal grants by keyword or agency. Simple grant search.
+- [Grants.gov Finder](https://geminigeorge22.github.io/grantsgov/): Find open US federal grants by keyword or agency. Simple grant search.
 - [Federal Grants](https://geminigeorge22.github.io/grantsgov/federal-grants.html): Federal grant opportunities from the official Grants.gov search2 API. Keyword, agency, posted-within and date filters to flat FOA JSON.
 - [Government Grants](https://geminigeorge22.github.io/grantsgov/government-grants.html): Federal grant opportunities from the official Grants.gov search2 API. Keyword, agency, posted-within and date filters to flat FOA JSON.
 - [Grant Search](https://geminigeorge22.github.io/grantsgov/grant-search.html): Federal grant opportunities from the official Grants.gov search2 API. Keyword, agency, posted-within and date filters to flat FOA JSON.

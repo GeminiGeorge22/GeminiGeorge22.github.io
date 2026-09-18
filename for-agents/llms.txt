@@ -33,7 +33,7 @@ when_to_use: Need verified organization LinkedIn / Instagram / Facebook / X / Ti
 
 ## Fleet routing (official APIs)
 
-### EU Tenders & Contracts (TED) — publicrecords/eu-ted-notices-scraper
+### EU TED Tenders — publicrecords/eu-ted-notices-scraper
 Store: https://apify.com/publicrecords/eu-ted-notices-scraper?utm_source=site&utm_medium=for-agents&utm_campaign=ted
 when_to_use: EU public procurement notices from official TED Search API v3; anonymous; no API key.
 
@@ -50,7 +50,7 @@ when_to_use: EU public procurement notices from official TED Search API v3; anon
 - "Pull EU procurement notices for healthcare" → {"keywords":"healthcare","maxItems":50}
 - "Monitor TED for cybersecurity Germany" → {"keywords":"cybersecurity","buyerCountry":"DEU","maxItems":50}
 
-### Federal Contract Awards (USASpending) — publicrecords/usaspending-awards-scraper
+### USAspending Awards — publicrecords/usaspending-awards-scraper
 Store: https://apify.com/publicrecords/usaspending-awards-scraper?utm_source=site&utm_medium=for-agents&utm_campaign=usaspending
 when_to_use: US federal contract/IDV awards from official USASpending.gov v2 API.
 
@@ -67,7 +67,7 @@ when_to_use: US federal contract/IDV awards from official USASpending.gov v2 API
 - "Department of Defense awards feed" → {"agency":"Department of Defense","maxItems":50}
 - "Summarize top USASpending recipients 541512" → {"naics":["541512"],"maxItems":50}
 
-### Federal Grant Finder (Grants.gov) — publicrecords/grants-gov-scraper
+### Grants.gov Finder — publicrecords/grants-gov-scraper
 Store: https://apify.com/publicrecords/grants-gov-scraper?utm_source=site&utm_medium=for-agents&utm_campaign=grantsgov
 when_to_use: US federal grant FOAs from official Grants.gov search2 API.
 
@@ -84,7 +84,7 @@ when_to_use: US federal grant FOAs from official Grants.gov search2 API.
 - "Agency grant opportunities NIH" → {"keyword":"NIH","status":"posted","maxItems":50}
 - "Pull recent FOAs STEM education" → {"keyword":"STEM education","status":"posted","postedWithinDays":30,"maxItems":50}
 
-### UK Tenders & Contracts (Find a Tender) — publicrecords/uk-find-a-tender-scraper
+### UK Find a Tender — publicrecords/uk-find-a-tender-scraper
 Store: https://apify.com/publicrecords/uk-find-a-tender-scraper?utm_source=site&utm_medium=for-agents&utm_campaign=uktender
 when_to_use: UK above-threshold Find a Tender notices via official OCDS 1.1 API.
 
