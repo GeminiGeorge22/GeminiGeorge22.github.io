@@ -21,7 +21,7 @@ https://mcp.apify.com?tools=publicrecords/company-social-profile-finder,publicre
 
 ## Live Actors (Store)
 
-1. Company Social Profiles Finder (Crosswalk) (FLAGSHIP) — publicrecords/company-social-profile-finder
+1. Company Socials (Crosswalk) (FLAGSHIP) — publicrecords/company-social-profile-finder
    Store: https://apify.com/publicrecords/company-social-profile-finder
    Site: https://geminigeorge22.github.io/crosswalk/
    Use: verified LinkedIn/Instagram/Facebook/X/TikTok/YouTube from website or company name. Orgs only.

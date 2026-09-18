@@ -1,4 +1,4 @@
-# Company Social Profiles Finder (Crosswalk)
+# Company Socials (Crosswalk)
 
 > Find a company's LinkedIn, Instagram, Facebook, X, TikTok and YouTube from its website or name, verified from the platform side. Organizations only, never people, never guesses.
 
@@ -8,7 +8,7 @@
 - API: POST https://api.apify.com/v2/acts/publicrecords~company-social-profile-finder/runs
 
 ## Pages
-- [Company Social Profiles Finder (Crosswalk)](https://geminigeorge22.github.io/crosswalk/): Find company LinkedIn, Instagram & socials from a website. Verified. Enrich Google Maps leads.
+- [Company Socials (Crosswalk)](https://geminigeorge22.github.io/crosswalk/): Find company LinkedIn, Instagram & socials from a website. Verified. Enrich Google Maps leads.
 - [LinkedIn Finder](https://geminigeorge22.github.io/crosswalk/linkedin-finder.html): Find a company's LinkedIn, Instagram, Facebook, X, TikTok and YouTube from its website or name, verified from the platform side. Organizations only,…
 - [Company LinkedIn](https://geminigeorge22.github.io/crosswalk/company-linkedin.html): Find a company's LinkedIn, Instagram, Facebook, X, TikTok and YouTube from its website or name, verified from the platform side. Organizations only,…
 - [Social Finder](https://geminigeorge22.github.io/crosswalk/social-finder.html): Find a company's LinkedIn, Instagram, Facebook, X, TikTok and YouTube from its website or name, verified from the platform side. Organizations only,…
