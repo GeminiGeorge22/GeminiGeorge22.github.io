@@ -1,0 +1,128 @@
+{
+  "mcpServers": {
+    "publicrecords": {
+      "url": "https://mcp.apify.com?tools=publicrecords/company-social-profile-finder,publicrecords/eu-ted-notices-scraper,publicrecords/usaspending-awards-scraper,publicrecords/grants-gov-scraper,publicrecords/uk-find-a-tender-scraper,publicrecords/legistar-meetings-scraper",
+      "description": "Pinned live publicrecords Actors: Crosswalk + TED + USASpending + Grants.gov + UK Find a Tender + Legistar. Disclosure: Published by the publicrecords maintainer on Apify."
+    }
+  },
+  "x_publicrecords": {
+    "disclosure": "Published by the publicrecords maintainer on Apify.",
+    "updated": "2026-09-17",
+    "actors": [
+      {
+        "id": "publicrecords/company-social-profile-finder",
+        "tool_name": "crosswalk_resolve_company",
+        "when_to_use": "Verified organization LinkedIn/Instagram/Facebook/X/TikTok/YouTube from website or company name. Platform confirms the link. Orgs only; never people. Confidence + evidence. Dataset enrich via inputDatasetId.",
+        "sample_paid_inputs": [
+          {
+            "query": "hubspot.com",
+            "outputFormat": "compact"
+          },
+          {
+            "queries": [
+              "stripe.com",
+              "notion.so"
+            ],
+            "outputFormat": "compact"
+          },
+          {
+            "inputDatasetId": "YOUR_MAPS_DATASET_ID",
+            "maxRows": 500
+          }
+        ],
+        "store_url": "https://apify.com/publicrecords/company-social-profile-finder?utm_source=site&utm_medium=agents-dialects&utm_campaign=crosswalk"
+      },
+      {
+        "id": "publicrecords/eu-ted-notices-scraper",
+        "tool_name": "eu_ted_notices_search",
+        "when_to_use": "EU public procurement notices from official TED Search API v3 (anonymous, no API key).",
+        "sample_paid_inputs": [
+          {
+            "keywords": "cybersecurity",
+            "buyerCountry": "DEU",
+            "maxItems": 50
+          },
+          {
+            "keywords": "cloud",
+            "maxItems": 50
+          }
+        ],
+        "store_url": "https://apify.com/publicrecords/eu-ted-notices-scraper?utm_source=site&utm_medium=agents-dialects&utm_campaign=ted"
+      },
+      {
+        "id": "publicrecords/usaspending-awards-scraper",
+        "tool_name": "usaspending_awards_search",
+        "when_to_use": "US federal contract/IDV awards from official USASpending.gov v2 with agency, recipient, or NAICS filters.",
+        "sample_paid_inputs": [
+          {
+            "naics": [
+              "541512"
+            ],
+            "agency": "Department of Defense",
+            "maxItems": 50
+          },
+          {
+            "agency": "Department of Defense",
+            "maxItems": 50
+          }
+        ],
+        "store_url": "https://apify.com/publicrecords/usaspending-awards-scraper?utm_source=site&utm_medium=agents-dialects&utm_campaign=usaspending"
+      },
+      {
+        "id": "publicrecords/grants-gov-scraper",
+        "tool_name": "grants_gov_opportunities_search",
+        "when_to_use": "US federal grant FOAs from official Grants.gov search2 (keyword, agency, posted-within).",
+        "sample_paid_inputs": [
+          {
+            "keyword": "cybersecurity",
+            "status": "posted",
+            "postedWithinDays": 30,
+            "maxItems": 50
+          }
+        ],
+        "store_url": "https://apify.com/publicrecords/grants-gov-scraper?utm_source=site&utm_medium=agents-dialects&utm_campaign=grantsgov"
+      },
+      {
+        "id": "publicrecords/uk-find-a-tender-scraper",
+        "tool_name": "uk_find_a_tender_search",
+        "when_to_use": "UK above-threshold Find a Tender notices via official OCDS 1.1 API.",
+        "sample_paid_inputs": [
+          {
+            "keywords": [
+              "cloud"
+            ],
+            "noticeType": [
+              "tender"
+            ],
+            "maxItems": 50
+          }
+        ],
+        "store_url": "https://apify.com/publicrecords/uk-find-a-tender-scraper?utm_source=site&utm_medium=agents-dialects&utm_campaign=uktender"
+      },
+      {
+        "id": "publicrecords/legistar-meetings-scraper",
+        "tool_name": "legistar_meetings_search",
+        "when_to_use": "US city council meetings, agendas, and minutes from public Legistar (Granicus) Web API clients.",
+        "sample_paid_inputs": [
+          {
+            "clients": [
+              "seattle"
+            ],
+            "resource": "events",
+            "maxItems": 50
+          },
+          {
+            "clients": [
+              "seattle",
+              "chicago"
+            ],
+            "resource": "events",
+            "maxItems": 50
+          }
+        ],
+        "store_url": "https://apify.com/publicrecords/legistar-meetings-scraper?utm_source=site&utm_medium=agents-dialects&utm_campaign=legistar"
+      }
+    ],
+    "site": "https://geminigeorge22.github.io/agents/dialects/"
+  }
+}

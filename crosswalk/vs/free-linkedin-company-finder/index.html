@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Crosswalk vs Free LinkedIn Company Finder (s-r)</title>
+<meta name="description" content="Factual contrast: Crosswalk platform-verified org socials vs s-r Free LinkedIn Company Finder. Dated comparison; Store CTAs.">
+<link rel="canonical" href="https://geminigeorge22.github.io/crosswalk/vs/free-linkedin-company-finder/">
+<meta name="robots" content="index,follow">
+<style>body{font:16px/1.55 system-ui,sans-serif;max-width:860px;margin:40px auto;padding:0 20px;color:#111}
+nav{font-size:.9rem;color:#555;margin-bottom:24px}a{color:inherit}
+h1{font-size:clamp(1.45rem,3.5vw,2rem);line-height:1.2}h2{margin-top:1.8em;font-size:1.2rem}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:.95rem}
+th,td{border:1px solid #e6e6e6;padding:8px 10px;text-align:left;vertical-align:top}th{background:#fafafa}
+.cta{display:inline-block;margin:12px 0;padding:10px 14px;background:#111;color:#fff;border-radius:8px;text-decoration:none}
+.note{color:#555;font-size:.95rem}footer{margin-top:48px;color:#555;font-size:.85rem}
+.muted{color:#666}</style>
+</head><body>
+<nav><a href="https://geminigeorge22.github.io/">publicrecords</a> · <a href="https://geminigeorge22.github.io/crosswalk/">Crosswalk</a> · Vs · <a href="https://geminigeorge22.github.io/for-agents/">For agents</a></nav>
+<h1>Crosswalk vs Free LinkedIn Company Finder (s-r)</h1>
+<p class="note">Comparison dated <time datetime="2026-09-17">2026-09-17</time>. Claims about Crosswalk are from the Actor README / allowed fleet claims only. Competitor facts summarize that Actor’s public Store listing. No insults — pick the tool that matches the job.</p>
+<p><strong>Crosswalk:</strong> <code>publicrecords/company-social-profile-finder</code> · <a href="https://apify.com/publicrecords/company-social-profile-finder?utm_source=site&utm_medium=crosswalk-vs&utm_campaign=crosswalk-vs&amp;utm_content=free-linkedin-company-finder">Store</a><br>
+<strong>Compared listing:</strong> Free LinkedIn Company Finder · <code>s-r/free-linkedin-company-finder---linkedin-address-from-any-site</code> · <a href="https://apify.com/s-r/free-linkedin-company-finder---linkedin-address-from-any-site">Store</a></p>
+<a class="cta" href="https://apify.com/publicrecords/company-social-profile-finder?utm_source=site&utm_medium=crosswalk-vs&utm_campaign=crosswalk-vs&amp;utm_content=free-linkedin-company-finder-cta">Open Crosswalk on Apify →</a>
+
+<h2>Factual contrast</h2>
+<table>
+<thead><tr><th>Dimension</th><th>Crosswalk (ours)</th><th>Free LinkedIn Company Finder</th></tr></thead>
+<tbody>
+<tr><th scope="row">Primary output</th><td>Multi-platform verified org profiles + confidence/evidence + canonicalId</td><td>LinkedIn company page URL for a domain; may also return other social URLs when available (per Store description)</td></tr>
+<tr><th scope="row">Verification model</th><td>Platform-side confirmation + declared website/Wikidata sources (README)</td><td>Search/extract LinkedIn company URLs for domains (per Store description)</td></tr>
+<tr><th scope="row">Organizations vs people</th><td>Organizations only; people refused</td><td>Company-page oriented domain→LinkedIn lookup (per Store description)</td></tr>
+<tr><th scope="row">Confidence + evidence</th><td>Confidence score and evidence per link</td><td>Returns LinkedIn address when found; pay-per-success style pricing on Store</td></tr>
+<tr><th scope="row">Batch / enrich</th><td>queries[] and inputDatasetId dataset on-ramp</td><td>Bulk domains (Store notes max batch size on input)</td></tr>
+<tr><th scope="row">Agent default</th><td>compact outputFormat for tool calls</td><td>JSON/CSV/Excel export via Apify dataset</td></tr>
+<tr><th scope="row">Scope</th><td>Identity resolver across platforms + registry ids</td><td>Domain → LinkedIn (and related socials) finder</td></tr>
+</tbody>
+</table>
+
+<h2>When Crosswalk fits</h2>
+<ul>
+<li>You need <strong>platform-verified</strong> organization links (LinkedIn website field / platform confirmation), not only a homepage scrape or name search.</li>
+<li>You need <strong>orgs only</strong> (people profiles refused).</li>
+<li>You need <strong>confidence + evidence</strong> per link for automation.</li>
+<li>You need to <strong>enrich a dataset</strong> (e.g. Google Maps) via <code>inputDatasetId</code>.</li>
+</ul>
+
+<h2>Sources</h2>
+<ul>
+<li>Crosswalk README / Store: <a href="https://apify.com/publicrecords/company-social-profile-finder">apify.com/publicrecords/company-social-profile-finder</a> — allowed claims: verified from the platform side; confidence score and evidence per link; organizations only, people refused; ambiguous names return candidates; stable canonicalId; dataset enrich.</li>
+<li>Competitor Store listing (public): <a href="https://apify.com/s-r/free-linkedin-company-finder---linkedin-address-from-any-site">https://apify.com/s-r/free-linkedin-company-finder---linkedin-address-from-any-site</a></li>
+</ul>
+<p class="muted">Page slug uses free-linkedin-company-finder for readability; the live Store id is the longer s-r slug above. Compare documentation before choosing.</p>
+<p>More vs pages: <a href="../linkedin-company-finder-from-website/">vs LinkedIn Company Finder from Website</a> · <a href="../free-linkedin-company-finder/">vs Free LinkedIn Company Finder</a> · <a href="../website-contact-scrapers/">vs website contact scrapers</a></p>
+<footer><em>Published by the publicrecords maintainer on Apify.</em> · Updated 2026-09-17</footer>
+</body></html>

@@ -1,0 +1,310 @@
+{
+  "publisher": "publicrecords",
+  "disclosure": "Published by the publicrecords maintainer on Apify.",
+  "updated": "2026-09-17",
+  "note": "Copy into OpenAI tools / function-calling. Run via Apify API or MCP call-actor with actor id + input. Sample inputs are billable on Apify when executed.",
+  "mcp_pin_url": "https://mcp.apify.com?tools=publicrecords/company-social-profile-finder,publicrecords/eu-ted-notices-scraper,publicrecords/usaspending-awards-scraper,publicrecords/grants-gov-scraper,publicrecords/uk-find-a-tender-scraper,publicrecords/legistar-meetings-scraper",
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "crosswalk_resolve_company",
+        "description": "Crosswalk: Find a company's LinkedIn, Instagram, Facebook, X, TikTok and YouTube from its website or name, verified from the platform side. Organizations only. when_to_use: Verified organization LinkedIn/Instagram/Facebook/X/TikTok/YouTube from website or company name. Platform confirms the link. Orgs only; never people. Confidence + evidence. Dataset enrich via inputDatasetId. Store: https://apify.com/publicrecords/company-social-profile-finder?utm_source=site&utm_medium=agents-dialects&utm_campaign=crosswalk",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "actorId": {
+              "type": "string",
+              "const": "publicrecords/company-social-profile-finder",
+              "description": "Must be publicrecords/company-social-profile-finder"
+            },
+            "input": {
+              "type": "object",
+              "description": "Actor input JSON",
+              "example": {
+                "query": "hubspot.com",
+                "outputFormat": "compact"
+              }
+            }
+          },
+          "required": [
+            "actorId",
+            "input"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "x_publicrecords": {
+        "actor_id": "publicrecords/company-social-profile-finder",
+        "when_to_use": "Verified organization LinkedIn/Instagram/Facebook/X/TikTok/YouTube from website or company name. Platform confirms the link. Orgs only; never people. Confidence + evidence. Dataset enrich via inputDatasetId.",
+        "sample_paid_inputs": [
+          {
+            "query": "hubspot.com",
+            "outputFormat": "compact"
+          },
+          {
+            "queries": [
+              "stripe.com",
+              "notion.so"
+            ],
+            "outputFormat": "compact"
+          },
+          {
+            "inputDatasetId": "YOUR_MAPS_DATASET_ID",
+            "maxRows": 500
+          }
+        ],
+        "store_url": "https://apify.com/publicrecords/company-social-profile-finder?utm_source=site&utm_medium=agents-dialects&utm_campaign=crosswalk"
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "eu_ted_notices_search",
+        "description": "EU TED Notices: Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. when_to_use: EU public procurement notices from official TED Search API v3 (anonymous, no API key). Store: https://apify.com/publicrecords/eu-ted-notices-scraper?utm_source=site&utm_medium=agents-dialects&utm_campaign=ted",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "actorId": {
+              "type": "string",
+              "const": "publicrecords/eu-ted-notices-scraper",
+              "description": "Must be publicrecords/eu-ted-notices-scraper"
+            },
+            "input": {
+              "type": "object",
+              "description": "Actor input JSON",
+              "example": {
+                "keywords": "cybersecurity",
+                "buyerCountry": "DEU",
+                "maxItems": 50
+              }
+            }
+          },
+          "required": [
+            "actorId",
+            "input"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "x_publicrecords": {
+        "actor_id": "publicrecords/eu-ted-notices-scraper",
+        "when_to_use": "EU public procurement notices from official TED Search API v3 (anonymous, no API key).",
+        "sample_paid_inputs": [
+          {
+            "keywords": "cybersecurity",
+            "buyerCountry": "DEU",
+            "maxItems": 50
+          },
+          {
+            "keywords": "cloud",
+            "maxItems": 50
+          }
+        ],
+        "store_url": "https://apify.com/publicrecords/eu-ted-notices-scraper?utm_source=site&utm_medium=agents-dialects&utm_campaign=ted"
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "usaspending_awards_search",
+        "description": "USASpending Awards: Federal contract and IDV awards from the official USASpending.gov v2 API. when_to_use: US federal contract/IDV awards from official USASpending.gov v2 with agency, recipient, or NAICS filters. Store: https://apify.com/publicrecords/usaspending-awards-scraper?utm_source=site&utm_medium=agents-dialects&utm_campaign=usaspending",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "actorId": {
+              "type": "string",
+              "const": "publicrecords/usaspending-awards-scraper",
+              "description": "Must be publicrecords/usaspending-awards-scraper"
+            },
+            "input": {
+              "type": "object",
+              "description": "Actor input JSON",
+              "example": {
+                "naics": [
+                  "541512"
+                ],
+                "agency": "Department of Defense",
+                "maxItems": 50
+              }
+            }
+          },
+          "required": [
+            "actorId",
+            "input"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "x_publicrecords": {
+        "actor_id": "publicrecords/usaspending-awards-scraper",
+        "when_to_use": "US federal contract/IDV awards from official USASpending.gov v2 with agency, recipient, or NAICS filters.",
+        "sample_paid_inputs": [
+          {
+            "naics": [
+              "541512"
+            ],
+            "agency": "Department of Defense",
+            "maxItems": 50
+          },
+          {
+            "agency": "Department of Defense",
+            "maxItems": 50
+          }
+        ],
+        "store_url": "https://apify.com/publicrecords/usaspending-awards-scraper?utm_source=site&utm_medium=agents-dialects&utm_campaign=usaspending"
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "grants_gov_opportunities_search",
+        "description": "Grants.gov Opportunities: Federal grant opportunities from the official Grants.gov search2 API. when_to_use: US federal grant FOAs from official Grants.gov search2 (keyword, agency, posted-within). Store: https://apify.com/publicrecords/grants-gov-scraper?utm_source=site&utm_medium=agents-dialects&utm_campaign=grantsgov",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "actorId": {
+              "type": "string",
+              "const": "publicrecords/grants-gov-scraper",
+              "description": "Must be publicrecords/grants-gov-scraper"
+            },
+            "input": {
+              "type": "object",
+              "description": "Actor input JSON",
+              "example": {
+                "keyword": "cybersecurity",
+                "status": "posted",
+                "postedWithinDays": 30,
+                "maxItems": 50
+              }
+            }
+          },
+          "required": [
+            "actorId",
+            "input"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "x_publicrecords": {
+        "actor_id": "publicrecords/grants-gov-scraper",
+        "when_to_use": "US federal grant FOAs from official Grants.gov search2 (keyword, agency, posted-within).",
+        "sample_paid_inputs": [
+          {
+            "keyword": "cybersecurity",
+            "status": "posted",
+            "postedWithinDays": 30,
+            "maxItems": 50
+          }
+        ],
+        "store_url": "https://apify.com/publicrecords/grants-gov-scraper?utm_source=site&utm_medium=agents-dialects&utm_campaign=grantsgov"
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "uk_find_a_tender_search",
+        "description": "UK Find a Tender: UK above-threshold Find a Tender notices via the official OCDS 1.1 API. when_to_use: UK above-threshold Find a Tender notices via official OCDS 1.1 API. Store: https://apify.com/publicrecords/uk-find-a-tender-scraper?utm_source=site&utm_medium=agents-dialects&utm_campaign=uktender",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "actorId": {
+              "type": "string",
+              "const": "publicrecords/uk-find-a-tender-scraper",
+              "description": "Must be publicrecords/uk-find-a-tender-scraper"
+            },
+            "input": {
+              "type": "object",
+              "description": "Actor input JSON",
+              "example": {
+                "keywords": [
+                  "cloud"
+                ],
+                "noticeType": [
+                  "tender"
+                ],
+                "maxItems": 50
+              }
+            }
+          },
+          "required": [
+            "actorId",
+            "input"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "x_publicrecords": {
+        "actor_id": "publicrecords/uk-find-a-tender-scraper",
+        "when_to_use": "UK above-threshold Find a Tender notices via official OCDS 1.1 API.",
+        "sample_paid_inputs": [
+          {
+            "keywords": [
+              "cloud"
+            ],
+            "noticeType": [
+              "tender"
+            ],
+            "maxItems": 50
+          }
+        ],
+        "store_url": "https://apify.com/publicrecords/uk-find-a-tender-scraper?utm_source=site&utm_medium=agents-dialects&utm_campaign=uktender"
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "legistar_meetings_search",
+        "description": "Legistar Meetings: Scrape US city council meetings, agendas, and minutes from public Legistar clients. when_to_use: US city council meetings, agendas, and minutes from public Legistar (Granicus) Web API clients. Store: https://apify.com/publicrecords/legistar-meetings-scraper?utm_source=site&utm_medium=agents-dialects&utm_campaign=legistar",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "actorId": {
+              "type": "string",
+              "const": "publicrecords/legistar-meetings-scraper",
+              "description": "Must be publicrecords/legistar-meetings-scraper"
+            },
+            "input": {
+              "type": "object",
+              "description": "Actor input JSON",
+              "example": {
+                "clients": [
+                  "seattle"
+                ],
+                "resource": "events",
+                "maxItems": 50
+              }
+            }
+          },
+          "required": [
+            "actorId",
+            "input"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "x_publicrecords": {
+        "actor_id": "publicrecords/legistar-meetings-scraper",
+        "when_to_use": "US city council meetings, agendas, and minutes from public Legistar (Granicus) Web API clients.",
+        "sample_paid_inputs": [
+          {
+            "clients": [
+              "seattle"
+            ],
+            "resource": "events",
+            "maxItems": 50
+          },
+          {
+            "clients": [
+              "seattle",
+              "chicago"
+            ],
+            "resource": "events",
+            "maxItems": 50
+          }
+        ],
+        "store_url": "https://apify.com/publicrecords/legistar-meetings-scraper?utm_source=site&utm_medium=agents-dialects&utm_campaign=legistar"
+      }
+    }
+  ]
+}

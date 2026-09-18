@@ -1,0 +1,69 @@
+# publicrecords Apify Actors — CrewAI tool definitions
+# Disclosure: Published by the publicrecords maintainer on Apify.
+# Sample inputs are billable when executed on Apify.
+# MCP pin: https://mcp.apify.com?tools=publicrecords/company-social-profile-finder,publicrecords/eu-ted-notices-scraper,publicrecords/usaspending-awards-scraper,publicrecords/grants-gov-scraper,publicrecords/uk-find-a-tender-scraper,publicrecords/legistar-meetings-scraper
+
+tools:
+  - name: crosswalk_resolve_company
+    actor_id: publicrecords/company-social-profile-finder
+    when_to_use: Verified organization LinkedIn/Instagram/Facebook/X/TikTok/YouTube from website or company name. Platform confirms. Orgs only; never people. Confidence + evidence. Dataset enrich via inputDatasetId.
+    description: Find a company's LinkedIn, Instagram, Facebook, X, TikTok and YouTube from its website or name, verified from the platform side. Organizations only.
+    store_url: https://apify.com/publicrecords/company-social-profile-finder?utm_source=site&utm_medium=agents-dialects&utm_campaign=crosswalk
+    sample_paid_inputs:
+      - query: hubspot.com
+        outputFormat: compact
+      - queries: [stripe.com, notion.so]
+        outputFormat: compact
+      - inputDatasetId: YOUR_MAPS_DATASET_ID
+        maxRows: 500
+
+  - name: eu_ted_notices_search
+    actor_id: publicrecords/eu-ted-notices-scraper
+    when_to_use: EU public procurement notices from official TED Search API v3; anonymous; no API key.
+    description: Scrape EU TED notices into flat JSON.
+    store_url: https://apify.com/publicrecords/eu-ted-notices-scraper?utm_source=site&utm_medium=agents-dialects&utm_campaign=ted
+    sample_paid_inputs:
+      - keywords: cybersecurity
+        buyerCountry: DEU
+        maxItems: 50
+
+  - name: usaspending_awards_search
+    actor_id: publicrecords/usaspending-awards-scraper
+    when_to_use: US federal contract/IDV awards from official USASpending.gov v2.
+    description: Federal awards with agency, recipient, NAICS filters.
+    store_url: https://apify.com/publicrecords/usaspending-awards-scraper?utm_source=site&utm_medium=agents-dialects&utm_campaign=usaspending
+    sample_paid_inputs:
+      - naics: ["541512"]
+        agency: Department of Defense
+        maxItems: 50
+
+  - name: grants_gov_opportunities_search
+    actor_id: publicrecords/grants-gov-scraper
+    when_to_use: US federal grant FOAs from official Grants.gov search2.
+    description: Grants.gov opportunities to flat FOA JSON.
+    store_url: https://apify.com/publicrecords/grants-gov-scraper?utm_source=site&utm_medium=agents-dialects&utm_campaign=grantsgov
+    sample_paid_inputs:
+      - keyword: cybersecurity
+        status: posted
+        postedWithinDays: 30
+        maxItems: 50
+
+  - name: uk_find_a_tender_search
+    actor_id: publicrecords/uk-find-a-tender-scraper
+    when_to_use: UK above-threshold Find a Tender notices via official OCDS 1.1.
+    description: UK Find a Tender notices to flat JSON.
+    store_url: https://apify.com/publicrecords/uk-find-a-tender-scraper?utm_source=site&utm_medium=agents-dialects&utm_campaign=uktender
+    sample_paid_inputs:
+      - keywords: [cloud]
+        noticeType: [tender]
+        maxItems: 50
+
+  - name: legistar_meetings_search
+    actor_id: publicrecords/legistar-meetings-scraper
+    when_to_use: US city council meetings/agendas/minutes from public Legistar Web API clients.
+    description: Legistar meetings to flat JSON. Not affiliated with Granicus/Legistar.
+    store_url: https://apify.com/publicrecords/legistar-meetings-scraper?utm_source=site&utm_medium=agents-dialects&utm_campaign=legistar
+    sample_paid_inputs:
+      - clients: [seattle]
+        resource: events
+        maxItems: 50

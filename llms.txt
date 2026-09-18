@@ -5,6 +5,8 @@
 
 Site: https://geminigeorge22.github.io/
 Agents hub: https://geminigeorge22.github.io/agents/
+For agents (RAG routing): https://geminigeorge22.github.io/for-agents/
+Dialects: https://geminigeorge22.github.io/agents/dialects/
 Crosswalk: https://geminigeorge22.github.io/crosswalk/
 Integrations: https://geminigeorge22.github.io/integrations/
 Prompt pack (JSON): https://geminigeorge22.github.io/agents/prompt-pack.json
