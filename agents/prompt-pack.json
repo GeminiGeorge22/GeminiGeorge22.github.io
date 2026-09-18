@@ -8,12 +8,12 @@
     {
       "id": "crosswalk",
       "brand": "Crosswalk \u2014 Company Social Profiles & LinkedIn Finder",
-      "when_to_use": "Need verified organization LinkedIn/Instagram/Facebook/X/TikTok/YouTube from a website or company name. Platform confirms the link. Orgs only; never people.",
+      "when_to_use": "Find a company's LinkedIn, Instagram, Facebook, TikTok, or YouTube from its website or business name. Confirms the profile belongs to that company. Use to enrich lead lists and Google Maps scrapes. Companies and orgs only \u2014 not people.",
       "example_prompts": [
-        "Resolve hubspot.com with publicrecords/company-social-profile-finder and return verified LinkedIn + Instagram.",
-        "Call Crosswalk with query stripe.com and outputFormat compact; report confidence and verified flags.",
-        "Enrich my Google Maps dataset with publicrecords/company-social-profile-finder using inputDatasetId.",
-        "Batch-resolve stripe.com and notion.so social profiles via Crosswalk; organizations only."
+        "Find the LinkedIn and Instagram for hubspot.com",
+        "Get social profiles for stripe.com from its website",
+        "Add LinkedIn to every row in my Google Maps lead list",
+        "Look up company socials for stripe.com and notion.so"
       ],
       "sample_input": {
         "query": "hubspot.com",
@@ -25,7 +25,7 @@
     {
       "id": "eu-ted-notices",
       "brand": "EU TED Notices",
-      "when_to_use": "Need EU public procurement notices from the official TED Search API v3 (anonymous, no API key).",
+      "when_to_use": "Find European Union government contracts and public tenders. Search by keyword, country, or industry to spot EU bids worth pursuing.",
       "example_prompts": [
         "Search EU TED notices about cybersecurity in Germany last 30 days using publicrecords/eu-ted-notices-scraper.",
         "Run publicrecords/eu-ted-notices-scraper with buyerCountry DEU and CPV 72000000; summarize top buyers."
@@ -41,7 +41,7 @@
     {
       "id": "usaspending-awards",
       "brand": "USASpending Awards",
-      "when_to_use": "Need US federal contract/IDV awards from the official USASpending.gov v2 API with agency, recipient, or NAICS filters.",
+      "when_to_use": "See which companies won US federal government contracts. Filter by agency, vendor, or industry for recent awards.",
       "example_prompts": [
         "Run publicrecords/usaspending-awards-scraper for NAICS 541512 cloud awards and summarize top recipients.",
         "Who won Department of Defense contracts last 30 days? Use publicrecords/usaspending-awards-scraper."
@@ -59,7 +59,7 @@
     {
       "id": "grants-gov",
       "brand": "Grants.gov Opportunities",
-      "when_to_use": "Need US federal grant FOAs from the official Grants.gov search2 API (keyword, agency, posted-within).",
+      "when_to_use": "Find US federal grants that are open for applications. Search by topic or agency.",
       "example_prompts": [
         "Find posted Grants.gov cybersecurity FOAs in the last 30 days with publicrecords/grants-gov-scraper."
       ],
@@ -94,7 +94,7 @@
     {
       "id": "legistar-meetings",
       "brand": "Legistar Meetings",
-      "when_to_use": "Need US city council meetings, agendas, and minutes from public Legistar (Granicus) Web API clients.",
+      "when_to_use": "Get city council meeting agendas and minutes for US cities that publish on Legistar. One city or many in one run.",
       "example_prompts": [
         "List recent Seattle Legistar council events with publicrecords/legistar-meetings-scraper."
       ],

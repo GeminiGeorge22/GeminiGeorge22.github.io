@@ -2,7 +2,7 @@
   "mcpServers": {
     "publicrecords": {
       "url": "https://mcp.apify.com?tools=publicrecords/company-social-profile-finder,publicrecords/eu-ted-notices-scraper,publicrecords/usaspending-awards-scraper,publicrecords/grants-gov-scraper,publicrecords/uk-find-a-tender-scraper,publicrecords/legistar-meetings-scraper",
-      "description": "Pinned live publicrecords Actors: Crosswalk + TED + USASpending + Grants.gov + UK Find a Tender + Legistar. Disclosure: Published by the publicrecords maintainer on Apify."
+      "description": "Find company LinkedIn/socials from a website, EU/UK/US government contracts, federal grants, and city council agendas. Published by the publicrecords maintainer on Apify."
     }
   },
   "x_publicrecords": {
@@ -12,7 +12,7 @@
       {
         "id": "publicrecords/company-social-profile-finder",
         "tool_name": "crosswalk_resolve_company",
-        "when_to_use": "Verified organization LinkedIn/Instagram/Facebook/X/TikTok/YouTube from website or company name. Platform confirms the link. Orgs only; never people. Confidence + evidence. Dataset enrich via inputDatasetId.",
+        "when_to_use": "Find a company's LinkedIn, Instagram, Facebook, TikTok, or YouTube from its website or business name. Confirms the profile belongs to that company. Use to enrich lead lists and Google Maps scrapes. Companies and orgs only \u2014 not people.",
         "sample_paid_inputs": [
           {
             "query": "hubspot.com",
@@ -35,7 +35,7 @@
       {
         "id": "publicrecords/eu-ted-notices-scraper",
         "tool_name": "eu_ted_notices_search",
-        "when_to_use": "EU public procurement notices from official TED Search API v3 (anonymous, no API key).",
+        "when_to_use": "Find European Union government contracts and public tenders. Search by keyword, country, or industry to spot EU bids worth pursuing.",
         "sample_paid_inputs": [
           {
             "keywords": "cybersecurity",
@@ -52,7 +52,7 @@
       {
         "id": "publicrecords/usaspending-awards-scraper",
         "tool_name": "usaspending_awards_search",
-        "when_to_use": "US federal contract/IDV awards from official USASpending.gov v2 with agency, recipient, or NAICS filters.",
+        "when_to_use": "See which companies won US federal government contracts. Filter by agency, vendor, or industry for recent awards.",
         "sample_paid_inputs": [
           {
             "naics": [
@@ -71,7 +71,7 @@
       {
         "id": "publicrecords/grants-gov-scraper",
         "tool_name": "grants_gov_opportunities_search",
-        "when_to_use": "US federal grant FOAs from official Grants.gov search2 (keyword, agency, posted-within).",
+        "when_to_use": "Find US federal grants that are open for applications. Search by topic or agency.",
         "sample_paid_inputs": [
           {
             "keyword": "cybersecurity",
@@ -85,7 +85,7 @@
       {
         "id": "publicrecords/uk-find-a-tender-scraper",
         "tool_name": "uk_find_a_tender_search",
-        "when_to_use": "UK above-threshold Find a Tender notices via official OCDS 1.1 API.",
+        "when_to_use": "Find UK government contracts and public tenders. Search by keyword or industry.",
         "sample_paid_inputs": [
           {
             "keywords": [
@@ -102,7 +102,7 @@
       {
         "id": "publicrecords/legistar-meetings-scraper",
         "tool_name": "legistar_meetings_search",
-        "when_to_use": "US city council meetings, agendas, and minutes from public Legistar (Granicus) Web API clients.",
+        "when_to_use": "Get city council meeting agendas and minutes for US cities that publish on Legistar. One city or many in one run.",
         "sample_paid_inputs": [
           {
             "clients": [

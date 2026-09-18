@@ -6,7 +6,7 @@
   "tools": [
     {
       "name": "crosswalk_resolve_company",
-      "description": "Crosswalk: Find a company's LinkedIn, Instagram, Facebook, X, TikTok and YouTube from its website or name, verified from the platform side. Organizations only. when_to_use: Verified organization LinkedIn/Instagram/Facebook/X/TikTok/YouTube from website or company name. Platform confirms the link. Orgs only; never people. Confidence + evidence. Dataset enrich via inputDatasetId.",
+      "description": "Find a company's LinkedIn, Instagram, Facebook, TikTok, or YouTube from its website or business name. Confirms the profile belongs to that company. Use to enrich lead lists and Google Maps scrapes. Companies and orgs only \u2014 not people.",
       "input_schema": {
         "type": "object",
         "properties": {
@@ -47,7 +47,7 @@
     },
     {
       "name": "eu_ted_notices_search",
-      "description": "EU TED Notices: Scrape EU public procurement notices from the official TED Search API v3 into flat JSON. when_to_use: EU public procurement notices from official TED Search API v3 (anonymous, no API key).",
+      "description": "Find European Union government contracts and public tenders. Search by keyword, country, or industry to spot EU bids worth pursuing.",
       "input_schema": {
         "type": "object",
         "properties": {
@@ -82,7 +82,7 @@
     },
     {
       "name": "usaspending_awards_search",
-      "description": "USASpending Awards: Federal contract and IDV awards from the official USASpending.gov v2 API. when_to_use: US federal contract/IDV awards from official USASpending.gov v2 with agency, recipient, or NAICS filters.",
+      "description": "See which companies won US federal government contracts. Filter by agency, vendor, or industry for recent awards.",
       "input_schema": {
         "type": "object",
         "properties": {
@@ -119,7 +119,7 @@
     },
     {
       "name": "grants_gov_opportunities_search",
-      "description": "Grants.gov Opportunities: Federal grant opportunities from the official Grants.gov search2 API. when_to_use: US federal grant FOAs from official Grants.gov search2 (keyword, agency, posted-within).",
+      "description": "Find US federal grants that are open for applications. Search by topic or agency.",
       "input_schema": {
         "type": "object",
         "properties": {
@@ -151,7 +151,7 @@
     },
     {
       "name": "uk_find_a_tender_search",
-      "description": "UK Find a Tender: UK above-threshold Find a Tender notices via the official OCDS 1.1 API. when_to_use: UK above-threshold Find a Tender notices via official OCDS 1.1 API.",
+      "description": "Find UK government contracts and public tenders. Search by keyword or industry.",
       "input_schema": {
         "type": "object",
         "properties": {
@@ -186,7 +186,7 @@
     },
     {
       "name": "legistar_meetings_search",
-      "description": "Legistar Meetings: Scrape US city council meetings, agendas, and minutes from public Legistar clients. when_to_use: US city council meetings, agendas, and minutes from public Legistar (Granicus) Web API clients.",
+      "description": "Get city council meeting agendas and minutes for US cities that publish on Legistar. One city or many in one run.",
       "input_schema": {
         "type": "object",
         "properties": {
