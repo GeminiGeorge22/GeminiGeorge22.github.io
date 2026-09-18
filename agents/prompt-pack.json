@@ -7,8 +7,8 @@
   "actors": [
     {
       "id": "crosswalk",
-      "brand": "Crosswalk — Company LinkedIn Finder",
-      "when_to_use": "Company LinkedIn Finder: find a company LinkedIn, Instagram, Facebook, TikTok, or YouTube from its website or business name. Confirms the profile belongs to that company. Enrich lead lists and Google Maps scrapes. Companies and orgs only — not people.",
+      "brand": "Company Social Profiles Finder (Crosswalk)",
+      "when_to_use": "Company Social Profiles Finder (Crosswalk): find a company's LinkedIn, Instagram, Facebook, X, TikTok, or YouTube from its website or business name. Confirms the profile belongs to that company. Enrich lead lists and Google Maps scrapes. Companies and orgs only — not people.",
       "example_prompts": [
         "Find the LinkedIn and Instagram for hubspot.com",
         "Get social profiles for stripe.com from its website",
