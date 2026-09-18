@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Install publicrecords MCP — one paste</title>
+<meta name="description" content="Pin Crosswalk + TED + USASpending + Grants.gov + UK Find a Tender + Legistar in Cursor, Claude, or any Apify MCP client with one URL. Manifest-only; no Actor source.">
+<link rel="canonical" href="https://geminigeorge22.github.io/mcp/">
+<meta property="og:title" content="publicrecords MCP — install in one paste">
+<meta property="og:description" content="Crosswalk flagship first. Official public-records Actors on Apify MCP.">
+<meta property="og:url" content="https://geminigeorge22.github.io/mcp/">
+<style>
+  :root{--ink:#0f172a;--muted:#475569;--accent:#0ea5e9;--bg:#f8fafc;--card:#fff;--border:#e2e8f0}
+  *{box-sizing:border-box}
+  body{font:16px/1.55 system-ui,sans-serif;color:var(--ink);background:var(--bg);margin:0}
+  .wrap{max-width:860px;margin:0 auto;padding:32px 20px 64px}
+  nav a{color:var(--muted);text-decoration:none;margin-right:12px}
+  nav a:hover{color:var(--accent)}
+  h1{font-size:1.85rem;letter-spacing:-.02em;margin:24px 0 8px}
+  .lead{color:var(--muted);font-size:1.05rem;margin-bottom:28px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin:16px 0}
+  .card h2{margin:0 0 10px;font-size:1.1rem}
+  pre,code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem}
+  pre{background:#0f172a;color:#e2e8f0;padding:14px 16px;border-radius:8px;overflow-x:auto;white-space:pre-wrap;word-break:break-all}
+  .pin{background:linear-gradient(135deg,#0ea5e9,#6366f1);color:#fff;border:none}
+  .pin h2{color:#fff}
+  .pin pre{background:rgba(0,0,0,.35)}
+  .btn{display:inline-block;margin-top:10px;padding:8px 14px;border-radius:8px;background:#fff;color:#0f172a;font-weight:600;text-decoration:none;font-size:.9rem}
+  ul.links{padding-left:1.2rem}
+  ul.links li{margin:6px 0}
+  footer{margin-top:40px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--border);padding-top:16px}
+  .badge{display:inline-block;background:#e0f2fe;color:#0369a1;font-size:.75rem;font-weight:600;padding:2px 8px;border-radius:999px;margin-left:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <a href="https://geminigeorge22.github.io/">publicrecords</a>
+  <a href="https://geminigeorge22.github.io/agents/">Agents</a>
+  <a href="https://geminigeorge22.github.io/for-agents/">For agents</a>
+  <a href="https://geminigeorge22.github.io/integrations/">Integrations</a>
+</nav>
+
+<h1>Install publicrecords MCP <span class="badge">one paste</span></h1>
+<p class="lead">Pin six live Actors for agents — <strong>Crosswalk</strong> (verified org socials) first, then official TED / USASpending / Grants.gov / UK Find a Tender / Legistar. No Actor source in this hub; manifests only.</p>
+
+<div class="card pin">
+  <h2>1. Copy this remote URL</h2>
+  <pre id="pin">https://mcp.apify.com?tools=publicrecords/company-social-profile-finder,publicrecords/eu-ted-notices-scraper,publicrecords/usaspending-awards-scraper,publicrecords/grants-gov-scraper,publicrecords/uk-find-a-tender-scraper,publicrecords/legistar-meetings-scraper</pre>
+  <a class="btn" href="https://mcp.apify.com?tools=publicrecords/company-social-profile-finder,publicrecords/eu-ted-notices-scraper,publicrecords/usaspending-awards-scraper,publicrecords/grants-gov-scraper,publicrecords/uk-find-a-tender-scraper,publicrecords/legistar-meetings-scraper&utm_source=site&utm_medium=mcp-hub&utm_campaign=crosswalk">Open on Apify MCP</a>
+</div>
+
+<div class="card">
+  <h2>2. Cursor</h2>
+  <p>Settings → MCP → Add server → paste the URL above, or merge:</p>
+  <pre>{
+  "mcpServers": {
+    "publicrecords": {
+      "url": "https://mcp.apify.com?tools=publicrecords/company-social-profile-finder,publicrecords/eu-ted-notices-scraper,publicrecords/usaspending-awards-scraper,publicrecords/grants-gov-scraper,publicrecords/uk-find-a-tender-scraper,publicrecords/legistar-meetings-scraper"
+    }
+  }
+}</pre>
+</div>
+
+<div class="card">
+  <h2>3. Claude / Claude Desktop</h2>
+  <p>Add the same <code>mcpServers.publicrecords</code> block to your Claude Desktop MCP config, or use the dialect file:</p>
+  <ul class="links">
+    <li><a href="https://geminigeorge22.github.io/agents/dialects/claude-mcp.json?utm_source=site&utm_medium=mcp-hub&utm_campaign=crosswalk">claude-mcp.json</a></li>
+    <li><a href="https://geminigeorge22.github.io/agents/dialects/cursor-rules.mdc?utm_source=site&utm_medium=mcp-hub&utm_campaign=crosswalk">cursor-rules.mdc</a></li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>4. Manifest repo + prompt pack</h2>
+  <ul class="links">
+    <li><a href="https://github.com/GeminiGeorge22/publicrecords-mcp?utm_source=site&utm_medium=mcp-hub&utm_campaign=crosswalk">GitHub: GeminiGeorge22/publicrecords-mcp</a> — thin tool JSON only</li>
+    <li><a href="https://geminigeorge22.github.io/agents/prompt-pack.json?utm_source=site&utm_medium=mcp-hub&utm_campaign=crosswalk">prompt-pack.json</a></li>
+    <li><a href="https://geminigeorge22.github.io/for-agents/?utm_source=site&utm_medium=mcp-hub&utm_campaign=crosswalk">for-agents RAG routing</a></li>
+    <li><a href="https://geminigeorge22.github.io/.well-known/mcp/server-card.json">.well-known/mcp/server-card.json</a></li>
+    <li><a href="https://geminigeorge22.github.io/integrations/?utm_source=site&utm_medium=mcp-hub&utm_campaign=crosswalk">n8n workflows</a></li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>Try Crosswalk first</h2>
+  <pre>call publicrecords/company-social-profile-finder with {"query":"hubspot.com","outputFormat":"compact"}</pre>
+  <p>Orgs only — never people profiles. <a href="https://apify.com/publicrecords/company-social-profile-finder?utm_source=site&utm_medium=mcp-hub&utm_campaign=crosswalk">Store listing →</a></p>
+</div>
+
+<footer>
+  <p><em>Published by the publicrecords maintainer on Apify.</em> GovCon Opportunity Feed is not marketed as live here.</p>
+</footer>
+</div>
+</body>
+</html>

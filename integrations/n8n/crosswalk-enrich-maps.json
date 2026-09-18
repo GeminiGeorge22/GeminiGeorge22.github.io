@@ -1,0 +1,78 @@
+{
+  "name": "publicrecords — Crosswalk enrich Maps dataset",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 24
+            }
+          ]
+        }
+      },
+      "id": "1",
+      "name": "Schedule",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.apify.com/v2/acts/publicrecords~company-social-profile-finder/runs?waitForFinish=300",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "Bearer YOUR_APIFY_TOKEN" },
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"inputDatasetId\": \"YOUR_MAPS_DATASET_ID\",\n  \"maxRows\": 500,\n  \"outputFormat\": \"compact\"\n}",
+        "options": {}
+      },
+      "id": "2",
+      "name": "Run Crosswalk",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [280, 0],
+      "notes": "Replace YOUR_APIFY_TOKEN and YOUR_MAPS_DATASET_ID. Crosswalk enriches org socials from a Maps/lead dataset. Organizations only."
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://api.apify.com/v2/datasets/{{$json.data.defaultDatasetId}}/items?clean=true&format=json",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "Bearer YOUR_APIFY_TOKEN" }
+          ]
+        },
+        "options": {}
+      },
+      "id": "3",
+      "name": "Fetch dataset items",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [560, 0]
+    }
+  ],
+  "connections": {
+    "Schedule": {
+      "main": [[{ "node": "Run Crosswalk", "type": "main", "index": 0 }]]
+    },
+    "Run Crosswalk": {
+      "main": [[{ "node": "Fetch dataset items", "type": "main", "index": 0 }]]
+    }
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "publicrecordsActor": "publicrecords/company-social-profile-finder",
+    "docs": "https://geminigeorge22.github.io/crosswalk/",
+    "disclosure": "Published by the publicrecords maintainer on Apify."
+  },
+  "settings": { "executionOrder": "v1" }
+}

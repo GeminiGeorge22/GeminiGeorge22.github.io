@@ -5,6 +5,9 @@
 
 Site: https://geminigeorge22.github.io/
 Agents hub: https://geminigeorge22.github.io/agents/
+MCP hub (one-paste install): https://geminigeorge22.github.io/mcp/
+MCP well-known card: https://geminigeorge22.github.io/.well-known/mcp/server-card.json
+MCP manifest repo: https://github.com/GeminiGeorge22/publicrecords-mcp
 For agents (RAG routing): https://geminigeorge22.github.io/for-agents/
 Dialects: https://geminigeorge22.github.io/agents/dialects/
 Crosswalk: https://geminigeorge22.github.io/crosswalk/

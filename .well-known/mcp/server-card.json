@@ -1,0 +1,23 @@
+{
+  "name": "publicrecords",
+  "title": "publicrecords — Crosswalk + official public-records Actors",
+  "description": "Pin live publicrecords Apify Actors for agents: Crosswalk (verified org socials) plus EU TED, USASpending, Grants.gov, UK Find a Tender, and Legistar. Organizations and official APIs only. Published by the publicrecords maintainer on Apify.",
+  "version": "1.0.0",
+  "transport": "http",
+  "url": "https://mcp.apify.com?tools=publicrecords/company-social-profile-finder,publicrecords/eu-ted-notices-scraper,publicrecords/usaspending-awards-scraper,publicrecords/grants-gov-scraper,publicrecords/uk-find-a-tender-scraper,publicrecords/legistar-meetings-scraper",
+  "homepage": "https://geminigeorge22.github.io/mcp/",
+  "for_agents": "https://geminigeorge22.github.io/for-agents/",
+  "manifest_repo": "https://github.com/GeminiGeorge22/publicrecords-mcp",
+  "store": "https://apify.com/publicrecords",
+  "disclosure": "Published by the publicrecords maintainer on Apify.",
+  "tools": [
+    "publicrecords/company-social-profile-finder",
+    "publicrecords/eu-ted-notices-scraper",
+    "publicrecords/usaspending-awards-scraper",
+    "publicrecords/grants-gov-scraper",
+    "publicrecords/uk-find-a-tender-scraper",
+    "publicrecords/legistar-meetings-scraper"
+  ],
+  "flagship": "publicrecords/company-social-profile-finder",
+  "updated": "2026-09-17"
+}
