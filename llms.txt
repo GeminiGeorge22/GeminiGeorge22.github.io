@@ -17,7 +17,7 @@ agents.md: https://geminigeorge22.github.io/agents.md
 
 ## MCP pin (all live Actors)
 
-https://mcp.apify.com?tools=publicrecords/company-social-profile-finder,publicrecords/eu-ted-notices-scraper,publicrecords/usaspending-awards-scraper,publicrecords/grants-gov-scraper,publicrecords/uk-find-a-tender-scraper,publicrecords/legistar-meetings-scraper
+https://mcp.apify.com?tools=publicrecords/company-social-profile-finder,publicrecords/eu-ted-notices-scraper,publicrecords/usaspending-awards-scraper,publicrecords/grants-gov-scraper,publicrecords/uk-find-a-tender-scraper,publicrecords/legistar-meetings-scraper,publicrecords/greenhouse-jobs-scraper,publicrecords/lever-jobs-scraper,publicrecords/ashby-jobs-scraper,publicrecords/smartrecruiters-jobs-scraper
 
 ## Live Actors (Store)
 
@@ -64,3 +64,25 @@ https://mcp.apify.com?tools=publicrecords/company-social-profile-finder,publicre
 - Never people profiles; never guessed socials; GovCon Opportunity Feed is not marketed as live here
 
 Disclosure: Published by the publicrecords maintainer on Apify.
+
+## Live Actors — ATS job-board APIs
+
+7. Greenhouse Jobs Scraper — New Postings Since Any Date — publicrecords/greenhouse-jobs-scraper
+   Store: https://apify.com/publicrecords/greenhouse-jobs-scraper
+   Site: https://geminigeorge22.github.io/greenhouse-jobs/
+   Use: Greenhouse job-board API postings published since a supplied date or window, with job metadata, URLs, timestamps and optional descriptions.
+
+8. Lever Jobs Scraper — New Postings Since Any Date — publicrecords/lever-jobs-scraper
+   Store: https://apify.com/publicrecords/lever-jobs-scraper
+   Site: https://geminigeorge22.github.io/lever-jobs/
+   Use: Lever job-board API postings created since a supplied date or window, with job metadata, URLs, timestamps and optional descriptions.
+
+9. Ashby Jobs Scraper — New Postings Since Any Date — publicrecords/ashby-jobs-scraper
+   Store: https://apify.com/publicrecords/ashby-jobs-scraper
+   Site: https://geminigeorge22.github.io/ashby-jobs/
+   Use: Ashby job-board API postings published since a supplied date or window, with job metadata, URLs, timestamps and optional descriptions.
+
+10. SmartRecruiters Jobs Scraper — New Postings Since Any Date — publicrecords/smartrecruiters-jobs-scraper
+   Store: https://apify.com/publicrecords/smartrecruiters-jobs-scraper
+   Site: https://geminigeorge22.github.io/smartrecruiters-jobs/
+   Use: SmartRecruiters job-board API postings released since a supplied date or window, with job metadata, URLs, timestamps and optional descriptions.
