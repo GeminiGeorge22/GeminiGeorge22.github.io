@@ -1,0 +1,9 @@
+# SmartRecruiters Jobs Scraper — New Postings Since Any Date
+
+Site: https://geminigeorge22.github.io/smartrecruiters-jobs/
+Store: https://apify.com/publicrecords/smartrecruiters-jobs-scraper
+MCP pin: https://mcp.apify.com?tools=publicrecords/smartrecruiters-jobs-scraper
+
+One question: Which roles did these companies post on SmartRecruiters since my last run?
+
+Use the public SmartRecruiters job-board API. Input supports company identifiers or board URLs, a since window/date, maxResults, and optional descriptions. Output is one structured dataset item per posting.

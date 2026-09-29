@@ -1,0 +1,9 @@
+# Greenhouse Jobs Scraper — New Postings Since Any Date
+
+Site: https://geminigeorge22.github.io/greenhouse-jobs/
+Store: https://apify.com/publicrecords/greenhouse-jobs-scraper
+MCP pin: https://mcp.apify.com?tools=publicrecords/greenhouse-jobs-scraper
+
+One question: Which roles did these companies post on Greenhouse since my last run?
+
+Use the public Greenhouse job-board API. Input supports company identifiers or board URLs, a since window/date, maxResults, and optional descriptions. Output is one structured dataset item per posting.
