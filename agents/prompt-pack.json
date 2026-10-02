@@ -6,6 +6,41 @@
   "updated": "2026-10-02",
   "actors": [
     {
+      "id": "etsy-search-scraper",
+      "brand": "Etsy Search Scraper",
+      "when_to_use": "FLAGSHIP. Etsy Search Scraper: pull live Etsy search, market, or category listings as structured rows (title, price, shop, badges, rank).",
+      "example_prompts": [
+        "Scrape Etsy search for ceramic mug, max 3 pages, with publicrecords/etsy-search-scraper.",
+        "Get Etsy market listings for personalized dog collar as JSON rows."
+      ],
+      "sample_input": {
+        "queries": [
+          "ceramic mug"
+        ],
+        "maxPages": 3
+      },
+      "store_url": "https://apify.com/publicrecords/etsy-search-scraper",
+      "site_url": "https://geminigeorge22.github.io/etsy-search-scraper/"
+    },
+    {
+      "id": "etsy-shop-velocity",
+      "brand": "Etsy Shop Sales Tracker & Scraper",
+      "when_to_use": "FLAGSHIP. Etsy Shop Sales Tracker: track daily sales counters, 7-/28-day changes, modelled rates and breakout flags for named Etsy shops.",
+      "example_prompts": [
+        "Track sales for Etsy shops OrelCeramics and Bestickend with publicrecords/etsy-shop-velocity.",
+        "Find Etsy shop breakouts with publicrecords/etsy-shop-velocity."
+      ],
+      "sample_input": {
+        "shops": [
+          "OrelCeramics",
+          "Bestickend"
+        ],
+        "maxShops": 2
+      },
+      "store_url": "https://apify.com/publicrecords/etsy-shop-velocity",
+      "site_url": "https://geminigeorge22.github.io/etsy-shop-velocity/"
+    },
+    {
       "id": "crosswalk",
       "brand": "Company Socials (Crosswalk)",
       "when_to_use": "Company Socials (Crosswalk): find a company's social profiles from its website or business name (LinkedIn, Instagram, Facebook, X, TikTok, YouTube). Confirms the profile belongs to that company. Enrich lead lists and Google Maps scrapes. Companies and orgs only \u2014 not people.",
@@ -107,43 +142,12 @@
       },
       "store_url": "https://apify.com/publicrecords/legistar-meetings-scraper",
       "site_url": "https://geminigeorge22.github.io/legistar/"
-    },
-    {
-      "id": "etsy-search-scraper",
-      "brand": "Etsy Search Scraper",
-      "when_to_use": "Etsy Search Scraper: pull live Etsy search, market, or category listings as structured rows (title, price, shop, badges, rank).",
-      "example_prompts": [
-        "Scrape Etsy search for ceramic mug, max 3 pages, with publicrecords/etsy-search-scraper.",
-        "Get Etsy market listings for personalized dog collar as JSON rows."
-      ],
-      "sample_input": {
-        "queries": [
-          "ceramic mug"
-        ],
-        "maxPages": 3
-      },
-      "store_url": "https://apify.com/publicrecords/etsy-search-scraper",
-      "site_url": "https://geminigeorge22.github.io/etsy-search-scraper/"
-    },
-    {
-      "id": "etsy-shop-velocity",
-      "brand": "Etsy Shop Sales Tracker & Scraper",
-      "when_to_use": "Etsy Shop Sales Tracker: track daily sales counters, 7-/28-day changes, modelled rates and breakout flags for named Etsy shops.",
-      "example_prompts": [
-        "Track sales for Etsy shops OrelCeramics and Bestickend with publicrecords/etsy-shop-velocity.",
-        "Find Etsy shop breakouts with publicrecords/etsy-shop-velocity."
-      ],
-      "sample_input": {
-        "shops": [
-          "OrelCeramics",
-          "Bestickend"
-        ],
-        "maxShops": 2
-      },
-      "store_url": "https://apify.com/publicrecords/etsy-shop-velocity",
-      "site_url": "https://geminigeorge22.github.io/etsy-shop-velocity/"
     }
   ],
   "etsy_mcp_pin_url": "https://mcp.apify.com?tools=publicrecords/etsy-shop-velocity,publicrecords/etsy-search-scraper",
-  "etsy_mcp_repo": "https://github.com/GeminiGeorge22/etsy-sales-mcp"
+  "etsy_mcp_repo": "https://github.com/GeminiGeorge22/etsy-sales-mcp",
+  "flagship": [
+    "etsy-search-scraper",
+    "etsy-shop-velocity"
+  ]
 }

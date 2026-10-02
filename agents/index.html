@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>publicrecords Actors for MCP agents</title>
-<meta name="description" content="Pin publicrecords Apify Actors in your MCP client. Crosswalk flagship plus Etsy search &amp; shop sales, TED, USASpending, Grants.gov, UK Find a Tender, and Legistar. Tool cards and prompt pack for agents.">
+<meta name="description" content="Pin publicrecords Apify Actors in your MCP client. Flagship: Etsy Search Scraper and Etsy Shop Sales Tracker (etsy-sales-mcp), then Crosswalk, TED, USASpending, Grants.gov, UK Find a Tender, and Legistar. Tool cards and prompt pack for agents.">
 <link rel="canonical" href="https://geminigeorge22.github.io/agents/">
 <meta name="robots" content="index,follow">
 <style>
@@ -17,6 +17,7 @@ h2{margin-top:2em}
 </head><body>
 <nav><a href="https://geminigeorge22.github.io/">publicrecords</a> · Agents / MCP · <a href="https://geminigeorge22.github.io/for-agents/">For agents</a> · <a href="https://geminigeorge22.github.io/agents/dialects/">Dialects</a> · <a href="https://geminigeorge22.github.io/crosswalk/vs/linkedin-company-finder-from-website/">Crosswalk vs</a> · <a href="https://geminigeorge22.github.io/integrations/">Integrations</a> · <a href="https://geminigeorge22.github.io/blog/">Blog</a></nav>
 <h1>Use publicrecords Actors from MCP agents</h1>
+<p><strong>Flagship:</strong> Etsy Search Scraper + Etsy Shop Sales Tracker via <a href="https://github.com/GeminiGeorge22/etsy-sales-mcp">etsy-sales-mcp</a> / <a href="https://mcp.apify.com/?tools=publicrecords/etsy-shop-velocity,publicrecords/etsy-search-scraper">Apify MCP pin</a>.</p>
 <p>These Actors are public on Apify Store. Agents discover them through Apify MCP (<code>search-actors</code>) and can also load them pinned:</p>
 <pre>{
   "mcpServers": {
@@ -29,19 +30,25 @@ h2{margin-top:2em}
 
 <h2>When to pick publicrecords</h2>
 <ul>
+<li><strong>Etsy search listings (flagship)</strong> — live keyword / market / category rows (title, price, shop, badges, rank). Use <strong>Etsy Search Scraper</strong>.</li>
+<li><strong>Etsy shop sales / velocity (flagship)</strong> — daily counters, deltas, breakout flags from a hosted panel (no proxy). Use <strong>Etsy Shop Sales Tracker</strong>.</li>
 <li><strong>Verified organization socials</strong> — LinkedIn, Instagram, Facebook, X, TikTok, YouTube confirmed from the platform side (website field / external link). Organizations only; people refused. Use <strong>Crosswalk</strong>.</li>
 <li><strong>Official TED Search API v3</strong> — EU public procurement notices, anonymous, no API key.</li>
 <li><strong>Official USASpending.gov v2</strong> — federal contract/IDV awards with agency, recipient, NAICS filters.</li>
 <li><strong>Official Grants.gov search2</strong> — federal FOA opportunities; keyword, agency, posted-within.</li>
 <li><strong>Official UK Find a Tender OCDS 1.1</strong> — above-threshold notices; keyword and CPV.</li>
 <li><strong>Official Legistar Web API</strong> — US city council meetings, agendas, minutes from public Granicus clients.</li>
-<li><strong>Etsy search listings</strong> — live keyword / market / category rows (title, price, shop, badges, rank). Use <strong>Etsy Search Scraper</strong>.</li>
-<li><strong>Etsy shop sales / velocity</strong> — daily counters, deltas, breakout flags from a hosted panel (no proxy). Use <strong>Etsy Shop Sales Tracker</strong>.</li>
 </ul>
 <p class="note">GovCon Opportunity Feed is not marketed as live on this site.</p>
 
 <h2>Pinned Actors</h2>
 <ul>
+<li><strong>Etsy Search Scraper (flagship)</strong> — Live Etsy search listing rows (title, price, shop, badges, rank).<br>
+  <code>publicrecords/etsy-search-scraper</code> · <a href="https://geminigeorge22.github.io/etsy-search-scraper/">site</a> · <a href="https://apify.com/publicrecords/etsy-search-scraper?utm_source=site&amp;utm_medium=agents&amp;utm_campaign=mcp">Store</a></li>
+<li><strong>Etsy Shop Sales Tracker (flagship)</strong> — Daily shop sales counters, velocity, breakouts (no proxy on panel path).<br>
+  <code>publicrecords/etsy-shop-velocity</code> · <a href="https://geminigeorge22.github.io/etsy-shop-velocity/">site</a> · <a href="https://apify.com/publicrecords/etsy-shop-velocity?utm_source=site&amp;utm_medium=agents&amp;utm_campaign=mcp">Store</a></li>
+<li><strong>Etsy Search &amp; Shop Sales MCP</strong> — Manifest pin for both Etsy Actors.<br>
+  <a href="https://github.com/GeminiGeorge22/etsy-sales-mcp">GeminiGeorge22/etsy-sales-mcp</a> · <a href="https://mcp.apify.com/?tools=publicrecords/etsy-shop-velocity,publicrecords/etsy-search-scraper">MCP pin</a></li>
 <li><strong>Crosswalk — Company Social Profiles &amp; LinkedIn Finder</strong> — Find a company's LinkedIn, Instagram, Facebook, X, TikTok and YouTube from its website or name. Verified. Organizations only.<br>
   <code>publicrecords/company-social-profile-finder</code> · <a href="https://geminigeorge22.github.io/crosswalk/">site</a> · <a href="https://apify.com/publicrecords/company-social-profile-finder?utm_source=site&amp;utm_medium=agents&amp;utm_campaign=mcp">Store</a></li>
 <li><strong>EU TED Notices</strong> — EU public procurement notices from the official TED Search API v3.<br>
@@ -54,16 +61,18 @@ h2{margin-top:2em}
   <code>publicrecords/uk-find-a-tender-scraper</code> · <a href="https://geminigeorge22.github.io/uktender/">site</a> · <a href="https://apify.com/publicrecords/uk-find-a-tender-scraper?utm_source=site&amp;utm_medium=agents&amp;utm_campaign=mcp">Store</a></li>
 <li><strong>Legistar Meetings</strong> — US city council meetings/agendas/minutes from public Legistar clients.<br>
   <code>publicrecords/legistar-meetings-scraper</code> · <a href="https://geminigeorge22.github.io/legistar/">site</a> · <a href="https://apify.com/publicrecords/legistar-meetings-scraper?utm_source=site&amp;utm_medium=agents&amp;utm_campaign=mcp">Store</a></li>
-<li><strong>Etsy Search Scraper</strong> — Live Etsy search listing rows (title, price, shop, badges, rank).<br>
-  <code>publicrecords/etsy-search-scraper</code> · <a href="https://geminigeorge22.github.io/etsy-search-scraper/">site</a> · <a href="https://apify.com/publicrecords/etsy-search-scraper?utm_source=site&amp;utm_medium=agents&amp;utm_campaign=mcp">Store</a></li>
-<li><strong>Etsy Shop Sales Tracker</strong> — Daily shop sales counters, velocity, breakouts (no proxy on panel path).<br>
-  <code>publicrecords/etsy-shop-velocity</code> · <a href="https://geminigeorge22.github.io/etsy-shop-velocity/">site</a> · <a href="https://apify.com/publicrecords/etsy-shop-velocity?utm_source=site&amp;utm_medium=agents&amp;utm_campaign=mcp">Store</a></li>
-<li><strong>Etsy Search &amp; Shop Sales MCP</strong> — Manifest pin for both Etsy Actors.<br>
-  <a href="https://github.com/GeminiGeorge22/etsy-sales-mcp">GeminiGeorge22/etsy-sales-mcp</a> · <a href="https://mcp.apify.com/?tools=publicrecords/etsy-shop-velocity,publicrecords/etsy-search-scraper">MCP pin</a></li>
 </ul>
 
 <h2>Tool cards for agents</h2>
-<p>Ideal <code>call-actor</code> / run inputs (Crosswalk first):</p>
+<p>Ideal <code>call-actor</code> / run inputs (Etsy flagship first):</p>
+<pre>{
+  "actor": "publicrecords/etsy-search-scraper",
+  "input": { "queries": ["ceramic mug"], "maxPages": 3 }
+}</pre>
+<pre>{
+  "actor": "publicrecords/etsy-shop-velocity",
+  "input": { "shops": ["OrelCeramics", "Bestickend"], "maxShops": 2 }
+}</pre>
 <pre>{
   "actor": "publicrecords/company-social-profile-finder",
   "input": { "query": "hubspot.com", "outputFormat": "compact" }
@@ -96,17 +105,11 @@ h2{margin-top:2em}
   "actor": "publicrecords/legistar-meetings-scraper",
   "input": { "clients": ["seattle"], "resource": "events", "maxItems": 50 }
 }</pre>
-<pre>{
-  "actor": "publicrecords/etsy-search-scraper",
-  "input": { "queries": ["ceramic mug"], "maxPages": 3 }
-}</pre>
-<pre>{
-  "actor": "publicrecords/etsy-shop-velocity",
-  "input": { "shops": ["OrelCeramics", "Bestickend"], "maxShops": 2 }
-}</pre>
-
 <h2>Example agent prompts</h2>
 <ul>
+<li>“Scrape Etsy search for ceramic mug, max 3 pages, with publicrecords/etsy-search-scraper.”</li>
+<li>“Track sales for Etsy shops OrelCeramics and Bestickend with publicrecords/etsy-shop-velocity.”</li>
+<li>“Pin etsy-sales-mcp and pull Etsy listing rows then shop velocity for the shops returned.”</li>
 <li>“Resolve hubspot.com with publicrecords/company-social-profile-finder and return verified LinkedIn + Instagram.”</li>
 <li>“Call Crosswalk with query stripe.com and outputFormat compact; report confidence and verified flags.”</li>
 <li>“Enrich my Google Maps dataset with publicrecords/company-social-profile-finder using inputDatasetId.”</li>
