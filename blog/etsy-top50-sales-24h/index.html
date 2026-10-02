@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Top 50 Etsy shops by sales in the last 24 hours (free CSV) — publicrecords</title>
+<meta name="description" content="Free CSV: top 50 Etsy shops by last-interval sales (delta_last) from the publicrecords/etsy-shop-velocity panel. No Apify token required.">
+<link rel="canonical" href="https://geminigeorge22.github.io/blog/etsy-top50-sales-24h/">
+<meta name="robots" content="index,follow">
+<style>body{font:16px/1.55 system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;color:#111}pre,code{background:#f4f4f5;border-radius:6px}pre{padding:12px;overflow:auto}table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.9rem}th,td{border:1px solid #ddd;padding:6px 8px;text-align:left}th{background:#f6f8fa}a.cta{display:inline-block;margin:16px 0;padding:10px 14px;background:#111;color:#fff;border-radius:8px;text-decoration:none}ul,ol{padding-left:1.2em}footer{margin-top:48px;color:#666;font-size:.9rem}</style>
+</head><body>
+<nav><a href="https://geminigeorge22.github.io/">publicrecords</a> · <a href="https://geminigeorge22.github.io/blog/">Blog</a></nav>
+<article>
+<h1>Top 50 Etsy shops by sales in the last 24 hours (free CSV)</h1>
+<p><em>2026-10-02 (America/Toronto). Panel snapshot_date=2026-10-02.</em></p>
+<p><em>Disclosure: I publish and maintain the Actor behind this sample (<code>publicrecords/etsy-shop-velocity</code> on Apify). Public Records maintains the hosted panel.</em></p>
+<p>You do not need an Apify token to read this sample. Below is a CSV of the <strong>fifty shops with the largest sales since their previous panel read</strong> — roughly the last day’s sales under the tracker’s daily cadence.</p>
+<h2>Download</h2>
+<p><a class="cta" href="https://geminigeorge22.github.io/data/etsy-top50-sales-24h-2026-10-02.csv">Download CSV — etsy-top50-sales-24h-2026-10-02.csv</a></p>
+<p>Free, static file, no login. Filename date is the panel <code>snapshot_date</code>.</p>
+<h2>Publish gate (met)</h2>
+<p>This edition publishes as an <strong>event</strong>, not on a fixed weekday:</p>
+<p><strong>Publish by default when the tracker panel has 2 readings on ≥500 shops.</strong></p>
+<p>Gate check 2026-10-02 ~4:03 PM ET: live HF <code>Publicrecords/etsy-shop-velocity</code> <code>latest.json</code> snapshot_date=<code>2026-10-02</code>, panel=1903, rows=869, <strong>shops with history_days≥2 = 793</strong>, history_days_max=3. Gate met; no placeholder rows.</p>
+<h2>How the ranking works</h2>
+<ul>
+<li><strong><code>delta_last</code></strong> — sales since the previous read (the last-interval / ~24h sales delta).</li>
+<li><strong><code>sales_per_day</code></strong> — that change divided by <code>read_interval_days</code> (measured, not modelled).</li>
+<li>Eligible shops need <strong><code>history_days ≥ 2</code></strong> so those deltas exist. Vintage/reset rows that suppress deltas are excluded.</li>
+<li>Sort by <code>delta_last</code> descending (tie-break <code>sales_per_day</code>, then <code>sales_count</code>), cap at <strong>50</strong>. No padding.</li>
+</ul>
+<p>A <strong>breakout</strong> column appears in the CSV only after the panel has <code>history_days_max ≥ 7</code>. This edition’s max is 3, so breakout columns are omitted.</p>
+<h2>Preview (ranks 1–15)</h2>
+<table>
+<thead><tr><th>rank</th><th>shop</th><th>category</th><th>delta_last</th><th>sales_per_day</th><th>sales_count</th><th>history_days</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><a href="https://www.etsy.com/shop/Lamoriea">Lamoriea</a></td><td>bags &amp;amp; purses &gt; backpacks</td><td>500</td><td>328.299</td><td>540200</td><td>3</td></tr>
+<tr><td>2</td><td><a href="https://www.etsy.com/shop/MoonberryHandmade">MoonberryHandmade</a></td><td>bags &amp;amp; purses &gt; backpacks</td><td>300</td><td>196.85</td><td>97100</td><td>3</td></tr>
+<tr><td>3</td><td><a href="https://www.etsy.com/shop/PersonalizationMall">PersonalizationMall</a></td><td>bags &amp;amp; purses &gt; backpacks</td><td>200</td><td>131.839</td><td>829800</td><td>3</td></tr>
+<tr><td>4</td><td><a href="https://www.etsy.com/shop/CustomPatchesTX">CustomPatchesTX</a></td><td>accessories &gt; patches &amp;amp; appliques</td><td>200</td><td>127.714</td><td>45900</td><td>3</td></tr>
+<tr><td>5</td><td><a href="https://www.etsy.com/shop/A1GraphicsLtd">A1GraphicsLtd</a></td><td>accessories &gt; aprons</td><td>200</td><td>122.026</td><td>443700</td><td>3</td></tr>
+<tr><td>6</td><td><a href="https://www.etsy.com/shop/CaSales">CaSales</a></td><td>accessories &gt; hand fans</td><td>200</td><td>121.655</td><td>351000</td><td>3</td></tr>
+<tr><td>7</td><td><a href="https://www.etsy.com/shop/CradleArtStore">CradleArtStore</a></td><td>accessories &gt; aprons</td><td>200</td><td>121.433</td><td>54000</td><td>3</td></tr>
+<tr><td>8</td><td><a href="https://www.etsy.com/shop/JoycieLaneDesigns">JoycieLaneDesigns</a></td><td>home &amp;amp; living &gt; home decor &gt; faux plants &amp;amp; greenery</td><td>100</td><td>150.15</td><td>81600</td><td>2</td></tr>
+<tr><td>9</td><td><a href="https://www.etsy.com/shop/GetNestly">GetNestly</a></td><td>pet supplies &gt; pet storage</td><td>100</td><td>144.718</td><td>7900</td><td>2</td></tr>
+<tr><td>10</td><td><a href="https://www.etsy.com/shop/DexinFloral">DexinFloral</a></td><td>home &amp;amp; living &gt; home decor &gt; faux plants &amp;amp; greenery</td><td>100</td><td>143.062</td><td>158500</td><td>2</td></tr>
+<tr><td>11</td><td><a href="https://www.etsy.com/shop/LovelandGiftandMore">LovelandGiftandMore</a></td><td>kids &amp;amp; baby &gt; games &amp;amp; puzzles</td><td>100</td><td>141.243</td><td>19600</td><td>2</td></tr>
+<tr><td>12</td><td><a href="https://www.etsy.com/shop/BadgerandBramble">BadgerandBramble</a></td><td>kids &amp;amp; baby &gt; baby gift sets</td><td>100</td><td>139.47</td><td>34000</td><td>2</td></tr>
+<tr><td>13</td><td><a href="https://www.etsy.com/shop/LifetimeCreations">LifetimeCreations</a></td><td>home &amp;amp; living &gt; home decor &gt; mirrors</td><td>100</td><td>139.082</td><td>224500</td><td>2</td></tr>
+<tr><td>14</td><td><a href="https://www.etsy.com/shop/GiftingKnot">GiftingKnot</a></td><td>home &amp;amp; living &gt; home decor &gt; clocks</td><td>100</td><td>134.228</td><td>14100</td><td>2</td></tr>
+<tr><td>15</td><td><a href="https://www.etsy.com/shop/SuesseShoppe">SuesseShoppe</a></td><td>kids &amp;amp; baby &gt; baby gift sets</td><td>100</td><td>132.979</td><td>7300</td><td>2</td></tr>
+</tbody>
+</table>
+<p>Full 50 rows are in the CSV.</p>
+<h2>What’s in the CSV</h2>
+<p>Columns: <code>rank</code>, <code>shop</code>, <code>shop_url</code>, <code>title</code>, <code>category</code>, <code>sales_count</code>, <code>sales_precision</code>, <code>delta_last</code>, <code>sales_per_day</code>, <code>read_interval_days</code>, <code>history_days</code>, <code>as_of</code>, <code>snapshot_date</code>, <code>source</code>.</p>
+<h2>Full panel (token / paid runs)</h2>
+<p>This CSV is a <strong>sample</strong>. For arbitrary shops, categories, modelled rates (<code>units_day</code> / interval), breakout filters, or more than the top 50:</p>
+<ul>
+<li>Actor: <a href="https://apify.com/publicrecords/etsy-shop-velocity">publicrecords/etsy-shop-velocity</a></li>
+<li>Method walkthrough: <a href="https://geminigeorge22.github.io/blog/etsy-shop-sales-velocity/">Track any Etsy shop&#39;s sales velocity in 5 minutes</a></li>
+<li>MCP: <code>https://mcp.apify.com/?tools=publicrecords/etsy-shop-velocity</code></li>
+</ul>
+<h2>Disclaimer</h2>
+<p>Etsy® is a trademark of Etsy, Inc. This post, the CSV, and the Actor are <strong>not affiliated with, endorsed by, or sponsored by Etsy</strong>. Counters come from publicly visible shop pages. Data is as-is; use it within Etsy’s Terms of Use.</p>
+<p><em>Disclosure (again): published by the maintainer of <code>publicrecords/etsy-shop-velocity</code> (Public Records / publicrecords on Apify). The sample itself needs no Apify token.</em></p>
+</article>
+<footer><p><a href="https://geminigeorge22.github.io/blog/">← Blog</a></p></footer>
+</body></html>
