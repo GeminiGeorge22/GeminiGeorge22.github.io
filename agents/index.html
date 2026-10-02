@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>publicrecords Actors for MCP agents</title>
-<meta name="description" content="Pin publicrecords Apify Actors in your MCP client. Crosswalk flagship plus TED, USASpending, Grants.gov, UK Find a Tender, and Legistar. Tool cards and prompt pack for agents.">
+<meta name="description" content="Pin publicrecords Apify Actors in your MCP client. Crosswalk flagship plus Etsy search &amp; shop sales, TED, USASpending, Grants.gov, UK Find a Tender, and Legistar. Tool cards and prompt pack for agents.">
 <link rel="canonical" href="https://geminigeorge22.github.io/agents/">
 <meta name="robots" content="index,follow">
 <style>
@@ -35,6 +35,8 @@ h2{margin-top:2em}
 <li><strong>Official Grants.gov search2</strong> — federal FOA opportunities; keyword, agency, posted-within.</li>
 <li><strong>Official UK Find a Tender OCDS 1.1</strong> — above-threshold notices; keyword and CPV.</li>
 <li><strong>Official Legistar Web API</strong> — US city council meetings, agendas, minutes from public Granicus clients.</li>
+<li><strong>Etsy search listings</strong> — live keyword / market / category rows (title, price, shop, badges, rank). Use <strong>Etsy Search Scraper</strong>.</li>
+<li><strong>Etsy shop sales / velocity</strong> — daily counters, deltas, breakout flags from a hosted panel (no proxy). Use <strong>Etsy Shop Sales Tracker</strong>.</li>
 </ul>
 <p class="note">GovCon Opportunity Feed is not marketed as live on this site.</p>
 
@@ -52,6 +54,12 @@ h2{margin-top:2em}
   <code>publicrecords/uk-find-a-tender-scraper</code> · <a href="https://geminigeorge22.github.io/uktender/">site</a> · <a href="https://apify.com/publicrecords/uk-find-a-tender-scraper?utm_source=site&amp;utm_medium=agents&amp;utm_campaign=mcp">Store</a></li>
 <li><strong>Legistar Meetings</strong> — US city council meetings/agendas/minutes from public Legistar clients.<br>
   <code>publicrecords/legistar-meetings-scraper</code> · <a href="https://geminigeorge22.github.io/legistar/">site</a> · <a href="https://apify.com/publicrecords/legistar-meetings-scraper?utm_source=site&amp;utm_medium=agents&amp;utm_campaign=mcp">Store</a></li>
+<li><strong>Etsy Search Scraper</strong> — Live Etsy search listing rows (title, price, shop, badges, rank).<br>
+  <code>publicrecords/etsy-search-scraper</code> · <a href="https://geminigeorge22.github.io/etsy-search-scraper/">site</a> · <a href="https://apify.com/publicrecords/etsy-search-scraper?utm_source=site&amp;utm_medium=agents&amp;utm_campaign=mcp">Store</a></li>
+<li><strong>Etsy Shop Sales Tracker</strong> — Daily shop sales counters, velocity, breakouts (no proxy on panel path).<br>
+  <code>publicrecords/etsy-shop-velocity</code> · <a href="https://geminigeorge22.github.io/etsy-shop-velocity/">site</a> · <a href="https://apify.com/publicrecords/etsy-shop-velocity?utm_source=site&amp;utm_medium=agents&amp;utm_campaign=mcp">Store</a></li>
+<li><strong>Etsy Search &amp; Shop Sales MCP</strong> — Manifest pin for both Etsy Actors.<br>
+  <a href="https://github.com/GeminiGeorge22/etsy-sales-mcp">GeminiGeorge22/etsy-sales-mcp</a> · <a href="https://mcp.apify.com/?tools=publicrecords/etsy-shop-velocity,publicrecords/etsy-search-scraper">MCP pin</a></li>
 </ul>
 
 <h2>Tool cards for agents</h2>
@@ -87,6 +95,14 @@ h2{margin-top:2em}
 <pre>{
   "actor": "publicrecords/legistar-meetings-scraper",
   "input": { "clients": ["seattle"], "resource": "events", "maxItems": 50 }
+}</pre>
+<pre>{
+  "actor": "publicrecords/etsy-search-scraper",
+  "input": { "queries": ["ceramic mug"], "maxPages": 3 }
+}</pre>
+<pre>{
+  "actor": "publicrecords/etsy-shop-velocity",
+  "input": { "shops": ["OrelCeramics", "Bestickend"], "maxShops": 2 }
 }</pre>
 
 <h2>Example agent prompts</h2>

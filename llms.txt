@@ -1,6 +1,6 @@
 # publicrecords — Apify Actors for agents
 
-> Verified org socials (Crosswalk) + official TED / USASpending / Grants.gov / UK Find a Tender / Legistar APIs.
+> Verified org socials (Crosswalk) + Etsy search & shop sales + official TED / USASpending / Grants.gov / UK Find a Tender / Legistar APIs.
 > Published by the publicrecords maintainer on Apify.
 
 Site: https://geminigeorge22.github.io/
@@ -17,7 +17,7 @@ agents.md: https://geminigeorge22.github.io/agents.md
 
 ## MCP pin (all live Actors)
 
-https://mcp.apify.com?tools=publicrecords/company-social-profile-finder,publicrecords/eu-ted-notices-scraper,publicrecords/usaspending-awards-scraper,publicrecords/grants-gov-scraper,publicrecords/uk-find-a-tender-scraper,publicrecords/legistar-meetings-scraper,publicrecords/greenhouse-jobs-scraper,publicrecords/lever-jobs-scraper,publicrecords/ashby-jobs-scraper,publicrecords/smartrecruiters-jobs-scraper
+https://mcp.apify.com?tools=publicrecords/company-social-profile-finder,publicrecords/eu-ted-notices-scraper,publicrecords/usaspending-awards-scraper,publicrecords/grants-gov-scraper,publicrecords/uk-find-a-tender-scraper,publicrecords/legistar-meetings-scraper,publicrecords/greenhouse-jobs-scraper,publicrecords/lever-jobs-scraper,publicrecords/ashby-jobs-scraper,publicrecords/smartrecruiters-jobs-scraper,publicrecords/etsy-shop-velocity,publicrecords/etsy-search-scraper
 
 ## Live Actors (Store)
 
@@ -86,3 +86,21 @@ Disclosure: Published by the publicrecords maintainer on Apify.
    Store: https://apify.com/publicrecords/smartrecruiters-jobs-scraper
    Site: https://geminigeorge22.github.io/smartrecruiters-jobs/
    Use: SmartRecruiters job-board API postings released since a supplied date or window, with job metadata, URLs, timestamps and optional descriptions.
+
+## Live Actors — Etsy search & shop sales
+
+11. Etsy Search Scraper — Keyword, Market & Category Listings — publicrecords/etsy-search-scraper
+   Store: https://apify.com/publicrecords/etsy-search-scraper
+   Site: https://geminigeorge22.github.io/etsy-search-scraper/
+   MCP: https://mcp.apify.com?tools=publicrecords/etsy-search-scraper
+   Use: Live Etsy search listing rows (title, price, shop, badges, rank). Keyword, market, or category URL. Apify residential by default.
+
+12. Etsy Shop Sales Tracker & Scraper — publicrecords/etsy-shop-velocity
+   Store: https://apify.com/publicrecords/etsy-shop-velocity
+   Site: https://geminigeorge22.github.io/etsy-shop-velocity/
+   MCP: https://mcp.apify.com?tools=publicrecords/etsy-shop-velocity
+   Use: Daily sales / velocity rows for named Etsy shops (counters, history, breakout). No proxy on panel path.
+
+Etsy MCP manifest (both Actors): https://github.com/GeminiGeorge22/etsy-sales-mcp
+Etsy MCP pin: https://mcp.apify.com?tools=publicrecords/etsy-shop-velocity,publicrecords/etsy-search-scraper
+Tutorials: https://geminigeorge22.github.io/blog/etsy-search-scraper/ · https://geminigeorge22.github.io/blog/etsy-shop-sales-velocity/

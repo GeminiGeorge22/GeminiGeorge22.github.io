@@ -1,0 +1,12 @@
+# Etsy Shop Sales Tracker & Scraper
+
+Site: https://geminigeorge22.github.io/etsy-shop-velocity/
+Store: https://apify.com/publicrecords/etsy-shop-velocity
+MCP pin: https://mcp.apify.com?tools=publicrecords/etsy-shop-velocity
+MCP both: https://mcp.apify.com?tools=publicrecords/etsy-shop-velocity,publicrecords/etsy-search-scraper
+Manifest: https://github.com/GeminiGeorge22/etsy-sales-mcp
+Tutorial: https://geminigeorge22.github.io/blog/etsy-shop-sales-velocity/
+
+One question: How fast is this Etsy shop selling, and did it just break out?
+
+Hosted panel of public shop counters — no proxy on this path. One row per shop; velocity fields null until history exists.

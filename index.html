@@ -1,6 +1,6 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>publicrecords — Apify Actors for company socials and public-records feeds</title><meta name="description" content="publicrecords on Apify: Crosswalk company socials, Federal Opportunity Feed, EU TED, USASpending, Grants.gov, UK Find a Tender, and Legistar city council minutes. Publisher docs hubs."><link rel="canonical" href="https://geminigeorge22.github.io/"><meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large"><style>body{font:16px/1.55 system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;color:#111}li{margin:10px 0}h2{margin-top:2em}p.lead{color:#444}.cta{display:inline-block;margin:8px 0 16px;padding:10px 14px;background:#111;color:#fff;border-radius:8px;text-decoration:none}footer{margin-top:48px;color:#666;font-size:.9rem}</style></head><body>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>publicrecords — Apify Actors for company socials, Etsy search &amp; shop sales, and public-records feeds</title><meta name="description" content="publicrecords on Apify: Crosswalk company socials, Etsy Search Scraper, Etsy Shop Sales Tracker, Federal Opportunity Feed, EU TED, USASpending, Grants.gov, UK Find a Tender, Legistar, and MCP pins. Publisher docs hubs."><link rel="canonical" href="https://geminigeorge22.github.io/"><meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large"><style>body{font:16px/1.55 system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;color:#111}li{margin:10px 0}h2{margin-top:2em}p.lead{color:#444}.cta{display:inline-block;margin:8px 0 16px;padding:10px 14px;background:#111;color:#fff;border-radius:8px;text-decoration:none}footer{margin-top:48px;color:#666;font-size:.9rem}</style></head><body>
 <h1>Actors by publicrecords</h1>
-<p class="lead">Publisher docs for live Apify Actors that resolve company socials and pull official public-records APIs into flat JSON. Each hub below is the long-form surface for that Actor — what it returns, who it is for, and what you can rely on. Store listings stay on apify.com; this site is for search, agents, and inbound authority.</p>
+<p class="lead">Publisher docs for live Apify Actors that resolve company socials, scrape Etsy search &amp; shop sales, and pull official public-records APIs into flat JSON. Each hub below is the long-form surface for that Actor — what it returns, who it is for, and what you can rely on. Store listings stay on apify.com; this site is for search, agents, and inbound authority.</p>
 
 <h2>Flagship</h2>
 <ul>
@@ -21,6 +21,13 @@
 <li><a href="./uktender/"><strong>UK Find a Tender</strong></a> — Above-threshold notices via the official OCDS 1.1 API.</li>
 </ul>
 
+
+<h2>Etsy search and shop sales</h2>
+<ul>
+<li><a href="./etsy-search-scraper/"><strong>Etsy Search Scraper</strong></a> — Live Etsy search as listing rows (title, price, shop, badges, rank). Keyword, market, or category. Apify residential by default.</li>
+<li><a href="./etsy-shop-velocity/"><strong>Etsy Shop Sales Tracker &amp; Scraper</strong></a> — Daily sales counters, 7-/28-day changes, modelled rates and breakout flags. One row per shop; no proxy on the panel path.</li>
+<li><a href="https://github.com/GeminiGeorge22/etsy-sales-mcp"><strong>Etsy Search &amp; Shop Sales MCP</strong></a> (v1.0.1) — Manifest-only pin for both Actors via <a href="https://mcp.apify.com/?tools=publicrecords/etsy-shop-velocity,publicrecords/etsy-search-scraper">Apify MCP</a>.</li>
+</ul>
 <h2>Jobs and hiring signals</h2>
 <ul>
 <li><a href="./greenhouse-jobs/"><strong>Greenhouse Jobs Scraper — New Postings Since Any Date</strong></a> — Greenhouse job-board API postings with metadata, URLs, timestamps and optional descriptions.</li>
@@ -35,11 +42,11 @@
 <li><a href="./for-agents/">For agents</a> — RAG routing: when user asks X → call Actor Y</li>
 <li><a href="./agents/">Agents / MCP</a> — pin URL, tool cards, <a href="./agents/prompt-pack.json">prompt-pack.json</a>, <a href="./llms.txt">llms.txt</a></li>
 <li><a href="./agents/dialects/">Dialects</a> — OpenAI / Anthropic / LangChain / CrewAI / Cursor / Claude MCP packs</li>
-<li><a href="./mcp/">MCP hub</a> — one-paste remote URL for the six live public-records tools</li>
+<li><a href="./mcp/">MCP hub</a> — one-paste remote URL for public-records tools · <a href="https://github.com/GeminiGeorge22/etsy-sales-mcp">Etsy MCP</a></li>
 <li><a href="./crosswalk/vs/linkedin-company-finder-from-website/">Crosswalk vs LinkedIn finders</a> — dated Store comparisons</li>
 <li><a href="./integrations/">Integrations</a> — n8n and workflow recipes</li>
-<li><a href="./blog/">Blog</a> — LinkedIn-from-website, Maps enrich, fleet API feeds</li>
+<li><a href="./blog/">Blog</a> — Etsy search &amp; shop sales, LinkedIn-from-website, Maps enrich, fleet API feeds</li>
 </ul>
 <p><a class="cta" href="https://apify.com/publicrecords/company-social-profile-finder?utm_source=site&amp;utm_medium=home&amp;utm_campaign=crosswalk&amp;utm_content=for-developers">Try Crosswalk on Apify →</a></p>
-<footer><p>Published by the publicrecords maintainer on Apify. · Updated 2026-09-29</p></footer>
+<footer><p>Published by the publicrecords maintainer on Apify. · Updated 2026-10-02</p></footer>
 </body></html>

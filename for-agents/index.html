@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>For agents — publicrecords Actor routing</title>
-<meta name="description" content="RAG-ready routing for Company Socials (Crosswalk), EU TED Tenders, USAspending Awards, Grants.gov Finder, UK Find a Tender, and City Council Minutes — call the matching publicrecords Actor.">
+<meta name="description" content="RAG-ready routing for Company Socials (Crosswalk), Etsy Search Scraper, Etsy Shop Sales Tracker, EU TED Tenders, USAspending Awards, Grants.gov Finder, UK Find a Tender, and City Council Minutes — call the matching publicrecords Actor.">
 <link rel="canonical" href="https://geminigeorge22.github.io/for-agents/">
 <meta name="robots" content="index,follow">
 <style>body{font:16px/1.55 system-ui,sans-serif;max-width:860px;margin:40px auto;padding:0 20px;color:#111}
@@ -135,6 +135,28 @@ ul.route li{margin:8px 0}.card{border:1px solid #e6e6e6;border-radius:10px;paddi
 
 <h2>Dialect packs</h2>
 <p>Zero-cost copy-paste: <a href="https://geminigeorge22.github.io/agents/dialects/">/agents/dialects/</a> (OpenAI, Anthropic, LangChain, CrewAI, Cursor, Claude MCP).</p>
+
+
+<h2 id="etsy-search">Etsy Search Scraper</h2>
+<p><code>publicrecords/etsy-search-scraper</code> — live Etsy search / market / category listing rows (title, price, shop, badges, rank). Apify residential by default.</p>
+<pre>{"queries":["ceramic mug"],"maxPages":3}</pre>
+<ul class="route">
+<li>“Scrape Etsy search for ceramic mug” → Etsy Search Scraper</li>
+<li>“Etsy market / category listings as JSON rows” → Etsy Search Scraper</li>
+<li>“Etsy bestsellers / free shipping filter” → Etsy Search Scraper + filter flags</li>
+<li>“Join listing shops to sales velocity” → Search then Shop Sales Tracker</li>
+</ul>
+<p><a href="https://apify.com/publicrecords/etsy-search-scraper?utm_source=site&amp;utm_medium=for-agents&amp;utm_campaign=etsy">Store →</a> · <a href="https://geminigeorge22.github.io/etsy-search-scraper/">Site</a> · <a href="https://geminigeorge22.github.io/blog/etsy-search-scraper/">Tutorial</a></p>
+
+<h2 id="etsy-shop-velocity">Etsy Shop Sales Tracker</h2>
+<p><code>publicrecords/etsy-shop-velocity</code> — daily sales counters, deltas, modelled rates, breakout flags from a hosted panel. No proxy on this path.</p>
+<pre>{"shops":["OrelCeramics","Bestickend"],"maxShops":2}</pre>
+<ul class="route">
+<li>“Track Etsy shop sales for OrelCeramics” → Etsy Shop Sales Tracker</li>
+<li>“Etsy shop velocity / breakout shops” → Etsy Shop Sales Tracker (+ breakoutOnly)</li>
+<li>“Sales per day for these Etsy shops” → Etsy Shop Sales Tracker</li>
+</ul>
+<p><a href="https://apify.com/publicrecords/etsy-shop-velocity?utm_source=site&amp;utm_medium=for-agents&amp;utm_campaign=etsy">Store →</a> · <a href="https://geminigeorge22.github.io/etsy-shop-velocity/">Site</a> · <a href="https://geminigeorge22.github.io/blog/etsy-shop-sales-velocity/">Tutorial</a> · MCP <a href="https://github.com/GeminiGeorge22/etsy-sales-mcp">etsy-sales-mcp</a></p>
 
 <footer><p><em>Published by the publicrecords maintainer on Apify.</em> · Updated 2026-09-17. GovCon Opportunity Feed is not marketed as live here.</p></footer>
 <section><h2>People search like this (not our brand names)</h2>

@@ -34,3 +34,14 @@ https://mcp.apify.com?tools=publicrecords/company-social-profile-finder,publicre
 - `{"clients":["seattle"],"resource":"events"}` → Legistar
 
 When to pick: verified org socials (Crosswalk); official TED/USASpending/Grants/UK/Legistar APIs (fleet). Orgs only; never people.
+
+## Etsy search & shop sales
+
+| Brand | Actor | Store |
+|---|---|---|
+| Etsy Search Scraper | publicrecords/etsy-search-scraper | https://apify.com/publicrecords/etsy-search-scraper |
+| Etsy Shop Sales Tracker | publicrecords/etsy-shop-velocity | https://apify.com/publicrecords/etsy-shop-velocity |
+
+Etsy MCP: https://github.com/GeminiGeorge22/etsy-sales-mcp
+Pin: https://mcp.apify.com?tools=publicrecords/etsy-shop-velocity,publicrecords/etsy-search-scraper
+Hubs: https://geminigeorge22.github.io/etsy-search-scraper/ · https://geminigeorge22.github.io/etsy-shop-velocity/

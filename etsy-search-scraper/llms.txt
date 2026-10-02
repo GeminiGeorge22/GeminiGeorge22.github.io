@@ -1,0 +1,12 @@
+# Etsy Search Scraper — Keyword, Market & Category Listings
+
+Site: https://geminigeorge22.github.io/etsy-search-scraper/
+Store: https://apify.com/publicrecords/etsy-search-scraper
+MCP pin: https://mcp.apify.com?tools=publicrecords/etsy-search-scraper
+MCP both: https://mcp.apify.com?tools=publicrecords/etsy-shop-velocity,publicrecords/etsy-search-scraper
+Manifest: https://github.com/GeminiGeorge22/etsy-sales-mcp
+Tutorial: https://geminigeorge22.github.io/blog/etsy-search-scraper/
+
+One question: What listings does Etsy show for this keyword/market/category as structured rows?
+
+Apify residential proxy by default (passthrough, no markup). Pay per complete listing row; blocked pages charge nothing.
