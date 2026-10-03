@@ -1,79 +1,87 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Scrape Etsy search results into listing rows — publicrecords</title>
-<meta name="description" content="Measured walkthrough: publicrecords/etsy-search-scraper works out of the box on Apify residential proxy; 36 listing rows for ceramic mug in 52.6s at $0.221 Console PPE. No proxy markup. MCP link included.">
+<title>Scrape Etsy search results with sort + price filters — publicrecords</title>
+<meta name="description" content="Etsy Search Scraper 0.2.3: sort and minPrice/maxPrice. Store-page run fB8Y28DNUy5kJ9xfg delivered 10 listing rows. Actor-start $0.005 + listing-row $0.006.">
 <link rel="canonical" href="https://geminigeorge22.github.io/blog/etsy-search-scraper/">
 <meta name="robots" content="index,follow">
 <style>body{font:16px/1.55 system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;color:#111}pre,code{background:#f4f4f5;border-radius:6px}pre{padding:12px;overflow:auto}table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.95rem}th,td{border:1px solid #ddd;padding:6px 8px;text-align:left}th{background:#f6f8fa}a.cta{display:inline-block;margin:16px 0;padding:10px 14px;background:#111;color:#fff;border-radius:8px;text-decoration:none}ul,ol{padding-left:1.2em}footer{margin-top:48px;color:#666;font-size:.9rem}</style>
 </head><body>
 <nav><a href="https://geminigeorge22.github.io/">publicrecords</a> · <a href="https://geminigeorge22.github.io/blog/">Blog</a></nav>
 <article>
-<h1>Scrape Etsy search results into listing rows</h1>
-<p><em>2026-10-02</em></p>
+<h1>Scrape Etsy search results with sort + price filters</h1>
+<p><em>2026-10-03 (America/Toronto). Actor build 0.2.3.</em></p>
 <p><em>Disclosure: I publish and maintain the Actor this tutorial uses (<code>publicrecords/etsy-search-scraper</code> on Apify).</em></p>
-<p>You have a search query — a niche keyword, a product type, a competitor phrase — and you need structured listing rows (title, price, shop, badges), not a screenshot of page one. Opening tabs by hand does not leave a dataset you can filter, score, or join to a shop tracker.</p>
+<p>You have a search query and you need structured listing rows you can filter by price and sort the way Etsy’s own menu does — not a screenshot of page one.</p>
 <h2>The method</h2>
 <ol>
-<li><strong>Run on Apify residential proxy (default).</strong> Search HTML is challenged often; plain datacenter egress from Apify cloud commonly fails. The Actor defaults to Apify Proxy RESIDENTIAL (billed by Apify as proxy usage — no markup on our PPE). You can also plug in your own residential proxy. If every page is challenged, the Actor exits <code>blocked_on_your_proxy</code> and charges <strong>no</strong> listing rows for those pages.</li>
-<li><strong>Parse listing cards into one row per listing.</strong> Fields include <code>listing_id</code>, <code>url</code>, <code>title</code>, <code>price</code>, <code>currency</code>, <code>shop_name</code> / <code>shop_url</code>, rating / review counts, and badges (<code>bestseller</code>, <code>popular_now</code>, <code>free_shipping</code>, etc.), plus <code>page</code>, <code>position</code>, and <code>query</code>.</li>
-<li><strong>Paginate under a hard cap.</strong> Set <code>maxPages</code> (and optionally <code>maxItems</code>) so a warm hang cannot run forever. Incomplete cards (missing price/title/shop) are pushed free and never billed.</li>
-<li><strong>Bill only delivered complete rows.</strong> PPE is actor-start once + listing-row per complete listing. Blocked pages charge nothing. Proxy usage is Apify’s bill, separate from our event prices.</li>
-<li><strong>Join to shop velocity when you care about the seller, not only the card.</strong> Listing rows give you the shop name; the companion Actor <code>publicrecords/etsy-shop-velocity</code> turns shop names into sales counters and rates (no proxy on that path).</li>
+<li><strong>Run on Apify residential proxy (default).</strong> Passthrough — Apify bills proxy usage; our PPE has no proxy markup. A blocked page charges <strong>no</strong> listing rows.</li>
+<li><strong>Set sort + price filters with the real input fields.</strong> <code>sort</code> is one of <code>relevance</code>, <code>newest</code>, <code>price_asc</code>, <code>price_desc</code>, <code>top_reviews</code>. <code>minPrice</code> / <code>maxPrice</code> are whole currency units.</li>
+<li><strong>Cap the run</strong> with <code>maxItems</code> and/or <code>maxPages</code>.</li>
+<li><strong>Bill only delivered complete rows.</strong> PPE: actor-start <strong>$0.005</strong> once + listing-row <strong>$0.006</strong> each. Never quote listing-row-bulk $0.004.</li>
+<li><strong>Join to shop velocity when you care about the seller.</strong> Companion Actor <code>publicrecords/etsy-shop-velocity</code>.</li>
 </ol>
-<h2>Doing it for real (measured run)</h2>
-<p><strong>Etsy Search Scraper</strong> (<code>publicrecords/etsy-search-scraper</code>) returns one dataset row per listing card from public Etsy search HTML. It works out of the box on <strong>Apify residential proxy</strong> (passthrough — Apify bills proxy usage to your account; our PPE is only actor-start + listing-row). Or plug in your own residential proxy if you prefer.</p>
-<h3>Proof run (2026-10-02)</h3>
+<h2>Doing it for real (Store-page run)</h2>
+<p><strong>Etsy Search Scraper</strong> (<code>publicrecords/etsy-search-scraper</code>) 0.2.3.</p>
+<h3>Proof run (2026-10-03, Store / WEB origin)</h3>
 <table>
 <thead><tr><th>Field</th><th>Value</th></tr></thead>
 <tbody>
 <tr><td>Actor</td><td><code>publicrecords/etsy-search-scraper</code></td></tr>
-<tr><td>Package / build</td><td>package <strong>0.1.11</strong>; Apify buildNumber <strong>0.1.10</strong>; buildId <code>0a3gEUM7nBFBabCvl</code> (candidate); commit <code>4f902ed7277471c93111468ea476883c91a50bc2</code></td></tr>
-<tr><td>Run ID</td><td><code>pRpdAMmfeMHdmuRXA</code></td></tr>
+<tr><td>Build</td><td><strong>0.2.3</strong> (<code>pkzvwNrteZ7Lq8Nhh</code>, tagged latest)</td></tr>
+<tr><td>Run ID</td><td><code>fB8Y28DNUy5kJ9xfg</code></td></tr>
+<tr><td>Origin</td><td>WEB (Apify Store / console)</td></tr>
 <tr><td>Status</td><td>SUCCEEDED</td></tr>
-<tr><td>Runtime</td><td>52.561 s</td></tr>
-<tr><td>Dataset</td><td><code>qzksphWvgq6TBnFcg</code> (36 items)</td></tr>
-<tr><td>RUN_SUMMARY</td><td>query <code>ceramic mug</code>: pages=3, rows=36, stopped=<code>max_pages_reached</code>; rows_served=36, pages_fetched=4</td></tr>
-<tr><td>Fill (complete rows)</td><td>price <strong>36/36</strong>, shop_name <strong>36/36</strong>, title <strong>36/36</strong>; missing fields: none</td></tr>
-<tr><td>Charged events</td><td>actor-start <strong>1</strong>, listing-row <strong>36</strong> (no listing-row-bulk event)</td></tr>
-<tr><td>Console pricing (PPE)</td><td>actor-start <strong>$0.005</strong> + listing-row <strong>$0.006</strong> each → <strong>$0.221</strong> for this 36-row run</td></tr>
+<tr><td>Dataset</td><td><code>RCiYoXZM1UKsynzNG</code> (<strong>10</strong> items)</td></tr>
+<tr><td>Sort / price</td><td><code>sort=price_asc</code>, <code>minPrice=10</code>, <code>maxPrice=40</code></td></tr>
+<tr><td>Console pricing (PPE)</td><td>actor-start <strong>$0.005</strong> + listing-row <strong>$0.006</strong> × 10 → <strong>$0.065</strong></td></tr>
 </tbody>
 </table>
-<p>Input used (S1 audit input — default Apify RESIDENTIAL passthrough):</p>
+<p>Input used (from that Store-page run):</p>
 <pre><code>{
-  "queries": ["ceramic mug"],
-  "maxPages": 3,
+  "fillLazyCards": true,
+  "free_shipping": false,
+  "instant_download": false,
+  "is_best_seller": false,
+  "is_discounted": false,
+  "is_handmade_only": false,
+  "is_personalizable": false,
+  "is_star_seller": false,
+  "maxItems": 10,
+  "maxPages": 1,
+  "maxPrice": 40,
+  "minPrice": 10,
+  "queries": [
+    "ceramic mug"
+  ],
+  "sort": "price_asc",
   "proxyConfiguration": {
     "useApifyProxy": true,
-    "apifyProxyGroups": ["RESIDENTIAL"],
+    "apifyProxyGroups": [
+      "RESIDENTIAL"
+    ],
     "apifyProxyCountry": "US"
-  },
-  "maxItems": 0,
-  "is_best_seller": false,
-  "is_star_seller": false,
-  "free_shipping": false,
-  "is_discounted": false,
-  "instant_download": false
+  }
 }</code></pre>
-<p>Output rows (abbreviated; first three of 36 from the dataset — no invented fields):</p>
+<p>Output rows (first 3 of 10; full file in the <a href="https://github.com/GeminiGeorge22/etsy-search-example">example repo</a>):</p>
 <pre><code>[
   {
-    "listing_id": "4296141840",
-    "url": "https://www.etsy.com/listing/4296141840/coffee-mug-kj-pottery",
-    "title": "Coffee Mug - KJ Pottery",
-    "price": 57,
+    "listing_id": "4560879110",
+    "url": "https://www.etsy.com/listing/4560879110/1980s-christmas-coffee-mug",
+    "title": "1980\u2019s Christmas Coffee Mug",
+    "price": 10,
     "currency": "$",
-    "shop_id": "7825028",
-    "shop_name": "KJPottery",
-    "shop_url": "https://www.etsy.com/shop/KJPottery",
+    "shop_id": "11795502",
+    "shop_name": "TheNostalgiaHunter",
+    "shop_url": "https://www.etsy.com/shop/TheNostalgiaHunter",
     "rating_value": 4.9,
-    "review_count": 3500,
+    "review_count": 2200,
     "review_count_approx": true,
-    "bestseller": true,
+    "bestseller": false,
     "popular_now": false,
     "star_seller": false,
     "etsys_pick": false,
-    "free_shipping": true,
+    "free_shipping": false,
     "is_ad": null,
     "position": 1,
     "surface": "neu",
@@ -81,19 +89,19 @@
     "query": "ceramic mug"
   },
   {
-    "listing_id": "837615700",
-    "url": "https://www.etsy.com/listing/837615700/handmade-ceramic-coffee-mug-large",
-    "title": "Handmade Ceramic Coffee Mug: Porcelain Espresso Cup",
-    "price": 35.5,
+    "listing_id": "1658939001",
+    "url": "https://www.etsy.com/listing/1658939001/ill-give-you-a-daisy-a-day-mug-11oz-most",
+    "title": "Daisy a Day Coffee Mug, 11oz Ceramic Mug",
+    "price": 10,
     "currency": "$",
-    "shop_id": "18265806",
-    "shop_name": "BZceramics",
-    "shop_url": "https://www.etsy.com/shop/BZceramics",
-    "rating_value": 4.9,
-    "review_count": 1600,
-    "review_count_approx": true,
+    "shop_id": "48580588",
+    "shop_name": "SmugMugMugs",
+    "shop_url": "https://www.etsy.com/shop/SmugMugMugs",
+    "rating_value": 5,
+    "review_count": 51,
+    "review_count_approx": false,
     "bestseller": false,
-    "popular_now": true,
+    "popular_now": false,
     "star_seller": false,
     "etsys_pick": false,
     "free_shipping": false,
@@ -104,22 +112,22 @@
     "query": "ceramic mug"
   },
   {
-    "listing_id": "1371848548",
-    "url": "https://www.etsy.com/listing/1371848548/handmade-ceramic-mug-large-size",
-    "title": "Handmade Ceramic Mug - Large Size",
-    "price": 35,
+    "listing_id": "4523191049",
+    "url": "https://www.etsy.com/listing/4523191049/america-250th-birthday-mug-1776",
+    "title": "America 250th Birthday Mug | 1776 Bicentennial Style Ceramic Mug | Patriotic Gift | Commemorative Americana Mug",
+    "price": 10,
     "currency": "$",
-    "shop_id": "5855415",
-    "shop_name": "Neherpottery",
-    "shop_url": "https://www.etsy.com/shop/Neherpottery",
+    "shop_id": "28112493",
+    "shop_name": "SouthernRoyaltyUS",
+    "shop_url": "https://www.etsy.com/shop/SouthernRoyaltyUS",
     "rating_value": 5,
-    "review_count": 3800,
-    "review_count_approx": true,
-    "bestseller": true,
+    "review_count": 32,
+    "review_count_approx": false,
+    "bestseller": false,
     "popular_now": false,
     "star_seller": false,
     "etsys_pick": false,
-    "free_shipping": true,
+    "free_shipping": false,
     "is_ad": null,
     "position": 3,
     "surface": "neu",
@@ -127,23 +135,23 @@
     "query": "ceramic mug"
   }
 ]</code></pre>
-<h3>When a page is challenged (measured)</h3>
-<p>An earlier attempt with the same input (<code>9RfVZjBbBvCvbs8JX</code>) ended after ~620 s with <code>blocked_on_your_proxy</code> — every page challenged on that proxy path, so <strong>zero</strong> listing-row charges. Retry on Apify RESIDENTIAL US (<code>pRpdAMmfeMHdmuRXA</code>) succeeded in ~53 s with 36 complete rows. Occasional challenges and a retry are normal; prefer the default RESIDENTIAL group, and you only pay listing-row for rows actually delivered.</p>
-<h3>Cost math you can recompute</h3>
+<p>Row count for this sample is <strong>10</strong> (the Store run’s <code>maxItems</code> was 10). Not padded.</p>
+<h3>Cost math</h3>
 <ul>
-<li>1 complete listing row: $0.005 + $0.006 = <strong>$0.011</strong></li>
-<li>36 rows (this tutorial): $0.005 + 36×$0.006 = <strong>$0.221</strong></li>
-<li>100 complete rows: $0.005 + 100×$0.006 = <strong>$0.605</strong></li>
+<li>Actor-start: <strong>$0.005</strong></li>
+<li>Listing row: <strong>$0.006</strong> each</li>
+<li>10 complete rows: $0.005 + 10×$0.006 = <strong>$0.065</strong></li>
+<li>Do <strong>not</strong> quote listing-row-bulk $0.004</li>
 </ul>
-<p>Prices are Console PPE as of the audit read on 2026-10-02 (actor-start $0.005, listing-row $0.006 only — no listing-row-bulk, <strong>no proxy markup</strong>). Quote Console if they change. Apify residential proxy usage is billed separately by Apify.</p>
-<h3>Store + MCP</h3>
-<p>Actor (Store): <a href="https://apify.com/publicrecords/etsy-search-scraper?utm_source=site&utm_medium=article&utm_campaign=etsy-search-scraper">https://apify.com/publicrecords/etsy-search-scraper</a></p>
-<p>MCP for Claude Desktop / Cursor / any MCP client: <a href="https://mcp.apify.com/?tools=publicrecords/etsy-search-scraper">https://mcp.apify.com/?tools=publicrecords/etsy-search-scraper</a></p>
-<p>Companion (shop counters, no proxy): <a href="https://apify.com/publicrecords/etsy-shop-velocity">https://apify.com/publicrecords/etsy-shop-velocity</a> · MCP <a href="https://mcp.apify.com/?tools=publicrecords/etsy-shop-velocity"><code>https://mcp.apify.com/?tools=publicrecords/etsy-shop-velocity</code></a></p>
+<h3>Store + MCP + one-command example</h3>
+<p>Actor (Store): <a href="https://apify.com/publicrecords/etsy-search-scraper">https://apify.com/publicrecords/etsy-search-scraper</a></p>
+<p>MCP: <code>https://mcp.apify.com/?tools=publicrecords/etsy-search-scraper</code></p>
+<p>Example repo: <a href="https://github.com/GeminiGeorge22/etsy-search-example">GeminiGeorge22/etsy-search-example</a></p>
+<pre><code>apify call publicrecords/etsy-search-scraper --input '{"fillLazyCards": true, "free_shipping": false, "instant_download": false, "is_best_seller": false, "is_discounted": false, "is_handmade_only": false, "is_personalizable": false, "is_star_seller": false, "maxItems": 10, "maxPages": 1, "maxPrice": 40, "minPrice": 10, "queries": ["ceramic mug"], "sort": "price_asc", "proxyConfiguration": {"useApifyProxy": true, "apifyProxyGroups": ["RESIDENTIAL"], "apifyProxyCountry": "US"}}'</code></pre>
+<a class="cta" href="https://apify.com/publicrecords/etsy-search-scraper">Open on Apify Store →</a>
 <h2>Disclaimer</h2>
-<p>Etsy® is a trademark of Etsy, Inc. This post and the Actor are <strong>not affiliated with, endorsed by, or sponsored by Etsy</strong>. Rows come from publicly visible search pages via Apify residential proxy (default) or a proxy you configure. Data is as-is; use it within Etsy’s Terms of Use.</p>
+<p>Etsy® is a trademark of Etsy, Inc. This post and the Actor are <strong>not affiliated with, endorsed by, or sponsored by Etsy</strong>.</p>
 <p><em>Disclosure (again): published by the maintainer of <code>publicrecords/etsy-search-scraper</code> (Public Records / publicrecords on Apify).</em></p>
-<p><a class="cta" href="https://apify.com/publicrecords/etsy-search-scraper?utm_source=site&utm_medium=blog&utm_campaign=etsy-search-scraper&utm_content=etsy-search-scraper">Try Etsy Search Scraper on Apify →</a></p>
 </article>
-<footer><p><em>Published by the publicrecords maintainer on Apify.</em></p></footer>
+<footer>publicrecords · <a href="https://apify.com/publicrecords/etsy-search-scraper">Store</a></footer>
 </body></html>
