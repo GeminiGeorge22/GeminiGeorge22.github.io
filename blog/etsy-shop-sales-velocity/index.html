@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Track any Etsy shop's sales velocity in 5 minutes (no proxy) — publicrecords</title>
-<meta name="description" content="Measured walkthrough: run publicrecords/etsy-shop-velocity on Apify, read real shop counters, cost $0.011 for 2 shops. No proxy. MCP link included.">
+<meta name="description" content="Measured walkthrough: run publicrecords/etsy-shop-velocity on Apify, read real shop counters, about 0.6¢ for 2 shops at Oct 28, 2026 prices. No proxy. MCP link included.">
 <link rel="canonical" href="https://geminigeorge22.github.io/blog/etsy-shop-sales-velocity/">
 <meta name="robots" content="index,follow">
 <style>body{font:16px/1.55 system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;color:#111}pre,code{background:#f4f4f5;border-radius:6px}pre{padding:12px;overflow:auto}table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.95rem}th,td{border:1px solid #ddd;padding:6px 8px;text-align:left}th{background:#f6f8fa}a.cta{display:inline-block;margin:16px 0;padding:10px 14px;background:#111;color:#fff;border-radius:8px;text-decoration:none}ul,ol{padding-left:1.2em}footer{margin-top:48px;color:#666;font-size:.9rem}</style>
@@ -28,13 +28,11 @@
 <thead><tr><th>Field</th><th>Value</th></tr></thead>
 <tbody>
 <tr><td>Actor</td><td><code>publicrecords/etsy-shop-velocity</code></td></tr>
-<tr><td>Build</td><td>latest (listing build 0.2.5)</td></tr>
-<tr><td>Run ID</td><td><code>lWWrFPgwZcu6DYYKe</code></td></tr>
 <tr><td>Status</td><td>SUCCEEDED</td></tr>
 <tr><td>Runtime</td><td>5.314 s</td></tr>
-<tr><td>Dataset</td><td><code>w4HG8g4gRIbzDRLIx</code> (2 items)</td></tr>
+<tr><td>Dataset</td><td>2 items</td></tr>
 <tr><td>RUN_SUMMARY</td><td>panel=313, matched=2, served=2, charged_rows=2, snapshot_date=2026-09-30, stale=true</td></tr>
-<tr><td>Console pricing (PPE)</td><td>actor-start <strong>$0.005</strong> + shop-row <strong>$0.003</strong> each → <strong>$0.011</strong> for this 2-shop run</td></tr>
+<tr><td>Cost at Oct 28, 2026 prices (<a href="https://apify.com/publicrecords/etsy-shop-velocity/pricing">Store pricing</a>)</td><td>2 × 0.3¢ + 0.005¢ → about <strong>0.6¢</strong> for this 2-shop run on the Free plan</td></tr>
 </tbody>
 </table>
 <p>Input used (Store prefill shops):</p>
@@ -86,14 +84,14 @@
 ]</code></pre>
 <h3>What those nulls mean (measured, not marketing)</h3>
 <p>On this run every shop had <code>history_days: 1</code>. The Actor therefore left <code>delta_last</code>, <code>sales_per_day</code>, <code>delta_7d</code>, <code>delta_28d</code>, and <code>units_day</code> as <code>null</code>. That is correct: velocity and breakout flags are not filled until successive panel reads accumulate. The README states breakouts need 7 days of history. The panel snapshot date was <code>2026-09-30</code> and the run marked <code>snapshot_stale: true</code> on 2026-10-02.</p>
-<p>A second proof run the same night (<code>5dCSPEknPT5wtoCLH</code>, input <code>minSales: 1000</code>, <code>maxShops: 5</code>) returned in <strong>4.59 s</strong>, charged <strong>5</strong> shop-rows (<strong>$0.020</strong> at Console rates), and showed the same pattern: e.g. PersonalizationMall <code>sales_count=829600</code> (rounded), <code>history_days=1</code>, velocity fields null, <code>snapshot_stale=true</code>.</p>
+<p>A second proof run the same night (input <code>minSales: 1000</code>, <code>maxShops: 5</code>) returned in <strong>4.59 s</strong>, charged <strong>5</strong> shop rows, and showed the same pattern: e.g. PersonalizationMall <code>sales_count=829600</code> (rounded), <code>history_days=1</code>, velocity fields null, <code>snapshot_stale=true</code>.</p>
 <h3>Cost math you can recompute</h3>
 <ul>
-<li>1 shop: $0.005 + $0.003 = <strong>$0.008</strong></li>
-<li>2 shops (this tutorial): $0.005 + 2×$0.003 = <strong>$0.011</strong></li>
-<li>5 shops (second proof): $0.005 + 5×$0.003 = <strong>$0.020</strong></li>
+<li>1 shop: 0.3¢ + 0.005¢ ≈ <strong>0.3¢</strong></li>
+<li>2 shops (this tutorial): 2 × 0.3¢ + 0.005¢ ≈ <strong>0.6¢</strong></li>
+<li>5 shops (second proof): 5 × 0.3¢ + 0.005¢ ≈ <strong>1.5¢</strong></li>
 </ul>
-<p>Prices are Console PPE as of the listing read on 2026-10-02 (actor-start $0.005, shop-row $0.003). Quote Console if they change.</p>
+<p>Prices as of Oct 28, 2026 (<a href="https://apify.com/publicrecords/etsy-shop-velocity/pricing">Store pricing</a>): <strong>0.3¢</strong> per shop row on the Free plan (0.285¢ Bronze, 0.27¢ Silver, 0.255¢ Gold and up), plus a <strong>0.005¢</strong> start fee once per run. The Store pricing page is the live source.</p>
 <h3>Store + MCP</h3>
 <p>Actor (Store): <a href="https://apify.com/publicrecords/etsy-shop-velocity?utm_source=site&amp;utm_medium=article&amp;utm_campaign=etsy-shop-velocity">https://apify.com/publicrecords/etsy-shop-velocity</a></p>
 <p>MCP for Claude Desktop / Cursor: <a href="https://mcp.apify.com/?tools=publicrecords/etsy-shop-velocity">https://mcp.apify.com/?tools=publicrecords/etsy-shop-velocity</a></p>

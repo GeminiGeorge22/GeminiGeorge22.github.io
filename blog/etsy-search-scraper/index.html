@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Scrape Etsy search results with sort + price filters — publicrecords</title>
-<meta name="description" content="Etsy Search Scraper 0.2.3: sort and minPrice/maxPrice. Store-page run fB8Y28DNUy5kJ9xfg delivered 10 listing rows. Actor-start $0.005 + listing-row $0.006.">
+<meta name="description" content="Etsy Search Scraper: sort and minPrice/maxPrice. A Store-page run delivered 10 listing rows. As of Oct 28, 2026: 0.4¢ per listing row plus a 0.005¢ start fee per run.">
 <link rel="canonical" href="https://geminigeorge22.github.io/blog/etsy-search-scraper/">
 <meta name="robots" content="index,follow">
 <style>body{font:16px/1.55 system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;color:#111}pre,code{background:#f4f4f5;border-radius:6px}pre{padding:12px;overflow:auto}table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.95rem}th,td{border:1px solid #ddd;padding:6px 8px;text-align:left}th{background:#f6f8fa}a.cta{display:inline-block;margin:16px 0;padding:10px 14px;background:#111;color:#fff;border-radius:8px;text-decoration:none}ul,ol{padding-left:1.2em}footer{margin-top:48px;color:#666;font-size:.9rem}</style>
@@ -10,7 +10,7 @@
 <nav><a href="https://geminigeorge22.github.io/">publicrecords</a> · <a href="https://geminigeorge22.github.io/blog/">Blog</a></nav>
 <article>
 <h1>Scrape Etsy search results with sort + price filters</h1>
-<p><em>2026-10-03 (America/Toronto). Actor build 0.2.3.</em></p>
+<p><em>2026-10-03 (America/Toronto). Prices updated Oct 28, 2026.</em></p>
 <p><em>Disclosure: I publish and maintain the Actor this tutorial uses (<code>publicrecords/etsy-search-scraper</code> on Apify).</em></p>
 <p>You have a search query and you need structured listing rows you can filter by price and sort the way Etsy’s own menu does — not a screenshot of page one.</p>
 <h2>The method</h2>
@@ -18,23 +18,21 @@
 <li><strong>Run on Apify residential proxy (default).</strong> Passthrough — Apify bills proxy usage; our PPE has no proxy markup. A blocked page charges <strong>no</strong> listing rows.</li>
 <li><strong>Set sort + price filters with the real input fields.</strong> <code>sort</code> is one of <code>relevance</code>, <code>newest</code>, <code>price_asc</code>, <code>price_desc</code>, <code>top_reviews</code>. <code>minPrice</code> / <code>maxPrice</code> are whole currency units.</li>
 <li><strong>Cap the run</strong> with <code>maxItems</code> and/or <code>maxPages</code>.</li>
-<li><strong>Bill only delivered complete rows.</strong> PPE: actor-start <strong>$0.005</strong> once + listing-row <strong>$0.006</strong> each. Never quote listing-row-bulk $0.004.</li>
+<li><strong>Bill only delivered complete rows.</strong> As of Oct 28, 2026 (<a href="https://apify.com/publicrecords/etsy-search-scraper/pricing">Store pricing</a>): <strong>0.4¢</strong> per listing row on the Free plan (down to 0.34¢ on Gold and up), plus a <strong>0.005¢</strong> start fee once per run, charged only when a complete listing is in hand.</li>
 <li><strong>Join to shop velocity when you care about the seller.</strong> Companion Actor <code>publicrecords/etsy-shop-velocity</code>.</li>
 </ol>
 <h2>Doing it for real (Store-page run)</h2>
-<p><strong>Etsy Search Scraper</strong> (<code>publicrecords/etsy-search-scraper</code>) 0.2.3.</p>
+<p><strong>Etsy Search Scraper</strong> (<code>publicrecords/etsy-search-scraper</code>).</p>
 <h3>Proof run (2026-10-03, Store / WEB origin)</h3>
 <table>
 <thead><tr><th>Field</th><th>Value</th></tr></thead>
 <tbody>
 <tr><td>Actor</td><td><code>publicrecords/etsy-search-scraper</code></td></tr>
-<tr><td>Build</td><td><strong>0.2.3</strong> (<code>pkzvwNrteZ7Lq8Nhh</code>, tagged latest)</td></tr>
-<tr><td>Run ID</td><td><code>fB8Y28DNUy5kJ9xfg</code></td></tr>
 <tr><td>Origin</td><td>WEB (Apify Store / console)</td></tr>
 <tr><td>Status</td><td>SUCCEEDED</td></tr>
-<tr><td>Dataset</td><td><code>RCiYoXZM1UKsynzNG</code> (<strong>10</strong> items)</td></tr>
+<tr><td>Dataset</td><td><strong>10</strong> items</td></tr>
 <tr><td>Sort / price</td><td><code>sort=price_asc</code>, <code>minPrice=10</code>, <code>maxPrice=40</code></td></tr>
-<tr><td>Console pricing (PPE)</td><td>actor-start <strong>$0.005</strong> + listing-row <strong>$0.006</strong> × 10 → <strong>$0.065</strong></td></tr>
+<tr><td>Cost at Oct 28, 2026 prices (<a href="https://apify.com/publicrecords/etsy-search-scraper/pricing">Store pricing</a>)</td><td>10 × 0.4¢ + 0.005¢ → about <strong>4¢</strong> on the Free plan</td></tr>
 </tbody>
 </table>
 <p>Input used (from that Store-page run):</p>
@@ -138,10 +136,10 @@
 <p>Row count for this sample is <strong>10</strong> (the Store run’s <code>maxItems</code> was 10). Not padded.</p>
 <h3>Cost math</h3>
 <ul>
-<li>Actor-start: <strong>$0.005</strong></li>
-<li>Listing row: <strong>$0.006</strong> each</li>
-<li>10 complete rows: $0.005 + 10×$0.006 = <strong>$0.065</strong></li>
-<li>Do <strong>not</strong> quote listing-row-bulk $0.004</li>
+<li>Prices as of Oct 28, 2026 (<a href="https://apify.com/publicrecords/etsy-search-scraper/pricing">Store pricing</a>), Free plan; Store discounts lower them on paid plans</li>
+<li>Listing row: <strong>0.4¢</strong> each (0.38¢ Bronze, 0.36¢ Silver, 0.34¢ Gold and up)</li>
+<li>Start fee: <strong>0.005¢</strong> once per run</li>
+<li>10 complete rows: 10 × 0.4¢ + 0.005¢ ≈ <strong>4¢</strong></li>
 </ul>
 <h3>Store + MCP + one-command example</h3>
 <p>Actor (Store): <a href="https://apify.com/publicrecords/etsy-search-scraper">https://apify.com/publicrecords/etsy-search-scraper</a></p>
