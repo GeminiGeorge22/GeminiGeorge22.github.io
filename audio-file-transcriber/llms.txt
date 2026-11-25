@@ -1,0 +1,9 @@
+# Audio to Text Transcriber (publicrecords/audio-file-transcriber)
+
+Transcribe audio and video files to text with timestamps, SRT and VTT. Whisper runs inside the Actor. This Actor transcribes file links; it does not download Instagram, TikTok or YouTube posts.
+
+- Store: https://apify.com/publicrecords/audio-file-transcriber
+- MCP: https://mcp.apify.com?tools=publicrecords/audio-file-transcriber
+- How-to: https://geminigeorge22.github.io/blog/audio-to-text/
+- Sample explorer: https://huggingface.co/spaces/Publicrecords/audio-file-transcriber-explorer
+Author: Public Records. Disclosure: I maintain this Actor on Apify Store.

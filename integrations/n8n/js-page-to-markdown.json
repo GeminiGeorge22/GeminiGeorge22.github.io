@@ -1,0 +1,83 @@
+{
+  "name": "JavaScript Page to Markdown \u2192 daily rows (Apify, publicrecords)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "triggerAtHour": 7
+            }
+          ]
+        }
+      },
+      "id": "01dfe4b7-a884-4adb-8748-55ddad125247",
+      "name": "Every day 07:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/publicrecords~js-page-to-markdown/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"urls\": [\n    \"https://quotes.toscrape.com/js/\",\n    \"https://react.dev/\"\n  ],\n  \"waitForSelector\": \"\",\n  \"scrollToBottom\": false,\n  \"screenshot\": false\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "787c33a4-5a5d-4a9d-b991-26c0038595ad",
+      "name": "Run JavaScript Page to Markdown on Apify",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        240,
+        0
+      ],
+      "notes": "Create a Header Auth credential: name = Authorization, value = Bearer <your Apify API token> (console.apify.com/settings/integrations). Runs bill to your own Apify account at the Store price."
+    },
+    {
+      "parameters": {
+        "content": "## JavaScript Page to Markdown\nRender JavaScript-heavy pages in Chromium and get LLM-ready Markdown, with an optional screenshot. Use the cheaper url-to-markdown Actor when the text is already in the HTML.\n\nStore page: https://apify.com/publicrecords/js-page-to-markdown\nMCP: https://mcp.apify.com?tools=publicrecords/js-page-to-markdown\n\nEdit the JSON body to change the input, then connect the output to Google Sheets, Slack, Airtable or email.",
+        "height": 280,
+        "width": 420
+      },
+      "id": "23abdd23-5299-4c4d-b8bd-71a9bf8335b7",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        -320
+      ]
+    }
+  ],
+  "connections": {
+    "Every day 07:00": {
+      "main": [
+        [
+          {
+            "node": "Run JavaScript Page to Markdown on Apify",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": []
+}

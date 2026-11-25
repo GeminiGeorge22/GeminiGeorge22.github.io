@@ -1,0 +1,83 @@
+{
+  "name": "Email Verifier (domain, MX, disposable) \u2192 daily rows (Apify, publicrecords)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "triggerAtHour": 7
+            }
+          ]
+        }
+      },
+      "id": "624fdc92-8f82-46e7-960f-0d8682f13369",
+      "name": "Every day 07:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/publicrecords~email-verifier/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"emails\": [\n    \"support@apify.com\",\n    \"jane.doe@gmial.com\",\n    \"info@mailinator.com\",\n    \"sales@stripe.com\",\n    \"someone@no-such-domain-4k7q.com\"\n  ]\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "dfa2ece0-e2f6-475c-8e5f-9e6019f0ef94",
+      "name": "Run Email Verifier (domain, MX, disposable) on Apify",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        240,
+        0
+      ],
+      "notes": "Create a Header Auth credential: name = Authorization, value = Bearer <your Apify API token> (console.apify.com/settings/integrations). Runs bill to your own Apify account at the Store price."
+    },
+    {
+      "parameters": {
+        "content": "## Email Verifier (domain, MX, disposable)\nCheck a list of email addresses for syntax, domain, MX records and disposable domains. It does not check the mailbox and does not send mail (no SMTP check).\n\nStore page: https://apify.com/publicrecords/email-verifier\nMCP: https://mcp.apify.com?tools=publicrecords/email-verifier\n\nEdit the JSON body to change the input, then connect the output to Google Sheets, Slack, Airtable or email.",
+        "height": 280,
+        "width": 420
+      },
+      "id": "5104ef84-f823-4e75-8dd7-17160501c180",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        -320
+      ]
+    }
+  ],
+  "connections": {
+    "Every day 07:00": {
+      "main": [
+        [
+          {
+            "node": "Run Email Verifier (domain, MX, disposable) on Apify",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": []
+}

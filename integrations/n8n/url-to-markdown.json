@@ -1,0 +1,83 @@
+{
+  "name": "Web Page to Markdown \u2192 daily rows (Apify, publicrecords)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "triggerAtHour": 7
+            }
+          ]
+        }
+      },
+      "id": "65767b75-919a-462a-a593-ae90bd406536",
+      "name": "Every day 07:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/publicrecords~url-to-markdown/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"urls\": [\n    \"https://en.wikipedia.org/wiki/Web_scraping\",\n    \"https://quotes.toscrape.com/\"\n  ]\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "ef2687fa-7d0f-4658-9203-558145c75160",
+      "name": "Run Web Page to Markdown on Apify",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        240,
+        0
+      ],
+      "notes": "Create a Header Auth credential: name = Authorization, value = Bearer <your Apify API token> (console.apify.com/settings/integrations). Runs bill to your own Apify account at the Store price."
+    },
+    {
+      "parameters": {
+        "content": "## Web Page to Markdown\nTurn web page URLs into clean, LLM-ready Markdown over plain HTTP (no browser). Not a site crawler: you choose the URLs. For JavaScript-only pages, use js-page-to-markdown instead.\n\nStore page: https://apify.com/publicrecords/url-to-markdown\nMCP: https://mcp.apify.com?tools=publicrecords/url-to-markdown\n\nEdit the JSON body to change the input, then connect the output to Google Sheets, Slack, Airtable or email.",
+        "height": 280,
+        "width": 420
+      },
+      "id": "281f6cf8-4e74-4924-a142-473d1f7bf3c1",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        -320
+      ]
+    }
+  ],
+  "connections": {
+    "Every day 07:00": {
+      "main": [
+        [
+          {
+            "node": "Run Web Page to Markdown on Apify",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": []
+}

@@ -1,0 +1,36 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Audio to Text Transcriber — Whisper Speech to Text</title><meta name="description" content="Transcribe audio and video files to text with timestamps, SRT and VTT subtitles. Whisper runs inside the Actor, so there is no outside speech API."><link rel="canonical" href="https://geminigeorge22.github.io/audio-file-transcriber/"><meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large"><meta property="og:type" content="website"><meta property="og:site_name" content="publicrecords"><meta property="og:title" content="Audio to Text Transcriber — Whisper Speech to Text"><meta property="og:description" content="Transcribe audio and video files to text with timestamps, SRT and VTT subtitles. Whisper runs inside the Actor, so there is no outside speech API."><meta property="og:url" content="https://geminigeorge22.github.io/audio-file-transcriber/"><style> :root{--bg:#fff;--fg:#111;--muted:#666;--line:#e6e6e6;--card:#fafafa}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1115;--fg:#eaeaea;--muted:#9a9a9a;--line:#2a2d34;--card:#171a20}}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}main{max-width:760px;margin:0 auto;padding:40px 20px 80px}nav{font-size:.9rem;color:var(--muted);margin-bottom:24px}a{color:inherit}h1{font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.15;margin:0 0 10px}h2{font-size:1.25rem;margin:32px 0 8px}p.lead{color:var(--muted);margin:0 0 20px}.cta{display:inline-block;margin:14px 0;padding:12px 18px;border:1px solid var(--line);border-radius:10px;text-decoration:none}.card{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--card);margin:14px 0;overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.95rem}th,td{text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:8px}th{width:28%}code{background:var(--card);padding:1px 4px;border-radius:4px}footer{margin-top:48px;color:var(--muted);font-size:.85rem}pre{overflow-x:auto;background:var(--card);padding:12px;border-radius:10px;border:1px solid var(--line)}</style></head><body><main>
+<nav><a href="https://geminigeorge22.github.io/">publicrecords</a> · <a href="./">Audio to Text</a> · <a href="https://apify.com/publicrecords/audio-file-transcriber?utm_source=site&amp;utm_medium=page&amp;utm_campaign=audio-file-transcriber&amp;utm_content=index">Apify Actor</a></nav>
+<h1>Audio to Text Transcriber: Whisper Speech to Text</h1><p class="lead">Give it links to audio or video files. It returns the transcript, timed segments, and SRT and VTT subtitles. OpenAI's open Whisper model runs inside the Actor, so your audio is not sent to an outside speech API.</p>
+<a class="cta" href="https://apify.com/publicrecords/audio-file-transcriber?utm_source=site&amp;utm_medium=page&amp;utm_campaign=audio-file-transcriber&amp;utm_content=index">Open Audio to Text Transcriber on Apify →</a>
+
+<h2>The one question it answers</h2>
+<p>What are the words in these audio or video files, with timestamps and ready-made SRT or VTT subtitles?</p>
+<h2>Who it is for</h2>
+<p>Podcasters, researchers and journalists who need audio to text for recordings, interviews and meetings; AI agents and workflows that need the words in an mp3 or wav link; anyone turning video files into subtitles.</p>
+<p>This Actor transcribes files you link to. It does not download Instagram, TikTok or YouTube posts.</p>
+<h2>Input</h2>
+<div class="card"><table><tr><th>Field</th><th>What to put</th><th>Default</th></tr>
+<tr><td><code>audioUrls</code></td><td>Direct links to audio or video files (mp3, wav, m4a, ogg, flac, webm, mp4 and other formats ffmpeg reads). Up to 300 MB per file.</td><td>Store example: the public JFK wav sample</td></tr>
+<tr><td><code>model</code></td><td>Whisper <code>tiny</code>, <code>base</code>, or <code>small</code>. The price per minute is the same for every model.</td><td><code>base</code></td></tr>
+<tr><td><code>language</code></td><td>Two-letter code (en, fr, es, de …), or leave empty to detect it</td><td>detect automatically</td></tr>
+<tr><td><code>translateToEnglish</code></td><td>Output an English translation instead of the original-language transcript</td><td>false</td></tr>
+<tr><td><code>skipSilence</code></td><td>Skip long silent stretches before transcribing</td><td>true</td></tr>
+</table></div>
+<h2>Output</h2>
+<p>One dataset row per file, with the full <code>text</code>, timed <code>segments</code>, <code>srt</code> and <code>vtt</code> subtitles, detected language, and duration. Whisper runs inside the Actor — audio is not sent to an outside speech API. Pay per event on your own Apify account (free tier available). Current rates are on the Store page. No speaker labels (diarization).</p>
+<h2>Try it in 1 minute</h2>
+<ol>
+<li>Open the <a href="https://apify.com/publicrecords/audio-file-transcriber?utm_source=site&amp;utm_medium=page&amp;utm_campaign=audio-file-transcriber&amp;utm_content=try">Store page</a> and run the example input (the short public JFK wav, Whisper Base).</li>
+<li>Or pin it in an MCP client: <a href="https://mcp.apify.com?tools=publicrecords/audio-file-transcriber"><code>mcp.apify.com?tools=publicrecords/audio-file-transcriber</code></a> and sign in with your Apify account.</li>
+<li>Or import the <a href="https://github.com/GeminiGeorge22/publicrecords-mcp/blob/main/templates/n8n/audio-file-transcriber.json">n8n workflow</a> or the <a href="https://github.com/GeminiGeorge22/publicrecords-mcp/tree/main/templates/make">Make HTTP recipe</a>. Set your own Apify token; do not commit it.</li>
+</ol>
+<h2>MCP, examples, sample data</h2>
+<ul>
+<li>Tutorial: <a href="../blog/audio-to-text/">How to transcribe an audio or video file to text with Whisper</a></li>
+<li>Sample from the Actor README (real output, not invented) and explorer: <a href="https://huggingface.co/datasets/Publicrecords/audio-file-transcriber-sample">Hugging Face dataset</a> · <a href="https://huggingface.co/spaces/Publicrecords/audio-file-transcriber-explorer">Space</a></li>
+</ul>
+<h2>Attribution</h2>
+<p>Speech-to-text uses OpenAI&#39;s open Whisper model via faster-whisper, running inside the Actor. Not affiliated with OpenAI beyond that open-source model licence (MIT), which is listed on the Store page. Disclosure: I maintain this Actor on Apify Store (publicrecords).</p>
+
+<footer>Published by the publicrecords maintainer on Apify. · Updated 2026-11-25</footer>
+</main></body></html>

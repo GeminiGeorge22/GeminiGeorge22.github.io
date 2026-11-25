@@ -1,0 +1,9 @@
+# JavaScript Page to Markdown (publicrecords/js-page-to-markdown)
+
+Render JavaScript-heavy pages in Chromium and get LLM-ready Markdown, with an optional screenshot. If the text is already in the HTML, use the cheaper publicrecords/url-to-markdown Actor.
+
+- Store: https://apify.com/publicrecords/js-page-to-markdown
+- MCP: https://mcp.apify.com?tools=publicrecords/js-page-to-markdown
+- How-to: https://geminigeorge22.github.io/blog/js-page-to-markdown/
+- Sample explorer: https://huggingface.co/spaces/Publicrecords/js-page-to-markdown-explorer
+Author: Public Records. Disclosure: I maintain this Actor on Apify Store.

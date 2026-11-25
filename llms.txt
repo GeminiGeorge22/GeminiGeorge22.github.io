@@ -106,3 +106,35 @@ Disclosure: Published by the publicrecords maintainer on Apify.
    Store: https://apify.com/publicrecords/smartrecruiters-jobs-scraper
    Site: https://geminigeorge22.github.io/smartrecruiters-jobs/
    Use: SmartRecruiters job-board API postings released since a supplied date or window, with job metadata, URLs, timestamps and optional descriptions.
+
+## Live Actors — documents and speech
+
+13. PDF to Text & Markdown Extractor — OCR, DOCX, RAG chunks — publicrecords/pdf-docx-to-markdown
+   Store: https://apify.com/publicrecords/pdf-docx-to-markdown
+   Site: https://geminigeorge22.github.io/pdf-docx-to-markdown/
+   MCP: https://mcp.apify.com?tools=publicrecords/pdf-docx-to-markdown
+   Use: PDF and Word (.docx) to clean Markdown, OCR for scanned pages, RAG-ready chunks. No outside OCR or AI API.
+
+14. Audio to Text Transcriber — Whisper Speech to Text — publicrecords/audio-file-transcriber
+   Store: https://apify.com/publicrecords/audio-file-transcriber
+   Site: https://geminigeorge22.github.io/audio-file-transcriber/
+   MCP: https://mcp.apify.com?tools=publicrecords/audio-file-transcriber
+   Use: Transcript, timestamps, SRT and VTT from audio or video file links. Whisper runs inside the Actor. Not for Instagram, TikTok or YouTube page links.
+
+15. Web Page to Markdown — URL to LLM-Ready Text — publicrecords/url-to-markdown
+   Store: https://apify.com/publicrecords/url-to-markdown
+   Site: https://geminigeorge22.github.io/url-to-markdown/
+   MCP: https://mcp.apify.com?tools=publicrecords/url-to-markdown
+   Use: Web page URLs to clean Markdown over plain HTTP (no browser). Not a site crawler.
+
+16. JavaScript Page to Markdown — Render JS Web Pages + Screenshot — publicrecords/js-page-to-markdown
+   Store: https://apify.com/publicrecords/js-page-to-markdown
+   Site: https://geminigeorge22.github.io/js-page-to-markdown/
+   MCP: https://mcp.apify.com?tools=publicrecords/js-page-to-markdown
+   Use: Render JavaScript pages in Chromium, then get Markdown and an optional screenshot.
+
+17. Email Verifier — Domain, MX and Disposable Check — publicrecords/email-verifier
+   Store: https://apify.com/publicrecords/email-verifier
+   Site: https://geminigeorge22.github.io/email-verifier/
+   MCP: https://mcp.apify.com?tools=publicrecords/email-verifier
+   Use: Check syntax, domain, MX records and disposable domains. Does not check the mailbox, does not send mail, and is not an SMTP or mailbox verifier.
