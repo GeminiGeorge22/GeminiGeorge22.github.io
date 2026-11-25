@@ -1,0 +1,83 @@
+{
+  "name": "Sports Odds API → daily rows (Apify, publicrecords)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "triggerAtHour": 7
+            }
+          ]
+        }
+      },
+      "id": "a13fd10c-3b3a-4494-9576-7c006bf9237f",
+      "name": "Every day 07:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/publicrecords~sports-odds-api/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"leagues\": [\n    \"basketball/nba\",\n    \"american_football/nfl\",\n    \"ice_hockey/nhl\",\n    \"baseball/mlb\",\n    \"football/england/premier_league\"\n  ],\n  \"maxEvents\": 10,\n  \"proxyConfiguration\": {\n    \"useApifyProxy\": true\n  },\n  \"operators\": [\n    \"rsiusnj\",\n    \"rsiusny\",\n    \"rsiuspa\",\n    \"rsicaon\",\n    \"ubuk\",\n    \"ubca\",\n    \"paf\",\n    \"svenskaspel\",\n    \"atg\"\n  ],\n  \"markets\": \"main\",\n  \"includeLive\": true,\n  \"startsWithinHours\": 0\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "78aefa50-c768-49a9-96f8-d9de6e5ed3a3",
+      "name": "Run Sports Odds API on Apify",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        240,
+        0
+      ],
+      "notes": "Create a Header Auth credential: name = Authorization, value = Bearer <your Apify API token> (console.apify.com/settings/integrations). Runs bill to your own Apify account at the Store price."
+    },
+    {
+      "parameters": {
+        "content": "## Sports Odds API\nLive odds from 24 Kambi-powered sportsbooks (BetRivers, Unibet, Paf...) with best price per outcome.\n\nStore page: https://apify.com/publicrecords/sports-odds-api\nMCP: https://mcp.apify.com?tools=publicrecords/sports-odds-api\n\nEdit the JSON body to change the input, then connect the output to Google Sheets, Slack, Airtable or email.",
+        "height": 260,
+        "width": 420
+      },
+      "id": "ec300e82-4f9d-478e-aa3f-a4a22e133a19",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        -300
+      ]
+    }
+  ],
+  "connections": {
+    "Every day 07:00": {
+      "main": [
+        [
+          {
+            "node": "Run Sports Odds API on Apify",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": []
+}

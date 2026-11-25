@@ -1,0 +1,83 @@
+{
+  "name": "Etsy Shop Daily Sales → daily rows (Apify, publicrecords)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "triggerAtHour": 7
+            }
+          ]
+        }
+      },
+      "id": "fb9aac9f-dc9f-427a-8c44-3aad77fd9df9",
+      "name": "Every day 07:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/publicrecords~etsy-shop-velocity/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"shops\": [\n    \"OrelCeramics\",\n    \"Bestickend\"\n  ]\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "a794177b-adb7-4e04-b98e-a936c91dba4e",
+      "name": "Run Etsy Shop Daily Sales on Apify",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        240,
+        0
+      ],
+      "notes": "Create a Header Auth credential: name = Authorization, value = Bearer <your Apify API token> (console.apify.com/settings/integrations). Runs bill to your own Apify account at the Store price."
+    },
+    {
+      "parameters": {
+        "content": "## Etsy Shop Daily Sales\nDaily, 7-day and 28-day sales for Etsy shops from each shop's public sales counter.\n\nStore page: https://apify.com/publicrecords/etsy-shop-velocity\nMCP: https://mcp.apify.com?tools=publicrecords/etsy-shop-velocity\n\nEdit the JSON body to change the input, then connect the output to Google Sheets, Slack, Airtable or email.",
+        "height": 260,
+        "width": 420
+      },
+      "id": "d0f22e4c-24a1-4257-ab7a-a03f76eec36e",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        -300
+      ]
+    }
+  ],
+  "connections": {
+    "Every day 07:00": {
+      "main": [
+        [
+          {
+            "node": "Run Etsy Shop Daily Sales on Apify",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": []
+}

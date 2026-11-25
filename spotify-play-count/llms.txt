@@ -1,0 +1,10 @@
+# Spotify Play Count Scraper (publicrecords/spotify-play-count-scraper)
+
+Spotify play count scraper for tracks, albums, playlists and artists: play counts, monthly listeners and followers. No login. Pay per track.
+
+- Store: https://apify.com/publicrecords/spotify-play-count-scraper
+- MCP: https://mcp.apify.com?tools=publicrecords/spotify-play-count-scraper
+- Examples: https://github.com/GeminiGeorge22/publicrecords-spotify-play-count-scraper-examples
+- How-to: https://geminigeorge22.github.io/blog/spotify-play-counts/
+- Sample explorer: https://huggingface.co/spaces/Publicrecords/spotify-play-count-data-explorer
+Author: Public Records. Disclosure: I maintain this Actor on Apify Store.
