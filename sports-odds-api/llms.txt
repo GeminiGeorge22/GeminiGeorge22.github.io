@@ -1,0 +1,10 @@
+# Sports Odds API (publicrecords/sports-odds-api)
+
+Sports odds API for live and pre-game prices from BetRivers, Unibet, Paf, Svenska Spel and ATG. One row per game, best price per outcome. Not DraftKings or FanDuel.
+
+- Store: https://apify.com/publicrecords/sports-odds-api
+- MCP: https://mcp.apify.com?tools=publicrecords/sports-odds-api
+- Examples: https://github.com/GeminiGeorge22/publicrecords-sports-odds-api-examples
+- How-to: https://geminigeorge22.github.io/blog/sports-odds-api/
+- Sample explorer: https://huggingface.co/spaces/Publicrecords/sports-odds-data-explorer
+Author: Public Records. Disclosure: I maintain this Actor on Apify Store.
