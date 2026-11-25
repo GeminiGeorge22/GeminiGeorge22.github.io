@@ -1,0 +1,9 @@
+# PDF to Text & Markdown Extractor (publicrecords/pdf-docx-to-markdown)
+
+Turn PDF and Word files into clean Markdown, with OCR for scans and RAG-ready chunks. No outside OCR or AI API.
+
+- Store: https://apify.com/publicrecords/pdf-docx-to-markdown
+- MCP: https://mcp.apify.com?tools=publicrecords/pdf-docx-to-markdown
+- How-to: https://geminigeorge22.github.io/blog/pdf-to-text/
+- Sample explorer: https://huggingface.co/spaces/Publicrecords/pdf-docx-to-markdown-explorer
+Author: Public Records. Disclosure: I maintain this Actor on Apify Store.

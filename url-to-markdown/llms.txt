@@ -1,0 +1,9 @@
+# Web Page to Markdown (publicrecords/url-to-markdown)
+
+Turn web page URLs into clean, LLM-ready Markdown over plain HTTP (no browser). Single-page tool, not a site crawler. For JavaScript-only pages, use publicrecords/js-page-to-markdown.
+
+- Store: https://apify.com/publicrecords/url-to-markdown
+- MCP: https://mcp.apify.com?tools=publicrecords/url-to-markdown
+- How-to: https://geminigeorge22.github.io/blog/web-page-to-markdown/
+- Sample explorer: https://huggingface.co/spaces/Publicrecords/url-to-markdown-explorer
+Author: Public Records. Disclosure: I maintain this Actor on Apify Store.

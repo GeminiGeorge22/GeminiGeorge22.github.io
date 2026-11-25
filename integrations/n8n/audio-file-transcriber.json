@@ -1,0 +1,83 @@
+{
+  "name": "Audio to Text Transcriber \u2192 daily rows (Apify, publicrecords)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "triggerAtHour": 7
+            }
+          ]
+        }
+      },
+      "id": "c77394ef-6c3e-4d5d-9dcd-585a32d0deb2",
+      "name": "Every day 07:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/publicrecords~audio-file-transcriber/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"audioUrls\": [\n    \"https://raw.githubusercontent.com/ggerganov/whisper.cpp/master/samples/jfk.wav\"\n  ],\n  \"model\": \"base\",\n  \"translateToEnglish\": false,\n  \"wordTimestamps\": false,\n  \"skipSilence\": true,\n  \"maxMinutesPerFile\": 60\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "8ce6afce-c9c8-42d7-bb32-86d4f7df5286",
+      "name": "Run Audio to Text Transcriber on Apify",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        240,
+        0
+      ],
+      "notes": "Create a Header Auth credential: name = Authorization, value = Bearer <your Apify API token> (console.apify.com/settings/integrations). Runs bill to your own Apify account at the Store price."
+    },
+    {
+      "parameters": {
+        "content": "## Audio to Text Transcriber\nTranscribe audio and video files to text with timestamps, SRT and VTT. Whisper runs inside the Actor.\n\nStore page: https://apify.com/publicrecords/audio-file-transcriber\nMCP: https://mcp.apify.com?tools=publicrecords/audio-file-transcriber\n\nEdit the JSON body to change the input, then connect the output to Google Sheets, Slack, Airtable or email.",
+        "height": 260,
+        "width": 420
+      },
+      "id": "2d2c8b8a-6a44-400a-81d2-af1d8186f37e",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        -300
+      ]
+    }
+  ],
+  "connections": {
+    "Every day 07:00": {
+      "main": [
+        [
+          {
+            "node": "Run Audio to Text Transcriber on Apify",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": []
+}

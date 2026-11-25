@@ -1,0 +1,83 @@
+{
+  "name": "PDF to Text & Markdown Extractor \u2192 daily rows (Apify, publicrecords)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "triggerAtHour": 7
+            }
+          ]
+        }
+      },
+      "id": "b794e74c-3eff-4b9c-aa3b-69c5e9b77832",
+      "name": "Every day 07:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/publicrecords~pdf-docx-to-markdown/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"documentUrls\": [\n    \"https://arxiv.org/pdf/1706.03762\",\n    \"https://raw.githubusercontent.com/ocrmypdf/OCRmyPDF/main/tests/resources/skew.pdf\"\n  ],\n  \"ocrMode\": \"auto\",\n  \"ocrLanguage\": \"eng\",\n  \"chunkSize\": 400,\n  \"chunkOverlap\": 40\n}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "b4382de4-1804-4589-9365-66369857067f",
+      "name": "Run PDF to Text & Markdown Extractor on Apify",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        240,
+        0
+      ],
+      "notes": "Create a Header Auth credential: name = Authorization, value = Bearer <your Apify API token> (console.apify.com/settings/integrations). Runs bill to your own Apify account at the Store price."
+    },
+    {
+      "parameters": {
+        "content": "## PDF to Text & Markdown Extractor\nTurn PDF and Word files into clean Markdown, with OCR for scans and RAG-ready chunks.\n\nStore page: https://apify.com/publicrecords/pdf-docx-to-markdown\nMCP: https://mcp.apify.com?tools=publicrecords/pdf-docx-to-markdown\n\nEdit the JSON body to change the input, then connect the output to Google Sheets, Slack, Airtable or email.",
+        "height": 260,
+        "width": 420
+      },
+      "id": "d3b83eb2-3572-47dd-b2e6-e66fee63b651",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        -300
+      ]
+    }
+  ],
+  "connections": {
+    "Every day 07:00": {
+      "main": [
+        [
+          {
+            "node": "Run PDF to Text & Markdown Extractor on Apify",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": []
+}

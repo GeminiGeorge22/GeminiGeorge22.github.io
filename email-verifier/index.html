@@ -1,0 +1,36 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Email Verifier — Domain, MX and Disposable Check (not the mailbox)</title><meta name="description" content="Validate a list of email addresses without sending mail. It checks the syntax, the domain, MX records and disposable domains, not the mailbox."><link rel="canonical" href="https://geminigeorge22.github.io/email-verifier/"><meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large"><meta property="og:type" content="website"><meta property="og:site_name" content="publicrecords"><meta property="og:title" content="Email Verifier — Domain, MX and Disposable Check (not the mailbox)"><meta property="og:description" content="Validate a list of email addresses without sending mail. It checks the syntax, the domain, MX records and disposable domains, not the mailbox."><meta property="og:url" content="https://geminigeorge22.github.io/email-verifier/"><style> :root{--bg:#fff;--fg:#111;--muted:#666;--line:#e6e6e6;--card:#fafafa}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1115;--fg:#eaeaea;--muted:#9a9a9a;--line:#2a2d34;--card:#171a20}}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}main{max-width:760px;margin:0 auto;padding:40px 20px 80px}nav{font-size:.9rem;color:var(--muted);margin-bottom:24px}a{color:inherit}h1{font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.15;margin:0 0 10px}h2{font-size:1.25rem;margin:32px 0 8px}p.lead{color:var(--muted);margin:0 0 20px}.cta{display:inline-block;margin:14px 0;padding:12px 18px;border:1px solid var(--line);border-radius:10px;text-decoration:none}.card{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--card);margin:14px 0;overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.95rem}th,td{text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:8px}th{width:28%}code{background:var(--card);padding:1px 4px;border-radius:4px}footer{margin-top:48px;color:var(--muted);font-size:.85rem}pre{overflow-x:auto;background:var(--card);padding:12px;border-radius:10px;border:1px solid var(--line)}</style></head><body><main>
+<nav><a href="https://geminigeorge22.github.io/">publicrecords</a> · <a href="./">Email Verifier</a> · <a href="https://apify.com/publicrecords/email-verifier?utm_source=site&amp;utm_medium=page&amp;utm_campaign=email-verifier&amp;utm_content=index">Apify Actor</a></nav>
+<h1>Email Verifier: Bulk Email Validation, MX &amp; Disposable Check</h1><p class="lead">Paste a list of email addresses and get a verdict for each one, without sending any mail. It checks the domain and its MX records, not the mailbox. This is not a mailbox verifier and it does not do an SMTP check.</p>
+<a class="cta" href="https://apify.com/publicrecords/email-verifier?utm_source=site&amp;utm_medium=page&amp;utm_campaign=email-verifier&amp;utm_content=index">Open Email Verifier on Apify →</a>
+
+<h2>The one question it answers</h2>
+<p>For each address: is the syntax valid, does the domain exist, does it have MX records, and is it a disposable domain, a role account, or a typo — without sending mail or checking the mailbox?</p>
+<h2>Who it is for</h2>
+<p>Anyone cleaning a list before a send, checking sign-up forms, or scoring leads, and AI agents that need a quick, cheap email check. It is not a mailbox-level or SMTP verifier.</p>
+<h2>What it checks — and what it does not</h2>
+<p>For every address the Actor checks the syntax, whether the domain exists, its MX records (or A-record fallback), SPF and DMARC, and whether it is a disposable domain, a role account (info@, support@) or a free webmail provider. It also suggests a fix for common domain typos such as <code>gmial.com</code>.</p>
+<p><strong>It does not check the mailbox</strong> and it does not send mail. There is no SMTP probe. A made-up name at a real domain can still get the verdict <code>deliverable_domain</code>, which only means the domain and its MX records can receive mail and nothing about the address looks risky.</p>
+<h2>Input</h2>
+<div class="card"><table><tr><th>Field</th><th>What to put</th><th>Default</th></tr>
+<tr><td><code>emails</code></td><td>Addresses to check, one per line (up to 10,000 per run). Duplicates are checked once. No email is sent.</td><td>Store example mix of role, typo, disposable and missing-domain addresses</td></tr>
+<tr><td><code>dnsServers</code></td><td>Optional resolver IPs, e.g. 1.1.1.1</td><td>the platform resolver</td></tr>
+</table></div>
+<h2>Output</h2>
+<p>One row per address, with <code>verdict</code> (<code>deliverable_domain</code>, <code>risky</code>, or <code>undeliverable</code>), plain-language <code>reasons</code>, MX records, and flags for disposable, role account and free provider. Pay per event on your own Apify account (free tier available). Current rates are on the Store page.</p>
+<p>The disposable list is the open disposable-email-domains blocklist (CC0), bundled with each build. This tool is not affiliated with Stripe, Apify, Mailinator or Google; those names appear only in the Store example or as public MX hosts.</p>
+<h2>Try it in 1 minute</h2>
+<ol>
+<li>Open the <a href="https://apify.com/publicrecords/email-verifier?utm_source=site&amp;utm_medium=page&amp;utm_campaign=email-verifier&amp;utm_content=try">Store page</a> and run the example input. No mail is sent.</li>
+<li>Or pin it in an MCP client: <a href="https://mcp.apify.com?tools=publicrecords/email-verifier"><code>mcp.apify.com?tools=publicrecords/email-verifier</code></a> and sign in with your Apify account.</li>
+<li>Or import the <a href="https://github.com/GeminiGeorge22/publicrecords-mcp/blob/main/templates/n8n/email-verifier.json">n8n workflow</a> or the <a href="https://github.com/GeminiGeorge22/publicrecords-mcp/tree/main/templates/make">Make HTTP recipe</a>. Set your own Apify token; do not commit it.</li>
+</ol>
+<h2>MCP, examples, sample data</h2>
+<ul>
+<li>Tutorial: <a href="../blog/email-verifier/">How to check email domains, MX records and disposable addresses (not the mailbox)</a></li>
+<li>Sample from the Actor README (real output, not invented): <a href="https://huggingface.co/datasets/Publicrecords/email-verifier-sample">Hugging Face dataset</a> · <a href="https://huggingface.co/spaces/Publicrecords/email-verifier-explorer">Space</a></li>
+</ul>
+<h2>Attribution</h2>
+<p>Disclosure: I maintain this Actor on Apify Store (publicrecords). This is a domain, MX and disposable-domain check, not a mailbox verifier.</p>
+
+<footer>Published by the publicrecords maintainer on Apify. · Updated 2026-11-25</footer>
+</main></body></html>

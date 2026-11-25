@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JavaScript Page to Markdown — Render JS Web Pages + Screenshot</title><meta name="description" content="Render JavaScript-heavy web pages in a real Chromium browser and get clean, LLM-ready Markdown with title, metadata and an optional screenshot."><link rel="canonical" href="https://geminigeorge22.github.io/js-page-to-markdown/"><meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large"><meta property="og:type" content="website"><meta property="og:site_name" content="publicrecords"><meta property="og:title" content="JavaScript Page to Markdown — Render JS Web Pages + Screenshot"><meta property="og:description" content="Render JavaScript-heavy web pages in a real Chromium browser and get clean, LLM-ready Markdown with title, metadata and an optional screenshot."><meta property="og:url" content="https://geminigeorge22.github.io/js-page-to-markdown/"><style> :root{--bg:#fff;--fg:#111;--muted:#666;--line:#e6e6e6;--card:#fafafa}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1115;--fg:#eaeaea;--muted:#9a9a9a;--line:#2a2d34;--card:#171a20}}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}main{max-width:760px;margin:0 auto;padding:40px 20px 80px}nav{font-size:.9rem;color:var(--muted);margin-bottom:24px}a{color:inherit}h1{font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.15;margin:0 0 10px}h2{font-size:1.25rem;margin:32px 0 8px}p.lead{color:var(--muted);margin:0 0 20px}.cta{display:inline-block;margin:14px 0;padding:12px 18px;border:1px solid var(--line);border-radius:10px;text-decoration:none}.card{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--card);margin:14px 0;overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.95rem}th,td{text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:8px}th{width:28%}code{background:var(--card);padding:1px 4px;border-radius:4px}footer{margin-top:48px;color:var(--muted);font-size:.85rem}pre{overflow-x:auto;background:var(--card);padding:12px;border-radius:10px;border:1px solid var(--line)}</style></head><body><main>
+<nav><a href="https://geminigeorge22.github.io/">publicrecords</a> · <a href="./">JavaScript Page to Markdown</a> · <a href="https://apify.com/publicrecords/js-page-to-markdown?utm_source=site&amp;utm_medium=page&amp;utm_campaign=js-page-to-markdown&amp;utm_content=index">Apify Actor</a></nav>
+<h1>JavaScript Page to Markdown: Render JS Web Pages + Screenshot</h1><p class="lead">Opens each URL in a real Chromium browser, lets the page's JavaScript run, and returns the rendered page as clean Markdown. Turn on screenshots for a PNG or JPEG of every page too.</p>
+<a class="cta" href="https://apify.com/publicrecords/js-page-to-markdown?utm_source=site&amp;utm_medium=page&amp;utm_campaign=js-page-to-markdown&amp;utm_content=index">Open JavaScript Page to Markdown on Apify →</a>
+
+<h2>The one question it answers</h2>
+<p>What text does a person actually see on this JavaScript page, as clean Markdown — and, optionally, what does a screenshot of the page look like?</p>
+<h2>Who it is for</h2>
+<p>AI agent and RAG builders who need the text a person sees on a React, Vue, Angular, Svelte or Next.js page; developers who do not want to run their own headless browser; analysts and SEO teams who want page text, metadata and a screenshot in one run.</p>
+<h2>Input</h2>
+<div class="card"><table><tr><th>Field</th><th>What to put</th><th>Default</th></tr>
+<tr><td><code>urls</code></td><td>Pages to render (up to 500 per run).</td><td>Store example: quotes.toscrape.com/js/ and react.dev</td></tr>
+<tr><td><code>waitForSelector</code></td><td>Wait for late-loading content, e.g. <code>.product-list</code></td><td>empty</td></tr>
+<tr><td><code>scrollToBottom</code></td><td>Scroll first so infinite-scroll items are included</td><td>false</td></tr>
+<tr><td><code>screenshot</code></td><td>Save a PNG or JPEG of each page to the run's key-value store</td><td>false</td></tr>
+</table></div>
+<h2>Output</h2>
+<p>One dataset row per rendered page, with <code>markdown</code>, metadata, a token estimate, and optional <code>screenshotUrl</code>. No outside AI API is used. Pay per event on your own Apify account (free tier available). Current rates are on the Store page. Pages that fail, time out or are skipped are not charged per page.</p>
+<p>If the page's text is already in its HTML, the cheaper and faster <a href="../url-to-markdown/">Web Page to Markdown</a> Actor is usually enough. Public pages only; login, paywall and CAPTCHA pages are not supported. Example links on the Store page are not an affiliation with those sites.</p>
+<h2>Try it in 1 minute</h2>
+<ol>
+<li>Open the <a href="https://apify.com/publicrecords/js-page-to-markdown?utm_source=site&amp;utm_medium=page&amp;utm_campaign=js-page-to-markdown&amp;utm_content=try">Store page</a> and run the example input (screenshots off).</li>
+<li>Or pin it in an MCP client: <a href="https://mcp.apify.com?tools=publicrecords/js-page-to-markdown"><code>mcp.apify.com?tools=publicrecords/js-page-to-markdown</code></a> and sign in with your Apify account.</li>
+<li>Or import the <a href="https://github.com/GeminiGeorge22/publicrecords-mcp/blob/main/templates/n8n/js-page-to-markdown.json">n8n workflow</a> or the <a href="https://github.com/GeminiGeorge22/publicrecords-mcp/tree/main/templates/make">Make HTTP recipe</a>. Set your own Apify token; do not commit it.</li>
+</ol>
+<h2>MCP, examples, sample data</h2>
+<ul>
+<li>Tutorial: <a href="../blog/js-page-to-markdown/">How to render a JavaScript page to Markdown</a></li>
+<li>Sample from the Actor README (real output excerpt, not invented): <a href="https://huggingface.co/datasets/Publicrecords/js-page-to-markdown-sample">Hugging Face dataset</a> · <a href="https://huggingface.co/spaces/Publicrecords/js-page-to-markdown-explorer">Space</a></li>
+</ul>
+<h2>Attribution</h2>
+<p>Disclosure: I maintain this Actor on Apify Store (publicrecords). Rendering uses Playwright and Chromium inside the Actor. Not affiliated with the sites used in the Store example input.</p>
+
+<footer>Published by the publicrecords maintainer on Apify. · Updated 2026-11-25</footer>
+</main></body></html>

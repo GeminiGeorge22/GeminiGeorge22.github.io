@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Web Page to Markdown — URL to LLM-Ready Text</title><meta name="description" content="Turn any web page URL into clean, LLM-ready Markdown with title, description, language and canonical URL. Plain HTTP, no browser."><link rel="canonical" href="https://geminigeorge22.github.io/url-to-markdown/"><meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large"><meta property="og:type" content="website"><meta property="og:site_name" content="publicrecords"><meta property="og:title" content="Web Page to Markdown — URL to LLM-Ready Text"><meta property="og:description" content="Turn any web page URL into clean, LLM-ready Markdown with title, description, language and canonical URL. Plain HTTP, no browser."><meta property="og:url" content="https://geminigeorge22.github.io/url-to-markdown/"><style> :root{--bg:#fff;--fg:#111;--muted:#666;--line:#e6e6e6;--card:#fafafa}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1115;--fg:#eaeaea;--muted:#9a9a9a;--line:#2a2d34;--card:#171a20}}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}main{max-width:760px;margin:0 auto;padding:40px 20px 80px}nav{font-size:.9rem;color:var(--muted);margin-bottom:24px}a{color:inherit}h1{font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.15;margin:0 0 10px}h2{font-size:1.25rem;margin:32px 0 8px}p.lead{color:var(--muted);margin:0 0 20px}.cta{display:inline-block;margin:14px 0;padding:12px 18px;border:1px solid var(--line);border-radius:10px;text-decoration:none}.card{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--card);margin:14px 0;overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.95rem}th,td{text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:8px}th{width:28%}code{background:var(--card);padding:1px 4px;border-radius:4px}footer{margin-top:48px;color:var(--muted);font-size:.85rem}pre{overflow-x:auto;background:var(--card);padding:12px;border-radius:10px;border:1px solid var(--line)}</style></head><body><main>
+<nav><a href="https://geminigeorge22.github.io/">publicrecords</a> · <a href="./">Web Page to Markdown</a> · <a href="https://apify.com/publicrecords/url-to-markdown?utm_source=site&amp;utm_medium=page&amp;utm_campaign=url-to-markdown&amp;utm_content=index">Apify Actor</a></nav>
+<h1>Web Page to Markdown: URL to LLM-Ready Text</h1><p class="lead">Give it web page URLs and get back clean Markdown for each page, ready for an LLM, a RAG index or an AI agent. It fetches pages over plain HTTP with no browser, so it is fast and cheap. It is a single-page tool, not a site crawler.</p>
+<a class="cta" href="https://apify.com/publicrecords/url-to-markdown?utm_source=site&amp;utm_medium=page&amp;utm_campaign=url-to-markdown&amp;utm_content=index">Open Web Page to Markdown on Apify →</a>
+
+<h2>The one question it answers</h2>
+<p>What is the clean, LLM-ready Markdown of these web page URLs, with title, description, language and canonical URL when the page has them?</p>
+<h2>Who it is for</h2>
+<p>Developers building RAG and AI-agent pipelines, and anyone who needs readable text from a list of pages.</p>
+<h2>Input</h2>
+<div class="card"><table><tr><th>Field</th><th>What to put</th><th>Default</th></tr>
+<tr><td><code>urls</code></td><td>Web pages to convert, one per line (up to 1,000 per run).</td><td>Store example: a Wikipedia article and quotes.toscrape.com</td></tr>
+<tr><td><code>contentScope</code></td><td><code>main</code> (recommended) or <code>full</code></td><td><code>main</code></td></tr>
+<tr><td><code>cssSelector</code></td><td>Keep only matching elements, e.g. <code>article</code></td><td>empty</td></tr>
+<tr><td><code>maxChars</code></td><td>Cut very long pages; the row then says <code>truncated: true</code></td><td>200,000</td></tr>
+</table></div>
+<h2>Output</h2>
+<p>One dataset row per page, with <code>markdown</code>, metadata, a token estimate, and <code>needsJavaScript</code> when the static HTML may be incomplete. Pay per event on your own Apify account (free tier available). Current rates are on the Store page. No browser is launched.</p>
+<p>This is not a site crawler, and it does not render JavaScript. For React, Vue, Angular or other pages that only fill in after JavaScript runs, use the <a href="../js-page-to-markdown/">JavaScript Page to Markdown</a> Actor. For PDF or Word files, use the <a href="../pdf-docx-to-markdown/">PDF to Text &amp; Markdown Extractor</a>. Example links on the Store page are not an affiliation with Wikipedia or quotes.toscrape.com.</p>
+<h2>Try it in 1 minute</h2>
+<ol>
+<li>Open the <a href="https://apify.com/publicrecords/url-to-markdown?utm_source=site&amp;utm_medium=page&amp;utm_campaign=url-to-markdown&amp;utm_content=try">Store page</a> and run the example input.</li>
+<li>Or pin it in an MCP client: <a href="https://mcp.apify.com?tools=publicrecords/url-to-markdown"><code>mcp.apify.com?tools=publicrecords/url-to-markdown</code></a> and sign in with your Apify account.</li>
+<li>Or import the <a href="https://github.com/GeminiGeorge22/publicrecords-mcp/blob/main/templates/n8n/url-to-markdown.json">n8n workflow</a> or the <a href="https://github.com/GeminiGeorge22/publicrecords-mcp/tree/main/templates/make">Make HTTP recipe</a>. Set your own Apify token; do not commit it.</li>
+</ol>
+<h2>MCP, examples, sample data</h2>
+<ul>
+<li>Tutorial: <a href="../blog/web-page-to-markdown/">How to turn a web page URL into LLM-ready Markdown</a></li>
+<li>Sample from the Actor README (real output excerpt, not invented): <a href="https://huggingface.co/datasets/Publicrecords/url-to-markdown-sample">Hugging Face dataset</a> · <a href="https://huggingface.co/spaces/Publicrecords/url-to-markdown-explorer">Space</a></li>
+</ul>
+<h2>Attribution</h2>
+<p>Disclosure: I maintain this Actor on Apify Store (publicrecords). Not affiliated with the sites used in the Store example input.</p>
+
+<footer>Published by the publicrecords maintainer on Apify. · Updated 2026-11-25</footer>
+</main></body></html>

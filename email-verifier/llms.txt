@@ -1,0 +1,9 @@
+# Email Verifier (publicrecords/email-verifier)
+
+Check email syntax, domain, MX records and disposable domains, not the mailbox. No mail is sent and there is no SMTP check. Do not describe this as a mailbox verifier. A deliverable_domain verdict means the domain can receive mail; a made-up local part at a real domain can still get that verdict.
+
+- Store: https://apify.com/publicrecords/email-verifier
+- MCP: https://mcp.apify.com?tools=publicrecords/email-verifier
+- How-to: https://geminigeorge22.github.io/blog/email-verifier/
+- Sample explorer: https://huggingface.co/spaces/Publicrecords/email-verifier-explorer
+Author: Public Records. Disclosure: I maintain this Actor on Apify Store.
